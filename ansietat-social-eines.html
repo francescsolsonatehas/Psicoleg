@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ansietat social: eines de TCC | Psicòleg</title>
+<meta name="description" content="Jerarquia d&#x27;exposició, registre de pensaments i experiments conductuals per treballar l&#x27;ansietat social amb TCC.">
+<link rel="canonical" href="https://francescsolsonatehas.github.io/Psicoleg/ansietat-social-eines.html">
+<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta name="theme-color" content="#3f7d6e">
+<meta property="og:title" content="Ansietat social: eines de TCC | Psicòleg">
+<meta property="og:description" content="Jerarquia d&#x27;exposició, registre de pensaments i experiments conductuals per treballar l&#x27;ansietat social amb TCC.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://francescsolsonatehas.github.io/Psicoleg/ansietat-social-eines.html">
+<meta property="og:site_name" content="Psicòleg">
+<meta property="og:locale" content="ca_ES">
+<meta property="og:image" content="https://francescsolsonatehas.github.io/Psicoleg/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="font" type="font/woff2" href="fonts/inter-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/poppins-700-latin.woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<script>try{var t=localStorage.getItem('psi-theme');if(!t&&matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t)document.documentElement.setAttribute('data-theme',t);var f=localStorage.getItem('psi-fs');if(f)document.documentElement.style.setProperty('--fs',f)}catch(e){}</script>
+
+</head>
+<body>
+<a class="skip" href="#main">Salta al contingut</a>
+<header class="site-header"><div class="container nav">
+  <a class="brand" href="index.html"><svg viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3f7d6e"/><stop offset="1" stop-color="#6c8ebf"/></linearGradient></defs><circle cx="20" cy="20" r="19" fill="url(#g)"/><path d="M20 28c-6-4-9-7.5-9-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 3.500-3 7-9 11z" fill="#fff" opacity=".95"/></svg><span>Psicòleg</span></a>
+  <nav aria-label="Navegació principal"><ul id="menu"><li><a href="index.html">Inici</a></li><li><a href="trastorns.html">Trastorns</a></li><li><a href="eines.html" aria-current="page">Eines</a></li><li><a href="cribratges.html">Cribratges</a></li><li><a href="familiars.html">Familiars</a></li><li><a href="ajuda.html">Trobar ajuda</a></li></ul></nav>
+  <div class="tools">
+    <button class="icon-btn" id="fs-down" aria-label="Reduir la mida del text">A−</button>
+    <button class="icon-btn" id="fs-up" aria-label="Augmentar la mida del text">A+</button>
+    <button class="icon-btn" id="theme" aria-label="Canviar entre mode clar i fosc">🌓</button>
+    <button class="icon-btn menu-btn" id="menu-btn" aria-label="Obrir el menú" aria-expanded="false" aria-controls="menu">☰</button>
+  </div>
+</div></header>
+<main id="main">
+
+<section class="page-hero"><div class="container narrow">
+  <p class="crumbs"><a href="eines.html">← Totes les eines</a></p>
+  <span class="eyebrow">Teràpia cognitivo-conductual</span><h1>Ansietat social: eines de TCC</h1>
+  <p class="lead muted">Tres eines per treballar la por a ser jutjat: ordenar el que evites, qüestionar els pensaments i comprovar-ho a la pràctica.</p>
+  <div class="notice"><strong>Un suport, no un tractament</strong>Funcionen millor acompanyades d'un psicòleg. Tot es guarda només al teu navegador. Si et sents desbordat/da, atura't i mira <a href="ajuda.html#urgent">ajuda urgent</a>.</div>
+</div></section>
+<section style="padding-top:10px"><div class="container narrow">
+
+<div class="tool" id="exposicio">
+  <h2>🪜 1. Jerarquia d'exposició</h2>
+  <p class="muted">Llista situacions socials que evites o et costen, i puntua la por de 0 (cap) a 100 (màxima). Comença per les de puntuació baixa i puja gradualment. Repeteix cada situació fins que la por baixi.</p>
+  <div class="field"><label for="x-sit">Situació</label><input type="text" id="x-sit" maxlength="140" placeholder="Ex.: saludar un veí, preguntar l'hora a un desconegut..."></div>
+  <div class="field"><label for="x-score">Por esperada: <output id="x-out">40</output>/100</label><input type="range" id="x-score" min="0" max="100" step="5" value="40" style="width:100%"></div>
+  <button class="btn btn-primary btn-sm" id="x-add">Afegir a l'escala</button>
+  <ol class="log" id="x-list" style="margin-top:18px;list-style:none"></ol>
+  <p class="muted" style="font-size:.9rem">Consell: tria un pas que et doni uns 30-50 de por, no el més difícil. Quedar-te a la situació fins que l'ansietat baixi t'ensenya que la pots tolerar.</p>
+  <div class="btn-row"><button class="btn btn-outline btn-sm" id="x-clear">Esborrar l'escala</button></div>
+</div>
+
+<div class="tool" id="pensaments-soc">
+  <h2>🧠 2. Registre de pensaments socials</h2>
+  <p class="muted">Per a després d'una situació (o abans). Posa les teves prediccions a prova.</p>
+  <div class="field"><label for="p-sit">Situació social</label><textarea id="p-sit" placeholder="Què va passar o què passarà? Amb qui?"></textarea></div>
+  <div class="field"><label for="p-pred">Què crec que passarà o què van pensar de mi</label><textarea id="p-pred" placeholder="Ex.: pensaran que sóc avorrit"></textarea></div>
+  <div class="field"><label for="p-b1">Quant m'ho crec ara: <output id="p-o1">60</output>%</label><input type="range" id="p-b1" min="0" max="100" step="5" value="60" style="width:100%"></div>
+  <fieldset class="field" style="border:0;padding:0;margin:0 0 14px"><legend class="lbl">Distorsions que reconec (opcional)</legend><div class="chk-grid"><label class="chk"><input type="checkbox" name="dist" value="0"> Lectura de ment (crec saber què pensen)</label><label class="chk"><input type="checkbox" name="dist" value="1"> Catastrofisme (ho veig pitjor del que és)</label><label class="chk"><input type="checkbox" name="dist" value="2"> Personalització (tot gira al meu voltant)</label><label class="chk"><input type="checkbox" name="dist" value="3"> Etiquetatge («sóc un fracàs»)</label><label class="chk"><input type="checkbox" name="dist" value="4"> Filtre mental (només veig el negatiu)</label><label class="chk"><input type="checkbox" name="dist" value="5"> Hauria de... (exigències rígides)</label></div></fieldset>
+  <div class="field"><label for="p-for">Proves a favor</label><textarea id="p-for" placeholder="Fets concrets, no sensacions"></textarea></div>
+  <div class="field"><label for="p-ag">Proves en contra</label><textarea id="p-ag" placeholder="Altres vegades que ha anat bé, què va fer l'altra persona..."></textarea></div>
+  <div class="field"><label for="p-alt">Pensament alternatiu més realista</label><textarea id="p-alt" placeholder="Què li diria a un bon amic en aquesta situació?"></textarea></div>
+  <div class="field"><label for="p-b2">Ara, quant m'ho crec: <output id="p-o2">40</output>%</label><input type="range" id="p-b2" min="0" max="100" step="5" value="40" style="width:100%"></div>
+  <div class="btn-row"><button class="btn btn-primary btn-sm" id="p-save">Desar</button><button class="btn btn-outline btn-sm" id="p-clear">Esborrar entrades</button></div>
+  <h3 style="margin-top:24px">Entrades anteriors</h3><ul class="log" id="p-log"></ul>
+</div>
+
+<div class="tool" id="experiments">
+  <h2>🔬 3. Experiments conductuals</h2>
+  <p class="muted">Una prova de la teva predicció. Primer escriu què creus que passarà, després fes-ho i anota què ha passat de debò.</p>
+  <h3>Abans</h3>
+  <div class="field"><label for="e-do">Què faré (concret i petit)</label><input type="text" id="e-do" maxlength="160" placeholder="Ex.: dir bon dia al company i fer una pregunta"></div>
+  <div class="field"><label for="e-pred">Què crec que passarà</label><input type="text" id="e-pred" maxlength="200" placeholder="Ex.: es quedarà en silenci i em mirarà estrany"></div>
+  <div class="field"><label for="e-a1">Ansietat prevista: <output id="e-o1">60</output>/100</label><input type="range" id="e-a1" min="0" max="100" step="5" value="60" style="width:100%"></div>
+  <p class="muted" style="font-size:.9rem">Prova de no usar «conductes de seguretat» (evitar la mirada, mirar el mòbil, repetir-te el guió). Ens fan creure que només anem bé gràcies a elles.</p>
+  <button class="btn btn-primary btn-sm" id="e-add">Planificar experiment</button>
+  <h3 style="margin-top:24px">Els teus experiments</h3>
+  <ul class="log" id="e-list"></ul>
+  <div class="btn-row"><button class="btn btn-outline btn-sm" id="e-clear">Esborrar experiments</button></div>
+</div>
+
+<div class="notice soft"><strong>I si em costa massa?</strong>És normal. Fes passos més petits o parla-ho amb un psicòleg: la TCC amb exposició és el tractament amb més evidència per a l'ansietat social. <a href="trastorns/ansietat-social.html">Llegeix la fitxa</a> · <a href="ajuda.html">Trobar ajuda</a></div>
+</div></section>
+</main>
+<footer class="site-footer"><div class="container">
+  <div class="foot">
+    <div><h4>Psicòleg</h4><p>Informació i eines per cuidar la salut mental. Contingut informatiu: no substitueix l'atenció d'un professional sanitari.</p></div>
+    <div><h4>Seccions</h4><ul><li><a href="index.html">Inici</a></li><li><a href="trastorns.html">Trastorns</a></li><li><a href="eines.html">Eines</a></li><li><a href="cribratges.html">Cribratges</a></li><li><a href="familiars.html">Familiars</a></li><li><a href="ajuda.html">Trobar ajuda</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="avis-legal.html">Avís legal i mèdic</a></li><li><a href="privacitat.html">Privacitat i cookies</a></li></ul></div>
+  </div>
+  <p class="copy">© 2026 Psicòleg. Les tipografies Inter i Poppins es distribueixen sota la llicència SIL OFL 1.1.</p>
+</div></footer>
+<div class="sos" role="region" aria-label="Ajuda urgent">
+  <span>🆘 Necessites ajuda ara?</span>
+  <a href="tel:112">112 Emergències</a>
+  <a href="tel:024">024 Conducta suïcida (24 h, gratuït)</a>
+  <a class="sos-btn" href="ajuda.html">Més recursos</a>
+</div>
+<script src="js/main.js" defer></script>
+<script src="js/social.js" defer></script>
+</body>
+</html>

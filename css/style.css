@@ -167,3 +167,12 @@ a.card:hover{transform:translateY(-4px);border-color:var(--primary)}
 }
 @media print{.site-header,.sos,.site-footer,.btn-row{display:none}body{padding:0}}
 [hidden]{display:none!important}
+.chk-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:6px}
+.chk{display:flex;gap:8px;align-items:flex-start;font-size:.93rem;cursor:pointer}
+.chk input{accent-color:var(--primary-strong);margin-top:5px}
+.badge{display:inline-block;min-width:44px;text-align:center;font-weight:700;padding:2px 10px;border-radius:99px;background:var(--accent-soft)}
+.done{text-decoration:line-through;opacity:.6}
+.log .grow{flex:1}
+.mini{background:transparent;border:1px solid var(--border);color:var(--text);border-radius:8px;padding:4px 10px;cursor:pointer;font:inherit;font-size:.85rem}
+.mini:hover{background:var(--primary-soft)}
+.inline-form{background:var(--surface-2);border-radius:12px;padding:14px;margin-top:10px}
