@@ -151,7 +151,10 @@ $('a-load').addEventListener('click', async () => {
     else { ollamaModel = $('a-oll-model').value; if (!ollamaModel) throw new Error('Primer prem «Detectar Ollama» i escull un model.'); }
     setStatus('Assistent llest.');
     $('a-setup').hidden = true; $('a-chat').hidden = false;
-  } catch (e) { setStatus(e.message || String(e), true); $('a-progress').hidden = true; $('a-load').disabled = !$('a-consent').checked; }
+  } catch (e) {
+    let m = e.message || String(e);
+    if (/cache|quota|storage/i.test(m)) m += ' — Probablement no hi ha prou espai lliure al disc o el navegador limita l\'emmagatzematge. Allibera espai, prova un model més petit (Llama 1B) o usa Ollama local.';
+    setStatus(m, true); $('a-progress').hidden = true; $('a-load').disabled = !$('a-consent').checked; }
 });
 $('a-start').addEventListener('click', () => {
   history = []; $('a-log').innerHTML = ''; $('a-crisis').hidden = true; $('a-input').disabled = false; $('a-send').disabled = false; $('a-end').disabled = false;
