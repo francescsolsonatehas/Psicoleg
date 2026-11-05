@@ -3,36 +3,71 @@ const WEBLLM_URL = 'https://cdn.jsdelivr.net/npm/@mlc-ai/web-llm@0.2.85/+esm';
 const OLLAMA = 'http://localhost:11434';
 const $ = (id) => document.getElementById(id);
 
-const COMMON = [
-  'Ets un assistent d\'una web d\'ajuda per a l\'ansietat social. NO ets un terapeuta ni un professional sanitari.',
-  'Respon SEMPRE en català, amb frases curtes (màxim 3), tó càlid i respectuós.',
-  'No diagnostiquis, no parlis de medicació ni de dosis, i no donis consells mèdics.',
-  'Si la persona expressa pensaments de fer-se mal o de no voler viure, digues-li amb calma que truqui al 024 o al 112 i atura\'t.',
-  'No inventis dades sobre la persona. Si no saps alguna cosa, digues-ho.'
-].join(' ');
-
-const SCENARIOS = {
-  feina: 'un company de feina que es creua amb la persona a la màquina de cafè',
-  veí: 'un veí que es troba amb la persona a l\'ascensor',
-  botiga: 'un/a dependent/a d\'una botiga on la persona vol fer una consulta o un canvi',
-  desconegut: 'una persona desconeguda que espera al costat de la persona a la parada de l\'autobús',
-  reunio: 'un company en una reunió de feina, abans que comenci, mentre s\'esperen els altres',
-  entrevista: 'una persona de recursos humans que fa una entrevista de feina curta i amable'
-};
-const LEVELS = {
-  facil: 'Fàcil: ets molt amable, fas preguntes obertes senzilles i deixes silencis còmodes.',
-  mitja: 'Mitjà: ets neutre, de vegades poc expressiu, fas alguna pregunta inesperada.',
-  dificil: 'Difícil però respectuós: ets una mica reservat/ada, fas preguntes directes i de vegades interromps amb tacte. Mai ets cruel ni humiliant.'
+const LANG = () => ($('a-lang') && $('a-lang').value) || 'es';
+const T = {
+  ca: {
+    common: [
+      'Ets un assistent d\'una web d\'ajuda per a l\'ansietat social. NO ets un terapeuta ni un professional sanitari.',
+      'Respon SEMPRE en català, amb frases curtes (màxim 3), tó càlid i respectuós.',
+      'No diagnostiquis, no parlis de medicació ni de dosis, i no donis consells mèdics.',
+      'Si la persona expressa pensaments de fer-se mal o de no voler viure, digues-li amb calma que truqui al 024 o al 112 i atura\'t.',
+      'No inventis dades sobre la persona. Si no saps alguna cosa, digues-ho.'
+    ].join(' '),
+    scenarios: {
+      feina: 'un company de feina que es creua amb la persona a la màquina de cafè',
+      veí: 'un veí que es troba amb la persona a l\'ascensor',
+      botiga: 'un/a dependent/a d\'una botiga on la persona vol fer una consulta o un canvi',
+      desconegut: 'una persona desconeguda que espera al costat de la persona a la parada de l\'autobús',
+      reunio: 'un company en una reunió de feina, abans que comenci, mentre s\'esperen els altres',
+      entrevista: 'una persona de recursos humans que fa una entrevista de feina curta i amable'
+    },
+    levels: {
+      facil: 'Fàcil: ets molt amable, fas preguntes obertes senzilles i deixes silencis còmodes.',
+      mitja: 'Mitjà: ets neutre, de vegades poc expressiu, fas alguna pregunta inesperada.',
+      dificil: 'Difícil però respectuós: ets una mica reservat/ada, fas preguntes directes i de vegades interromps amb tacte. Mai ets cruel ni humiliant.'
+    },
+    role: (sc, lv) => ' MODE PRÀCTICA: fas de ' + sc + '. ' + lv + ' Mantén-te en el personatge i en una conversa breu i natural. Comença tu amb una sola frase. No facis de terapeuta mentre dura l\'escena.',
+    reformula: ' MODE REFORMULAR PENSAMENTS (TCC): ajuda la persona a mirar un pensament de por social amb distància. Fes UNA sola pregunta socràtica cada vegada (proves a favor i en contra, alternatives, què diria a un amic). No donis la resposta feta ni diguis que té raó o no. Quan hagi trobat una versió més equilibrada, resumeix-la en una frase. Comença demanant quina situació social li preocupa.',
+    experiment: ' MODE PREPARAR UN EXPERIMENT CONDUCTUAL: ajuda la persona a definir un pas petit, concret i assolible, a escriure què prediu que passarà (i quanta ansietat espera, de 0 a 100) i a decidir què observarà. Recorda-li que provi de no usar conductes de seguretat. Fes una pregunta cada vegada. Comença demanant quina situació vol provar.',
+    startRole: '(Comença l\'escena amb una sola frase.)', startChat: '(Comença la conversa.)',
+    endRole: '(Surt del personatge. Dona\'m feedback amable en català: 2 coses que he fet bé, 1 suggeriment concret, una frase d\'ànim, i recorda que no substitueixes un professional.)',
+    endChat: '(Resumeix en 3 punts el que hem treballat i proposa un pas petit per a aquesta setmana.)',
+    none: '(sense resposta)', stopped: ' [aturat]', err: 'S\'ha produït un error: '
+  },
+  es: {
+    common: [
+      'Eres un asistente de una web de ayuda para la ansiedad social. NO eres un terapeuta ni un profesional sanitario.',
+      'Responde SIEMPRE en español (castellano), con frases cortas (máximo 3), tono cálido y respetuoso.',
+      'No diagnostiques, no hables de medicación ni de dosis, y no des consejos médicos.',
+      'Si la persona expresa pensamientos de hacerse daño o de no querer vivir, dile con calma que llame al 024 o al 112 y detente.',
+      'No inventes datos sobre la persona. Si no sabes algo, dilo.'
+    ].join(' '),
+    scenarios: {
+      feina: 'un compañero de trabajo que se cruza con la persona en la máquina de café',
+      veí: 'un vecino que se encuentra con la persona en el ascensor',
+      botiga: 'un/a dependiente/a de una tienda donde la persona quiere hacer una consulta o un cambio',
+      desconegut: 'una persona desconocida que espera junto a la persona en la parada del autobús',
+      reunio: 'un compañero en una reunión de trabajo, antes de que empiece, mientras esperan a los demás',
+      entrevista: 'una persona de recursos humanos que hace una entrevista de trabajo breve y amable'
+    },
+    levels: {
+      facil: 'Fácil: eres muy amable, haces preguntas abiertas sencillas y dejas silencios cómodos.',
+      mitja: 'Medio: eres neutro, a veces poco expresivo, haces alguna pregunta inesperada.',
+      dificil: 'Difícil pero respetuoso: eres algo reservado/a, haces preguntas directas y a veces interrumpes con tacto. Nunca eres cruel ni humillante.'
+    },
+    role: (sc, lv) => ' MODO PRÁCTICA: haces de ' + sc + '. ' + lv + ' Mantente en el personaje y en una conversación breve y natural. Empieza tú con una sola frase. No hagas de terapeuta mientras dure la escena.',
+    reformula: ' MODO REFORMULAR PENSAMIENTOS (TCC): ayuda a la persona a mirar con distancia un pensamiento de miedo social. Haz UNA sola pregunta socrática cada vez (pruebas a favor y en contra, alternativas, qué le diría a un amigo). No des la respuesta hecha ni digas si tiene razón o no. Cuando haya encontrado una versión más equilibrada, resúmela en una frase. Empieza preguntando qué situación social le preocupa.',
+    experiment: ' MODO PREPARAR UN EXPERIMENTO CONDUCTUAL: ayuda a la persona a definir un paso pequeño, concreto y alcanzable, a escribir qué predice que pasará (y cuánta ansiedad espera, de 0 a 100) y a decidir qué observará. Recuérdale que intente no usar conductas de seguridad. Haz una pregunta cada vez. Empieza preguntando qué situación quiere probar.',
+    startRole: '(Empieza la escena con una sola frase.)', startChat: '(Empieza la conversación.)',
+    endRole: '(Sal del personaje. Dame feedback amable en español: 2 cosas que he hecho bien, 1 sugerencia concreta, una frase de ánimo, y recuerda que no sustituyes a un profesional.)',
+    endChat: '(Resume en 3 puntos lo que hemos trabajado y propón un paso pequeño para esta semana.)',
+    none: '(sin respuesta)', stopped: ' [detenido]', err: 'Se ha producido un error: '
+  }
 };
 function systemFor(mode) {
-  if (mode === 'roleplay') {
-    return COMMON + ' MODE PRÀCTICA: fas de ' + SCENARIOS[$('a-scenario').value] + '. ' + LEVELS[$('a-level').value] +
-      ' Mantén-te en el personatge i en una conversa breu i natural. Comença tu amb una sola frase. No facis de terapeuta mentre dura l\'escena.';
-  }
-  if (mode === 'reformula') {
-    return COMMON + ' MODE REFORMULAR PENSAMENTS (TCC): ajuda la persona a mirar un pensament de por social amb distància. Fes UNA sola pregunta socràtica cada vegada (proves a favor i en contra, alternatives, què diria a un amic). No donis la resposta feta ni diguis que té raó o no. Quan hagi trobat una versió més equilibrada, resumeix-la en una frase. Comença demanant quina situació social li preocupa.';
-  }
-  return COMMON + ' MODE PREPARAR UN EXPERIMENT CONDUCTUAL: ajuda la persona a definir un pas petit, concret i assolible, a escriure què prediu que passarà (i quanta ansietat espera, de 0 a 100) i a decidir què observarà. Recorda-li que provi de no usar conductes de seguretat. Fes una pregunta cada vegada. Comença demanant quina situació vol provar.';
+  const t = T[LANG()];
+  if (mode === 'roleplay') return t.common + t.role(t.scenarios[$('a-scenario').value], t.levels[$('a-level').value]);
+  return t.common + (mode === 'reformula' ? t.reformula : t.experiment);
 }
 
 /* Detecció de crisi: CODI FIX, no depèn del model. Es mira abans d'enviar qualsevol missatge. */
@@ -120,11 +155,11 @@ async function turn(userText, hidden) {
   try {
     const mode = $('a-mode').value;
     const out = await generate(mode, (t) => { b.textContent = t; $('a-log').scrollTop = $('a-log').scrollHeight; });
-    b.textContent = out || '(sense resposta)';
+    b.textContent = out || T[LANG()].none;
     history.push({ role: 'assistant', content: out });
   } catch (e) {
-    if (e.name !== 'AbortError') { b.textContent = 'S\'ha produït un error: ' + e.message; b.classList.add('err'); }
-    else { b.textContent += ' [aturat]'; }
+    if (e.name !== 'AbortError') { b.textContent = T[LANG()].err + e.message; b.classList.add('err'); }
+    else { b.textContent += T[LANG()].stopped; }
   } finally { setBusy(false); abortCtl = null; if (!$('a-crisis').hidden) return; $('a-input').focus(); }
 }
 
@@ -159,7 +194,7 @@ $('a-load').addEventListener('click', async () => {
 $('a-start').addEventListener('click', () => {
   history = []; $('a-log').innerHTML = ''; $('a-crisis').hidden = true; $('a-input').disabled = false; $('a-send').disabled = false; $('a-end').disabled = false;
   const m = $('a-mode').value;
-  turn(m === 'roleplay' ? '(Comença l\'escena amb una sola frase.)' : '(Comença la conversa.)', true);
+  turn(m === 'roleplay' ? T[LANG()].startRole : T[LANG()].startChat, true);
 });
 $('a-form').addEventListener('submit', (e) => {
   e.preventDefault();
@@ -170,8 +205,6 @@ $('a-stop').addEventListener('click', () => { stopped = true; if (webEngine) web
 $('a-end').addEventListener('click', () => {
   if (busy || history.length === 0) return;
   const m = $('a-mode').value;
-  turn(m === 'roleplay'
-    ? '(Surt del personatge. Dona\'m feedback amable en català: 2 coses que he fet bé, 1 suggeriment concret, una frase d\'ànim, i recorda que no substitueixes un professional.)'
-    : '(Resumeix en 3 punts el que hem treballat i proposa un pas petit per a aquesta setmana.)', true);
+  turn(m === 'roleplay' ? T[LANG()].endRole : T[LANG()].endChat, true);
 });
 $('a-reset').addEventListener('click', () => { history = []; $('a-log').innerHTML = ''; $('a-crisis').hidden = true; $('a-input').disabled = false; $('a-send').disabled = false; $('a-end').disabled = false; });
