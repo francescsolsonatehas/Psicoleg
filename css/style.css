@@ -176,3 +176,4 @@ a.card:hover{transform:translateY(-4px);border-color:var(--primary)}
 .mini{background:transparent;border:1px solid var(--border);color:var(--text);border-radius:8px;padding:4px 10px;cursor:pointer;font:inherit;font-size:.85rem}
 .mini:hover{background:var(--primary-soft)}
 .inline-form{background:var(--surface-2);border-radius:12px;padding:14px;margin-top:10px}
+@media(max-width:600px){.sos{font-size:.82rem;padding:6px 8px;gap:4px 10px}.sos>span{display:none}.sos .sos-btn{padding:3px 10px}body{padding-bottom:56px}}
