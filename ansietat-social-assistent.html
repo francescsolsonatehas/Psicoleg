@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assistent de TCC amb IA per a l&#x27;ansietat social | Psicòleg</title>
+<meta name="description" content="Assistent experimental d&#x27;IA que s&#x27;executa al teu dispositiu per practicar converses socials i reformular pensaments amb TCC.">
+<link rel="canonical" href="https://francescsolsonatehas.github.io/Psicoleg/ansietat-social-assistent.html">
+<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta name="theme-color" content="#3f7d6e">
+<meta property="og:title" content="Assistent de TCC amb IA per a l&#x27;ansietat social | Psicòleg">
+<meta property="og:description" content="Assistent experimental d&#x27;IA que s&#x27;executa al teu dispositiu per practicar converses socials i reformular pensaments amb TCC.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://francescsolsonatehas.github.io/Psicoleg/ansietat-social-assistent.html">
+<meta property="og:site_name" content="Psicòleg">
+<meta property="og:locale" content="ca_ES">
+<meta property="og:image" content="https://francescsolsonatehas.github.io/Psicoleg/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="font" type="font/woff2" href="fonts/inter-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/poppins-700-latin.woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<script>try{var t=localStorage.getItem('psi-theme');if(!t&&matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t)document.documentElement.setAttribute('data-theme',t);var f=localStorage.getItem('psi-fs');if(f)document.documentElement.style.setProperty('--fs',f)}catch(e){}</script>
+
+</head>
+<body>
+<a class="skip" href="#main">Salta al contingut</a>
+<header class="site-header"><div class="container nav">
+  <a class="brand" href="index.html"><svg viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3f7d6e"/><stop offset="1" stop-color="#6c8ebf"/></linearGradient></defs><circle cx="20" cy="20" r="19" fill="url(#g)"/><path d="M20 28c-6-4-9-7.5-9-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 3.500-3 7-9 11z" fill="#fff" opacity=".95"/></svg><span>Psicòleg</span></a>
+  <nav aria-label="Navegació principal"><ul id="menu"><li><a href="index.html">Inici</a></li><li><a href="trastorns.html">Trastorns</a></li><li><a href="eines.html" aria-current="page">Eines</a></li><li><a href="cribratges.html">Cribratges</a></li><li><a href="familiars.html">Familiars</a></li><li><a href="ajuda.html">Trobar ajuda</a></li></ul></nav>
+  <div class="tools">
+    <button class="icon-btn" id="fs-down" aria-label="Reduir la mida del text">A−</button>
+    <button class="icon-btn" id="fs-up" aria-label="Augmentar la mida del text">A+</button>
+    <button class="icon-btn" id="theme" aria-label="Canviar entre mode clar i fosc">🌓</button>
+    <button class="icon-btn menu-btn" id="menu-btn" aria-label="Obrir el menú" aria-expanded="false" aria-controls="menu">☰</button>
+  </div>
+</div></header>
+<main id="main">
+
+<section class="page-hero"><div class="container narrow">
+  <p class="crumbs"><a href="ansietat-social-eines.html">← Eines d'ansietat social</a></p>
+  <span class="eyebrow">Experimental · opcional</span><h1>Assistent de TCC amb IA</h1>
+  <p class="lead muted">Practica converses socials, reformula pensaments i prepara experiments conductuals amb un model d'IA que s'executa al teu dispositiu.</p>
+  <div class="notice warn"><strong>No és un terapeuta</strong>És una IA experimental i pot equivocar-se, sobretot en català. No diagnostica ni substitueix un professional. Si estàs en crisi, truca al <a href="tel:024">024</a> o al <a href="tel:112">112</a>.</div>
+</div></section>
+<section style="padding-top:10px"><div class="container narrow">
+
+<div class="tool" id="a-setup">
+  <h2>1. Activa l'assistent</h2>
+  <p class="muted">No es descarrega res fins que ho demanis. Les converses <strong>no es desen ni s'envien enlloc</strong>: es queden a la pantalla i desapareixen en tancar la pàgina.</p>
+  <fieldset class="field" style="border:0;padding:0"><legend class="lbl">On vols que s'executi?</legend>
+    <label class="chk"><input type="radio" name="engine" value="web" checked> <span><strong>Al navegador</strong> (recomanat): privat i sense instal·lar res. Cal Chrome o Edge d'escriptori recents (WebGPU).</span></label>
+    <label class="chk" style="margin-top:8px"><input type="radio" name="engine" value="ollama"> <span><strong>Ollama local</strong>: si ja el tens instal·lat al teu ordinador. Permet models millors.</span></label>
+  </fieldset>
+
+  <div id="a-web-box">
+    <div class="field"><label for="a-model">Model</label>
+      <select id="a-model">
+        <option value="gemma-2-2b-it-q4f16_1-MLC">Gemma 2 · 2B (~1,5 GB) · equilibrat</option>
+        <option value="Llama-3.2-1B-Instruct-q4f16_1-MLC">Llama 3.2 · 1B (~0,9 GB) · lleuger, més limitat</option>
+        <option value="Llama-3.2-3B-Instruct-q4f16_1-MLC">Llama 3.2 · 3B (~2,3 GB) · millor, més pesat</option>
+      </select></div>
+    <p class="muted" style="font-size:.9rem">En activar-lo es baixarà la llibreria de <strong>jsDelivr</strong> i el model de <strong>Hugging Face</strong> (serveis de tercers, que poden registrar la teva IP). Es guarda a la memòria cau del navegador.</p>
+  </div>
+
+  <div id="a-oll-box" hidden>
+    <p class="muted" style="font-size:.9rem">Arrenca Ollama permetent aquesta web i descarrega un model. Al terminal:</p>
+    <pre class="code">OLLAMA_ORIGINS=https://francescsolsonatehas.github.io ollama serve
+ollama pull llama3.2</pre>
+    <button class="btn btn-outline btn-sm" id="a-oll-check" type="button">Detectar Ollama</button>
+    <div class="field" id="a-oll-sel" hidden style="margin-top:12px"><label for="a-oll-model">Model d'Ollama</label><select id="a-oll-model"></select></div>
+    <p class="muted" style="font-size:.9rem;margin-top:10px">La web només parlarà amb el teu Ollama a <code>localhost</code>; res no surt del teu ordinador. Alguns navegadors (p. ex. Safari) bloquegen aquesta connexió des d'una web https.</p>
+  </div>
+
+  <label class="chk" style="margin:16px 0"><input type="checkbox" id="a-consent"> <span>Entenc que és una IA experimental, no un terapeuta, i que pot dir coses incorrectes. Accepto la descàrrega descrita.</span></label>
+  <button class="btn btn-primary" id="a-load" disabled>Activar l'assistent</button>
+  <div class="progress" id="a-progress" hidden><i id="a-bar"></i></div>
+  <p id="a-status" class="muted" aria-live="polite"></p>
+</div>
+
+<div id="a-chat" hidden>
+  <div class="tool">
+    <h2>2. Tria què vols fer</h2>
+    <div class="field"><label for="a-mode">Mode</label>
+      <select id="a-mode">
+        <option value="roleplay">Practicar una conversa social</option>
+        <option value="reformula">Reformular un pensament (preguntes socràtiques)</option>
+        <option value="experiment">Preparar un experiment conductual</option>
+      </select></div>
+    <div id="a-role-opts" class="grid grid-2">
+      <div class="field"><label for="a-scenario">Escena</label>
+        <select id="a-scenario"><option value="feina">Company de feina (cafè)</option><option value="veí">Veí (ascensor)</option><option value="botiga">Dependent/a de botiga</option><option value="desconegut">Desconegut a la parada</option><option value="reunio">Abans d'una reunió</option><option value="entrevista">Entrevista de feina</option></select></div>
+      <div class="field"><label for="a-level">Dificultat</label>
+        <select id="a-level"><option value="facil">Fàcil</option><option value="mitja">Mitjana</option><option value="dificil">Difícil</option></select></div>
+    </div>
+    <div class="btn-row"><button class="btn btn-primary btn-sm" id="a-start">Començar</button><button class="btn btn-outline btn-sm" id="a-reset" type="button">Netejar</button></div>
+  </div>
+
+  <div class="tool">
+    <div class="chat-log" id="a-log" role="log" aria-live="polite" aria-label="Conversa"></div>
+    <div class="notice warn" id="a-crisis" role="alert" hidden><strong>Gràcies per dir-ho. Importa com et sents.</strong>Aquesta eina no et pot ajudar en això, però hi ha persones que sí: truca ara al <a href="tel:024"><b>024</b></a> (gratuït, 24 h) o al <a href="tel:112"><b>112</b></a> si hi ha perill immediat. Si pots, no et quedis sol/a. <a href="ajuda.html">Més recursos</a></div>
+    <form id="a-form" class="chat-form">
+      <label for="a-input" class="sr-only" style="position:absolute;left:-999px">El teu missatge</label>
+      <input type="text" id="a-input" maxlength="500" autocomplete="off" placeholder="Escriu aquí...">
+      <button class="btn btn-primary btn-sm" id="a-send" type="submit">Enviar</button>
+      <button class="btn btn-outline btn-sm" id="a-stop" type="button" hidden>Aturar</button>
+    </form>
+    <div class="btn-row"><button class="btn btn-outline btn-sm" id="a-end" type="button">Acabar i demanar feedback</button></div>
+  </div>
+</div>
+
+<div class="notice soft"><strong>Millor amb un professional</strong>Aquest assistent és un complement per practicar. La TCC funciona millor acompanyada d'un psicòleg. <a href="ajuda.html">Trobar ajuda</a></div>
+</div></section>
+<script type="module" src="js/assistent.js"></script>
+</main>
+<footer class="site-footer"><div class="container">
+  <div class="foot">
+    <div><h4>Psicòleg</h4><p>Informació i eines per cuidar la salut mental. Contingut informatiu: no substitueix l'atenció d'un professional sanitari.</p></div>
+    <div><h4>Seccions</h4><ul><li><a href="index.html">Inici</a></li><li><a href="trastorns.html">Trastorns</a></li><li><a href="eines.html">Eines</a></li><li><a href="cribratges.html">Cribratges</a></li><li><a href="familiars.html">Familiars</a></li><li><a href="ajuda.html">Trobar ajuda</a></li></ul></div>
+    <div><h4>Legal</h4><ul><li><a href="avis-legal.html">Avís legal i mèdic</a></li><li><a href="privacitat.html">Privacitat i cookies</a></li></ul></div>
+  </div>
+  <p class="copy">© 2026 Psicòleg. Les tipografies Inter i Poppins es distribueixen sota la llicència SIL OFL 1.1.</p>
+</div></footer>
+<div class="sos" role="region" aria-label="Ajuda urgent">
+  <span>🆘 Necessites ajuda ara?</span>
+  <a href="tel:112">112 Emergències</a>
+  <a href="tel:024">024 Conducta suïcida (24 h, gratuït)</a>
+  <a class="sos-btn" href="ajuda.html">Més recursos</a>
+</div>
+<script src="js/main.js" defer></script>
+
+</body>
+</html>
