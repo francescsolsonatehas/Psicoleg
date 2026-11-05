@@ -43,13 +43,13 @@ section{padding:56px 0}
 .brand{display:flex;align-items:center;gap:10px;font-family:'Poppins',sans-serif;font-weight:700;font-size:1.25rem;color:var(--text);text-decoration:none}
 .brand svg{width:34px;height:34px}
 .nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0;align-items:center}
-.nav ul a{white-space:nowrap;display:block;padding:8px 12px;border-radius:10px;text-decoration:none;color:var(--text);font-weight:500;font-size:.95rem}
+.nav ul a{white-space:nowrap;display:block;padding:8px 10px;border-radius:10px;text-decoration:none;color:var(--text);font-weight:500;font-size:.95rem}
 .nav ul a:hover,.nav ul a[aria-current="page"]{background:var(--primary-soft);color:var(--primary-strong)}
 .tools{display:flex;gap:6px;align-items:center}
 .icon-btn{background:transparent;border:1px solid var(--border);color:var(--text);border-radius:10px;padding:6px 10px;cursor:pointer;font:inherit;font-size:.9rem;min-height:38px}
 .icon-btn:hover{background:var(--primary-soft)}
 .menu-btn{display:none}
-@media(max-width:1120px){
+@media(max-width:1360px){
   .menu-btn{display:inline-block}
   .nav ul{display:none;position:absolute;left:0;right:0;top:64px;background:var(--surface);flex-direction:column;align-items:stretch;padding:12px 20px;border-bottom:1px solid var(--border);box-shadow:var(--shadow)}
   .nav ul.open{display:flex}
@@ -200,3 +200,18 @@ code{background:var(--surface-2);padding:1px 6px;border-radius:6px}
 :root[data-theme="dark"] .btn-danger{color:#2a0a08}
 :root[data-theme="dark"] .sos .sos-btn{color:#8a1c16}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.langsw{display:flex;gap:2px;align-items:center;margin-right:4px}
+.langsw a{padding:5px 8px;border-radius:8px;font-size:.78rem;font-weight:700;letter-spacing:.03em;text-decoration:none;color:var(--text);border:1px solid transparent}
+.langsw a:hover{background:var(--primary-soft)}
+.langsw a[aria-current="true"]{background:var(--primary-soft);color:var(--primary-strong);border-color:var(--border)}
+@media(max-width:420px){.langsw a{padding:4px 5px;font-size:.72rem}}
+
+@media(max-width:440px){
+  .brand span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .icon-btn{padding:6px 7px;min-height:36px;font-size:.85rem}
+  .tools{gap:3px}
+  .langsw{margin-right:2px}
+  .langsw a{padding:4px 4px}
+  .nav{gap:6px}
+}

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Self-help tools: breathing, grounding and mood log | Psicòleg</title>
+<meta name="description" content="Guided breathing, 5-4-3-2-1 grounding, muscle relaxation, mood log and thought diary. Everything is stored on your device.">
+<link rel="canonical" href="https://francescsolsonatehas.github.io/Psicoleg/en/eines.html">
+<link rel="icon" type="image/svg+xml" href="../img/favicon.svg">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<meta name="theme-color" content="#3f7d6e">
+<meta property="og:title" content="Self-help tools: breathing, grounding and mood log | Psicòleg">
+<meta property="og:description" content="Guided breathing, 5-4-3-2-1 grounding, muscle relaxation, mood log and thought diary. Everything is stored on your device.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://francescsolsonatehas.github.io/Psicoleg/en/eines.html">
+<meta property="og:site_name" content="Psicòleg">
+<meta property="og:locale" content="en_GB">
+<meta property="og:image" content="https://francescsolsonatehas.github.io/Psicoleg/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="font" type="font/woff2" href="../fonts/inter-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="../fonts/poppins-700-latin.woff2" crossorigin>
+<link rel="stylesheet" href="../css/style.css">
+<script>try{var t=localStorage.getItem('psi-theme');if(!t&&matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t)document.documentElement.setAttribute('data-theme',t);var f=localStorage.getItem('psi-fs');if(f)document.documentElement.style.setProperty('--fs',f)}catch(e){}</script>
+
+<link rel="alternate" hreflang="ca" href="https://francescsolsonatehas.github.io/Psicoleg/eines.html">
+<link rel="alternate" hreflang="es" href="https://francescsolsonatehas.github.io/Psicoleg/es/eines.html">
+<link rel="alternate" hreflang="en" href="https://francescsolsonatehas.github.io/Psicoleg/en/eines.html">
+<link rel="alternate" hreflang="x-default" href="https://francescsolsonatehas.github.io/Psicoleg/eines.html">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="container nav">
+  <a class="brand" href="index.html"><svg viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3f7d6e"/><stop offset="1" stop-color="#6c8ebf"/></linearGradient></defs><circle cx="20" cy="20" r="19" fill="url(#g)"/><path d="M20 28c-6-4-9-7.5-9-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 3.500-3 7-9 11z" fill="#fff" opacity=".95"/></svg><span>Psicòleg</span></a>
+  <nav aria-label="Main navigation"><ul id="menu"><li><a href="index.html">Home</a></li><li><a href="trastorns.html">Conditions</a></li><li><a href="eines.html" aria-current="page">Tools</a></li><li><a href="cribratges.html">Screening</a></li><li><a href="parlar-ne.html">How to talk about it</a></li><li><a href="joves.html">Young people</a></li><li><a href="familiars.html">Family</a></li><li><a href="ajuda.html">Find help</a></li></ul></nav>
+  <div class="tools">
+    <nav class="langsw" aria-label="Idioma / Idioma / Language"><a href="../eines.html" lang="ca" hreflang="ca">CA</a><a href="../es/eines.html" lang="es" hreflang="es">ES</a><a href="eines.html" lang="en" hreflang="en" aria-current="true">EN</a></nav>
+    <button class="icon-btn" id="fs-down" aria-label="Decrease text size">A−</button>
+    <button class="icon-btn" id="fs-up" aria-label="Increase text size">A+</button>
+    <button class="icon-btn" id="theme" aria-label="Switch between light and dark mode">🌓</button>
+    <button class="icon-btn menu-btn" id="menu-btn" aria-label="Open the menu" aria-expanded="false" aria-controls="menu">☰</button>
+  </div>
+</div></header>
+<main id="main">
+
+<section class="page-hero"><div class="container narrow">
+  <span class="eyebrow">Self-help</span><h1>Tools for everyday life</h1>
+  <p class="lead muted">Short exercises based on well-known techniques. They are a support, not a treatment.</p>
+  <div class="notice"><strong>Please note</strong>If an exercise makes you uncomfortable or feel worse, stop it. If you are in crisis, go to <a href="ajuda.html#urgent">urgent help</a>.</div>
+</div></section>
+<section style="padding-top:10px"><div class="container narrow">
+
+<div class="tool" id="respiracio">
+  <h2>🫁 Guided breathing</h2>
+  <p class="muted">Follow the circle. Choose a pattern and breathe through your nose if you can.</p>
+  <div class="field"><label for="b-mode">Pattern</label>
+    <select id="b-mode">
+      <option value="4,0,6,0">Calming: in 4 · out 6</option>
+      <option value="4,4,4,4">Box: 4 · 4 · 4 · 4</option>
+      <option value="4,7,8,0">4-7-8</option>
+    </select></div>
+  <div class="breath-wrap">
+    <div class="breath-circle" id="b-circle" role="img" aria-label="Breathing circle"><span id="b-text">Ready?</span></div>
+    <p id="b-live" class="muted" aria-live="polite">Press start whenever you are ready.</p>
+    <button class="btn btn-primary" id="b-btn">Start</button>
+  </div>
+</div>
+
+<div class="tool" id="grounding">
+  <h2>🌿 5-4-3-2-1 grounding</h2>
+  <p class="muted">Helps bring you back to the present when anxiety or thoughts overwhelm you.</p>
+  <div class="progress"><i id="g-bar"></i></div>
+  <div class="step-box" aria-live="polite"><div class="big" id="g-title">5 things you see</div><p id="g-text" class="muted">Look around you and name, quietly or in your head, five things you can see.</p></div>
+  <div class="btn-row"><button class="btn btn-outline btn-sm" id="g-prev">Previous</button><button class="btn btn-primary btn-sm" id="g-next">Next</button></div>
+</div>
+
+<div class="tool" id="relaxacio">
+  <h2>💆 Progressive muscle relaxation</h2>
+  <p class="muted">Tense each muscle group for about 5 seconds and let go for 10. Do it sitting or lying down.</p>
+  <div class="progress"><i id="r-bar"></i></div>
+  <div class="step-box" aria-live="polite"><div class="big" id="r-title">Ready?</div><p id="r-text" class="muted">Press start and it will guide you step by step.</p></div>
+  <div class="btn-row"><button class="btn btn-primary btn-sm" id="r-btn">Start</button></div>
+</div>
+
+<div class="tool" id="anim">
+  <h2>📓 Mood log</h2>
+  <p class="muted">Stored only in your browser. No one else sees it.</p>
+  <div class="field"><span class="lbl" id="m-lbl">How are you feeling now?</span>
+    <div class="mood-row" role="group" aria-labelledby="m-lbl">
+      <button data-v="1" aria-pressed="false" aria-label="Very bad">😞</button>
+      <button data-v="2" aria-pressed="false" aria-label="Bad">🙁</button>
+      <button data-v="3" aria-pressed="false" aria-label="Okay">😐</button>
+      <button data-v="4" aria-pressed="false" aria-label="Good">🙂</button>
+      <button data-v="5" aria-pressed="false" aria-label="Very good">😄</button>
+    </div></div>
+  <div class="field"><label for="m-note">Note (optional)</label><input type="text" id="m-note" maxlength="200" placeholder="What happened today?"></div>
+  <button class="btn btn-primary btn-sm" id="m-save">Save</button>
+  <div class="spark" id="m-spark" aria-hidden="true"></div>
+  <ul class="log" id="m-log"></ul>
+  <div class="btn-row"><button class="btn btn-outline btn-sm" id="m-export">Download (CSV)</button><button class="btn btn-outline btn-sm" id="m-clear">Delete everything</button></div>
+</div>
+
+<div class="tool" id="pensaments">
+  <h2>🧠 Thought diary (CBT)</h2>
+  <p class="muted">Name the thought, look at the evidence and find a more balanced version.</p>
+  <div class="field"><label for="t-sit">1. Situation</label><textarea id="t-sit" placeholder="What happened? Where were you?"></textarea></div>
+  <div class="field"><label for="t-th">2. Automatic thought</label><textarea id="t-th" placeholder="What thought came into your head?"></textarea></div>
+  <div class="field"><label for="t-em">3. Emotion and intensity (0-100)</label><input type="text" id="t-em" placeholder="E.g.: fear 80"></div>
+  <div class="field"><label for="t-for">4. Evidence for the thought</label><textarea id="t-for"></textarea></div>
+  <div class="field"><label for="t-ag">5. Evidence against it</label><textarea id="t-ag"></textarea></div>
+  <div class="field"><label for="t-alt">6. A more balanced alternative thought</label><textarea id="t-alt" placeholder="What would I tell a friend who thought this?"></textarea></div>
+  <div class="btn-row"><button class="btn btn-primary btn-sm" id="t-save">Save</button><button class="btn btn-outline btn-sm" id="t-clear">Delete entries</button></div>
+  <h3 style="margin-top:24px">Previous entries</h3>
+  <ul class="log" id="t-log"></ul>
+</div>
+
+<div class="card" style="margin-bottom:28px"><h2>🌱 More CBT tools</h2><p class="muted">Behavioural activation for depression, sleep diary and panic log.</p><div class="btn-row"><a class="btn btn-primary btn-sm" href="eines-tcc.html">Open the tools</a></div></div>
+
+<div class="card" style="margin-bottom:28px"><h2>📦 My data</h2><p class="muted">Print or download your records to take to your appointment, make backups and create reminders.</p><div class="btn-row"><a class="btn btn-primary btn-sm" href="meves-dades.html">Open</a></div></div>
+
+<div class="card"><h2>🫥 Social anxiety</h2><p class="muted">Specific CBT tools: exposure ladder, social thought record and behavioural experiments.</p><div class="btn-row"><a class="btn btn-primary btn-sm" href="ansietat-social-eines.html">Open the tools</a></div></div>
+
+</div></section>
+</main>
+<footer class="site-footer"><div class="container">
+  <div class="foot">
+    <div><p class="fh">Psicòleg</p><p>Information and tools to look after your mental health. Informational content: it does not replace care from a health professional.</p></div>
+    <div><p class="fh">Sections</p><ul><li><a href="index.html">Home</a></li><li><a href="trastorns.html">Conditions</a></li><li><a href="eines.html">Tools</a></li><li><a href="cribratges.html">Screening</a></li><li><a href="parlar-ne.html">How to talk about it</a></li><li><a href="joves.html">Young people</a></li><li><a href="familiars.html">Family</a></li><li><a href="ajuda.html">Find help</a></li></ul></div>
+    <div><p class="fh">Legal</p><ul><li><a href="avis-legal.html">Legal and medical notice</a></li><li><a href="privacitat.html">Privacy and cookies</a></li></ul></div>
+  </div>
+  <p class="copy">© 2026 Psicòleg. The Inter and Poppins typefaces are distributed under the SIL OFL 1.1 licence.</p>
+</div></footer>
+<div class="sos" role="region" aria-label="Urgent help">
+  <span>🆘 Do you need help now?</span> <a href="tel:112">112 Emergencies</a> <a href="tel:024">024 Suicide prevention (24 h, free)</a> <a class="sos-btn" href="ajuda.html">More resources</a>
+</div>
+<script src="../js/lang/en.js" defer></script>
+<script src="../js/i18n.js" defer></script>
+<script src="../js/main.js" defer></script>
+<script src="../js/lectura.js" defer></script>
+<script src="../js/eines.js" defer></script>
+</body>
+</html>

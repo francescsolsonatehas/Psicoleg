@@ -62,6 +62,35 @@ const T = {
     endRole: '(Sal del personaje. Dame feedback amable en español: 2 cosas que he hecho bien, 1 sugerencia concreta, una frase de ánimo, y recuerda que no sustituyes a un profesional.)',
     endChat: '(Resume en 3 puntos lo que hemos trabajado y propón un paso pequeño para esta semana.)',
     none: '(sin respuesta)', stopped: ' [detenido]', err: 'Se ha producido un error: '
+  },
+  en: {
+    common: [
+      'You are an assistant on a self-help website for social anxiety. You are NOT a therapist or a health professional.',
+      'ALWAYS reply in English, in short sentences (3 at most), with a warm and respectful tone.',
+      'Do not diagnose, do not talk about medication or doses, and do not give medical advice.',
+      'If the person expresses thoughts of harming themselves or of not wanting to live, calmly tell them to call 024 or 112 and stop there.',
+      'Do not invent facts about the person. If you do not know something, say so.'
+    ].join(' '),
+    scenarios: {
+      feina: 'a work colleague who bumps into the person at the coffee machine',
+      veí: 'a neighbour who meets the person in the lift',
+      botiga: 'a shop assistant where the person wants to ask a question or exchange something',
+      desconegut: 'a stranger waiting next to the person at the bus stop',
+      reunio: 'a colleague in a work meeting, before it starts, while waiting for the others',
+      entrevista: 'a human resources person doing a short, friendly job interview'
+    },
+    levels: {
+      facil: 'Easy: you are very friendly, ask simple open questions and leave comfortable silences.',
+      mitja: 'Medium: you are neutral, sometimes not very expressive, and ask the occasional unexpected question.',
+      dificil: 'Hard but respectful: you are a bit reserved, ask direct questions and sometimes interrupt politely. You are never cruel or humiliating.'
+    },
+    role: (sc, lv) => ' PRACTICE MODE: you play ' + sc + '. ' + lv + ' Stay in character and keep the conversation brief and natural. Start with a single sentence. Do not act as a therapist while the scene lasts.',
+    reformula: ' THOUGHT REFRAMING MODE (CBT): help the person look at a socially fearful thought from a distance. Ask ONE Socratic question at a time (evidence for and against, alternatives, what they would say to a friend). Do not give the answer or say whether they are right. When they have found a more balanced version, sum it up in one sentence. Start by asking which social situation worries them.',
+    experiment: ' BEHAVIOURAL EXPERIMENT MODE: help the person define a small, specific, achievable step, write down what they predict will happen (and how anxious they expect to be, from 0 to 100) and decide what they will observe. Remind them to try not to use safety behaviours. Ask one question at a time. Start by asking which situation they want to try.',
+    startRole: '(Start the scene with a single sentence.)', startChat: '(Start the conversation.)',
+    endRole: '(Step out of character. Give me kind feedback in English: 2 things I did well, 1 concrete suggestion, a word of encouragement, and remind me that you do not replace a professional.)',
+    endChat: '(Summarise in 3 points what we have worked on and suggest one small step for this week.)',
+    none: '(no reply)', stopped: ' [stopped]', err: 'An error occurred: '
   }
 };
 function systemFor(mode) {
@@ -73,7 +102,9 @@ function systemFor(mode) {
 /* Detecció de crisi: CODI FIX, no depèn del model. Es mira abans d'enviar qualsevol missatge. */
 const CRISIS = [/suicid/, /matar[- ]?me/, /m'?he de matar/, /vull matar-?me/, /no vull (viure|seguir|continuar)/, /voldria (morir|desapar)/,
   /vull morir/, /morir-?me/, /acabar amb (tot|la meva vida|la vida)/, /fer[- ]?me mal/, /autolesi/, /tallar[- ]?me/, /treure[- ]?me la vida/,
-  /quitarme la vida|quitarse la vida|quiero morir|no quiero vivir|hacerme dano|acabar con todo|quiero desaparecer/];
+  /quitarme la vida|quitarse la vida|quiero morir|no quiero vivir|hacerme dano|acabar con todo|quiero desaparecer/,
+  /\bem (vull|voldria|vaig a) (fer mal|matar)|\bme (quiero|quisiera|voy a) (hacer dano|matar)/,
+  /kill(ing)? myself|end(ing)? it all|want to die|end my life|take my (own )?life|don.?t want to (live|be here|go on)|hurt myself|harm myself|self[- ]?harm|better off dead|wish i (was|were) dead|no reason to live/];
 const norm = (s) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
 const isCrisis = (t) => CRISIS.some((r) => r.test(norm(t)));
 
@@ -97,17 +128,18 @@ function showCrisis() {
   $('a-crisis').scrollIntoView({ behavior: 'smooth', block: 'center' });
   $('a-input').disabled = true; $('a-send').disabled = true; $('a-end').disabled = true;
 }
+if ($('a-lang')) { $('a-lang').value = PSI.lang === 'en' ? 'en' : 'es'; }
 function setStatus(t, err) { const s = $('a-status'); s.textContent = t; s.className = err ? 'notice warn' : 'muted'; }
 
 /* ---- Motors ---- */
 async function loadWeb() {
-  if (!('gpu' in navigator)) throw new Error('El teu navegador no admet WebGPU (prova Chrome o Edge d\'escriptori recents). Pots usar Ollama local.');
-  setStatus('Carregant la llibreria...');
+  if (!('gpu' in navigator)) throw new Error(PSI.t('El teu navegador no admet WebGPU (prova Chrome o Edge d\'escriptori recents). Pots usar Ollama local.'));
+  setStatus(PSI.t('Carregant la llibreria...'));
   const webllm = await import(WEBLLM_URL);
   const id = $('a-model').value;
   $('a-progress').hidden = false;
   webEngine = await webllm.CreateMLCEngine(id, {
-    initProgressCallback: (r) => { setStatus(r.text || 'Descarregant el model...'); $('a-bar').style.width = Math.round((r.progress || 0) * 100) + '%'; }
+    initProgressCallback: (r) => { setStatus(r.text || PSI.t('Descarregant el model...')); $('a-bar').style.width = Math.round((r.progress || 0) * 100) + '%'; }
   });
   $('a-progress').hidden = true;
 }
@@ -115,7 +147,7 @@ async function detectOllama() {
   const r = await fetch(OLLAMA + '/api/tags', { signal: AbortSignal.timeout(3000) });
   const j = await r.json();
   const names = (j.models || []).map((m) => m.name);
-  if (!names.length) throw new Error('Ollama funciona però no té cap model. Executa, per exemple: ollama pull llama3.2');
+  if (!names.length) throw new Error(PSI.t('Ollama funciona però no té cap model. Executa, per exemple: ollama pull llama3.2'));
   const sel = $('a-oll-model'); sel.innerHTML = '';
   names.forEach((n) => { const o = document.createElement('option'); o.value = n; o.textContent = n; sel.appendChild(o); });
   return names;
@@ -135,7 +167,7 @@ async function generate(mode, onText) {
     abortCtl = new AbortController();
     const r = await fetch(OLLAMA + '/api/chat', { method: 'POST', signal: abortCtl.signal,
       body: JSON.stringify({ model: ollamaModel, messages: msgs, stream: true, options: { temperature: 0.7, num_predict: 260 } }) });
-    if (!r.ok || !r.body) throw new Error('Ollama ha retornat un error (' + r.status + ').');
+    if (!r.ok || !r.body) throw new Error(PSI.f('Ollama ha retornat un error ({0}).', [r.status]));
     const rd = r.body.getReader(), dec = new TextDecoder(); let buf = '';
     for (;;) {
       const { done, value } = await rd.read(); if (done) break;
@@ -176,19 +208,19 @@ document.querySelectorAll('input[name=engine]').forEach((r) => r.addEventListene
 }));
 $('a-consent').addEventListener('change', () => { $('a-load').disabled = !$('a-consent').checked; });
 $('a-oll-check').addEventListener('click', async () => {
-  try { await detectOllama(); setStatus('Ollama detectat. Escull un model i prem «Activar».'); $('a-oll-sel').hidden = false; }
-  catch (e) { setStatus('No he pogut connectar amb Ollama a ' + OLLAMA + '. ' + (e.message || '') + ' Comprova que està en marxa i que permet aquest origen (OLLAMA_ORIGINS).', true); }
+  try { await detectOllama(); setStatus(PSI.t('Ollama detectat. Escull un model i prem «Activar».')); $('a-oll-sel').hidden = false; }
+  catch (e) { setStatus(PSI.f('No he pogut connectar amb Ollama a {0}. {1} Comprova que està en marxa i que permet aquest origen (OLLAMA_ORIGINS).', [OLLAMA, e.message || '']), true); }
 });
 $('a-load').addEventListener('click', async () => {
   $('a-load').disabled = true;
   try {
     if (engineKind === 'web') await loadWeb();
-    else { ollamaModel = $('a-oll-model').value; if (!ollamaModel) throw new Error('Primer prem «Detectar Ollama» i escull un model.'); }
-    setStatus('Assistent llest.');
+    else { ollamaModel = $('a-oll-model').value; if (!ollamaModel) throw new Error(PSI.t('Primer prem «Detectar Ollama» i escull un model.')); }
+    setStatus(PSI.t('Assistent llest.'));
     $('a-setup').hidden = true; $('a-chat').hidden = false;
   } catch (e) {
     let m = e.message || String(e);
-    if (/cache|quota|storage/i.test(m)) m += ' — Probablement no hi ha prou espai lliure al disc o el navegador limita l\'emmagatzematge. Allibera espai, prova un model més petit (Llama 1B) o usa Ollama local.';
+    if (/cache|quota|storage/i.test(m)) m += ' — ' + PSI.t('Probablement no hi ha prou espai lliure al disc o el navegador limita l\'emmagatzematge. Allibera espai, prova un model més petit (Llama 1B) o usa Ollama local.');
     setStatus(m, true); $('a-progress').hidden = true; $('a-load').disabled = !$('a-consent').checked; }
 });
 $('a-start').addEventListener('click', () => {

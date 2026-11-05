@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 import os, html, sys
 sys.path.insert(0, os.path.dirname(__file__))
+import i18n
+import jsi18n
 from data import CONDITIONS, GROUPS
 
 OUT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -52,6 +54,7 @@ def page(path, title, desc, body, current="", root="", extra_head="", ld=""):
   <a class="brand" href="{root}index.html">{LOGO}<span>{NAME}</span></a>
   <nav aria-label="Navegació principal"><ul id="menu">{nav}</ul></nav>
   <div class="tools">
+    <!--LANGSW-->
     <button class="icon-btn" id="fs-down" aria-label="Reduir la mida del text">A−</button>
     <button class="icon-btn" id="fs-up" aria-label="Augmentar la mida del text">A+</button>
     <button class="icon-btn" id="theme" aria-label="Canviar entre mode clar i fosc">🌓</button>
@@ -75,6 +78,7 @@ def page(path, title, desc, body, current="", root="", extra_head="", ld=""):
   <a href="tel:024">024 Conducta suïcida (24 h, gratuït)</a>
   <a class="sos-btn" href="{root}ajuda.html">Més recursos</a>
 </div>
+<script src="{root}js/i18n.js" defer></script>
 <script src="{root}js/main.js" defer></script>
 <script src="{root}js/lectura.js" defer></script>
 {{SCRIPTS}}
@@ -83,14 +87,33 @@ def page(path, title, desc, body, current="", root="", extra_head="", ld=""):
 
 
 def with_scripts(h, scripts=()):
-    return h.replace("{SCRIPTS}", "".join(f'<script src="{s}" defer></script>' for s in scripts))
+    def tag(s):
+        if s.startswith("module:"):
+            return f'<script type="module" src="{s[7:]}"></script>'
+        return f'<script src="{s}" defer></script>'
+    return h.replace("{SCRIPTS}", "".join(tag(s) for s in scripts))
 
 
-def write(path, content):
+UNITS = {}
+MISSING = {"es": set(), "en": set()}
+
+
+def _write(path, content):
     full = os.path.join(OUT, path)
     os.makedirs(os.path.dirname(full), exist_ok=True)
     with open(full, "w", encoding="utf-8") as f:
         f.write(content)
+
+
+def write(path, content):
+    if path.endswith(".html") and path != "404.html":
+        res, miss = i18n.localized(path, content, UNITS)
+        for lang, (p, h) in res.items():
+            _write(p, h)
+        for lang in ("es", "en"):
+            MISSING[lang] |= miss[lang]
+    else:
+        _write(path, content.replace("<!--LANGSW-->", ""))
 
 
 def li(items):
@@ -634,7 +657,7 @@ body = """
   </fieldset>
 
   <div class="field"><label for="a-lang">Idioma de la conversa</label>
-    <select id="a-lang"><option value="es" selected>Español (recomendado)</option><option value="ca">Català (experimental)</option></select></div>
+    <select id="a-lang"><option value="es" selected>Español</option><option value="en">English</option><option value="ca">Català</option></select></div>
   <div class="notice soft" id="a-lang-note"><strong>Per motius tècnics, és millor parlar en castellà</strong>Els models d'IA petits que s'executen al dispositiu entenen i escriuen força millor en castellà que en català, on solen cometre errors o perdre el fil. Per això l'assistent conversa per defecte en castellà. La resta de la web continua en català.</div>
 
   <div id="a-web-box">
@@ -694,9 +717,8 @@ ollama pull llama3.2</pre>
 </div>
 
 <div class="notice soft"><strong>Millor amb un professional</strong>Aquest assistent és un complement per practicar. La TCC funciona millor acompanyada d'un psicòleg. <a href="ajuda.html">Trobar ajuda</a></div>
-</div></section>
-<script type="module" src="js/assistent.js"></script>"""
-write("ansietat-social-assistent.html", with_scripts(page("ansietat-social-assistent.html", f"Assistent de TCC amb IA per a l'ansietat social | {NAME}", "Assistent experimental d'IA que s'executa al teu dispositiu per practicar converses socials i reformular pensaments amb TCC.", body, "eines.html")))
+</div></section>"""
+write("ansietat-social-assistent.html", with_scripts(page("ansietat-social-assistent.html", f"Assistent de TCC amb IA per a l'ansietat social | {NAME}", "Assistent experimental d'IA que s'executa al teu dispositiu per practicar converses socials i reformular pensaments amb TCC.", body, "eines.html"), ["module:js/assistent.js"]))
 
 # ---------- Cribratges ----------
 body = '''
@@ -815,8 +837,36 @@ body = '''<section class="hero"><div class="container narrow"><h1>Pàgina no tro
 write("404.html", with_scripts(page("404.html", f"Pàgina no trobada | {NAME}", "Pàgina no trobada", body, root="/Psicoleg/")))
 
 # ---------- sitemap / robots ----------
-urls = ["index.html", "trastorns.html", "eines.html", "ansietat-social-eines.html", "ansietat-social-assistent.html", "cribratges.html", "ajuda.html", "familiars.html", "parlar-ne.html", "joves.html", "eines-tcc.html", "meves-dades.html", "avis-legal.html", "privacitat.html"] + [f"trastorns/{c['slug']}.html" for c in CONDITIONS]
-write("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(f"<url><loc>{BASE}{u}</loc></url>\n" for u in urls) + "</urlset>\n")
+urls = ["index.html", "trastorns.html", "eines.html", "eines-tcc.html", "ansietat-social-eines.html", "ansietat-social-assistent.html", "cribratges.html", "ajuda.html", "familiars.html", "parlar-ne.html", "joves.html", "meves-dades.html", "avis-legal.html", "privacitat.html"] + [f"trastorns/{c['slug']}.html" for c in CONDITIONS]
+
+
+def sm_entry(u):
+    alts = "".join(f'<xhtml:link rel="alternate" hreflang="{l}" href="{BASE}{i18n.prefix(l)}{u}"/>' for l in i18n.LANGS)
+    return "".join(f"<url><loc>{BASE}{i18n.prefix(l)}{u}</loc>{alts}</url>\n" for l in i18n.LANGS)
+
+
+write("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + "".join(sm_entry(u) for u in urls) + "</urlset>\n")
 write("robots.txt", f"User-agent: *\nAllow: /\nSitemap: {BASE}sitemap.xml\n")
 write("img/favicon.svg", LOGO.replace('<svg ', '<svg xmlns="http://www.w3.org/2000/svg" '))
-print("OK", len(urls), "pàgines")
+
+# Unitats de text (per traduir) i traduccions que falten
+os.makedirs(os.path.join(os.path.dirname(os.path.abspath(__file__)), "i18n"), exist_ok=True)
+idir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "i18n")
+with open(os.path.join(idir, "units.tsv"), "w", encoding="utf-8") as f:
+    for h, k in UNITS.items():
+        f.write(f"{h}\t{k}\n")
+bad = 0
+for lang in ("es", "en"):
+    miss = sorted(MISSING[lang])
+    with open(os.path.join(idir, f"missing-{lang}.tsv"), "w", encoding="utf-8") as f:
+        for k in miss:
+            f.write(f"{i18n.h6(k)}\t{k}\n")
+    print(f"{lang}: {len(miss)} unitats sense traduir de {len(UNITS)}")
+    bad += len(miss)
+jks, jmiss = jsi18n.build()
+for lang in ("es", "en"):
+    print(f"js {lang}: {len(jmiss[lang])} cadenes sense traduir de {len(jks)}")
+    bad += len(jmiss[lang])
+print("OK", len(urls) * 3, "pàgines")
+if "--strict" in sys.argv and bad:
+    sys.exit(1)

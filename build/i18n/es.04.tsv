@@ -1,0 +1,141 @@
+3ef4f1	1 · Muy mal
+67d6ac	1. Activa el asistente
+fd0eae	1. Entiende
+31e26b	1. Situación
+950ba8	2 · Mal
+afbc4d	2. Pensamiento automático
+2f48a5	2. Practica
+953642	2. Elige qué quieres hacer
+35c889	3 · Regular
+7c1b21	3. Pide ayuda
+f77d45	3. Emoción e intensidad (0-100)
+9d5fe5	4 · Bien
+a07d0c	4. Pruebas a favor del pensamiento
+92bbd8	5 cosas que ves
+8cff45	5 · Muy bien
+1ec290	5. Pruebas en contra
+f1278e	6. Pensamiento alternativo más equilibrado
+4f2312	<a#0>Con la familia y amigos</a><a#1>Con el médico</a><a#2>En el trabajo</a>
+50b699	<a#0>Canal Salut</a>: portal oficial de la Generalitat.
+2247dc	<a#0>Colegio Oficial de Psicología de Cataluña</a>: puedes comprobar que un psicólogo está colegiado.
+b29102	<a#0>Más recursos</a><a#1>Entender lo que siento</a>
+ea8878	<a#0>Necesito ayuda ahora</a> <a#1>Quiero entender lo que siento</a> <a#2>Herramientas para el día a día</a>
+36b8b1	<a#0>Abrir las herramientas</a>
+c003ed	<a#0>Abrir</a>
+521ee7	<a#0>Probar el asistente</a>
+8e2c4a	<a#0>Recursos de ayuda</a>
+a84fa2	<a#0>Salut Mental Catalunya</a>: federación de asociaciones de personas con problemas de salud mental y familias.
+676f5d	<a#0>Encontrar ayuda</a><a#1>Para familiares</a>
+8b8d57	<a#0>← Herramientas de ansiedad social</a>
+01cbfc	<a#0>← Herramientas</a>
+52acd9	<a#0>← Todas las herramientas</a>
+6dcbac	<span#0>Autoayuda</span>
+4cd515	<span#0>¿Cómo te sientes ahora?</span>
+fe3db2	<span#0>Experimental · opcional</span>
+fcbe82	<span#0>Guía práctica</span>
+0632d0	<span#0>Tus datos</span>
+5a334c	<span#0>Orientativo</span>
+651572	<span#0>Para jóvenes</span>
+4206a2	<span#0>Para quien acompaña</span>
+6f3df0	<span#0>¿Preparado/a?</span>
+dccc68	<span#0>Recursos</span>
+3c3301	<span#0>Salud mental · en español</span>
+129c8a	<span#0>TCC · autoayuda</span>
+a98497	<span#0>Terapia cognitivo-conductual</span>
+9063e2	<span><strong>En el navegador</strong> (recomendado): privado y sin instalar nada. Requiere Chrome o Edge de escritorio recientes (WebGPU).</span>
+f19005	<span><strong>Ollama local</strong>: si ya lo tienes instalado en tu ordenador. Permite modelos mejores.</span>
+5699ad	<span>Añadir a lo que ya tengo (sin duplicar)</span>
+bec120	<span>Entiendo que es una IA experimental, no un terapeuta, y que puede decir cosas incorrectas. Acepto la descarga descrita.</span>
+ec38aa	<span>Sustituir lo que tengo</span>
+0ae1f5	<strong>Esto no te define</strong>Pasarlo mal no te hace débil ni menos importante. Y con ayuda, la mayoría de las personas mejoran.
+852667	<strong>Esta web no sustituye a un profesional</strong>No diagnostica ni prescribe tratamientos. Si estás en crisis, llama al 112 o al 024. Puedes tener una vida mejor, y pedir ayuda es un acto de valentía.
+7b11de	<strong>Atención</strong>Si algún ejercicio te incomoda o te hace sentir peor, detenlo. Si estás en crisis, ve a <a#0>ayuda urgente</a>.
+0727bc	<strong>CAP (Centro de Atención Primaria):</strong> el médico de familia es el primer paso. Puede valorar, orientar y derivar a salud mental.
+d4d268	<strong>CAS:</strong> Centros de Atención y Seguimiento a las drogodependencias.
+4bc256	<strong>CSMA / CSMIJ:</strong> Centros de Salud Mental de Adultos y de Infancia y Juventud. Normalmente se accede por derivación.
+4b0b84	<strong>Consejos</strong>Empieza con cosas de 5-10 minutos. Elige algunas que te den placer <em>y</em> otras que te den sensación de dominio. No esperes tener ganas: planifica el momento (día y hora). Si el ánimo bajo dura semanas o hay pensamientos de hacerte daño, consulta ya: 024 o 112.
+a102a8	<strong>Dormir:</strong> horarios regulares y móvil fuera de la cama. El sueño cambia mucho el ánimo. <a#0>Diario de sueño</a>
+11ec5d	<strong>Durante un ataque de pánico</strong>Los síntomas son muy desagradables pero <strong>no son peligrosos</strong> y pasan: suelen alcanzar el máximo en unos 10 minutos. Espira despacio (4 segundos inspirar, 6 espirar), deja que la sensación pase sin pelear con ella y recuérdate: «es pánico, pasará». Si es la primera vez o tienes un dolor en el pecho que no pasa, llama al 112.
+5c045e	<strong>En resumen</strong>Esta web no recoge datos personales, no tiene cuentas de usuario, no usa cookies ni analítica de terceros.
+a49e0e	<strong>Fuera de Cataluña</strong>En el resto de España, el 024 es gratuito y funciona en todo el Estado. Fuera de España, consulta el servicio de emergencias local.
+752890	<strong>Gracias por decirlo. Importa cómo te sientes.</strong>Esta herramienta no puede ayudarte con esto, pero hay personas que sí: llama ahora al <a#0><b>024</b></a> (gratuito, 24 h) o al <a#1><b>112</b></a> si hay peligro inmediato. Si puedes, no te quedes solo/a. <a#2>Más recursos</a>
+0c005f	<strong>Higiene del sueño</strong>Horario regular (también el fin de semana) · luz del día por la mañana · menos cafeína a partir del mediodía · sin alcohol para dormir · pantallas fuera de la cama · si no te duermes en unos 20 minutos, levántate y haz algo tranquilo hasta que tengas sueño. La cama es para dormir. Para el insomnio persistente, la TCC-I es el tratamiento recomendado: <a#0>lee la ficha</a>.
+dc0d1f	<strong>¿Y si me cuesta demasiado?</strong>Es normal. Da pasos más pequeños o habla con un psicólogo: la TCC con exposición es el tratamiento con más evidencia para la ansiedad social. <a#0>Lee la ficha</a> · <a#1>Encontrar ayuda</a>
+5009b4	<strong>Tu salud importa</strong>Cuidarte no es fallar en el trabajo. Si no puedes más, hablarlo con un profesional es el primer paso.
+7695b0	<strong>Tu privacidad</strong>No hay cuentas ni servidores. Los registros se guardan únicamente en tu navegador y puedes borrarlos cuando quieras.
+e9e38e	<strong>Mejor con un profesional</strong>Este asistente es un complemento para practicar. La TCC funciona mejor acompañada de un psicólogo. <a#0>Encontrar ayuda</a>
+4c45df	<strong>Moverte:</strong> un paseo, bailar, deporte. Un poco cada día vale más que mucho un solo día.
+cf8c61	<strong>No aislarte del todo:</strong> un mensaje a un amigo/a ya es mucho.
+eba3f5	<strong>No hace falta hacerlo perfecto</strong>No necesitas tenerlo todo claro ni las palabras exactas. Puedes empezar solo diciendo «no me encuentro bien».
+40b8df	<strong>No guardes en secreto</strong> que alguien quiere hacerse daño: cuéntaselo a un adulto. No es traicionarlo: es cuidarlo.
+f4517e	<strong>No es un diagnóstico</strong>Los resultados no sustituyen una valoración clínica. Las respuestas no se envían a ningún sitio: se calculan en tu dispositivo.
+fa3b76	<strong>No es un terapeuta</strong>Es una IA experimental y puede equivocarse, sobre todo en catalán. No diagnostica ni sustituye a un profesional. Si estás en crisis, llama al <a#0>024</a> o al <a#1>112</a>.
+201d8f	<strong>Por motivos técnicos, es mejor hablar en español</strong>Los modelos de IA pequeños que se ejecutan en el dispositivo entienden y escriben bastante mejor en español que en catalán, donde suelen cometer errores o perder el hilo. Por eso el asistente conversa por defecto en español. El resto de la web continúa disponible en tu idioma.
+0177cb	<strong>Para saber más</strong>Lee la ficha de <a#0>trastorno de pánico</a> y prueba la <a#1>respiración guiada</a>.
+9c4b67	<strong>Llévalo a la consulta</strong>Puedes <a#0>imprimir o descargar</a> estos registros para enseñárselos a tu médico o psicólogo.
+75a208	<strong>Ponerle nombre a lo que sientes:</strong> el <a#0>registro de ánimo</a> y el <a#1>diario de pensamientos</a>.
+aaecef	<strong>Respirar y parar:</strong> <a#0>respiración guiada</a> o el <a#1>5-4-3-2-1</a> cuando sube la angustia.
+89882c	<strong>Si ahora quieres hacerte daño o tienes miedo por tu vida</strong>Llama ya al <a#0>900 20 20 10 (ANAR, gratuito)</a>, al <a#1>024</a> o al <a#2>112</a>. También puedes decírselo a un adulto de confianza. Ahora mismo.
+fb5b23	<strong>Si piensas en hacerte daño</strong>Dilo en voz alta. Lo tratarán como una prioridad y no te juzgarán. Si es urgente, llama al <a#0>024</a> o al <a#1>112</a>.
+f385a1	<strong>Si sospechas que piensa en hacerse daño</strong>Pregúntale directamente y con calma. Preguntar no aumenta el riesgo. Si hay peligro inmediato, no lo dejes solo/a y llama al <a#0>112</a>. Para orientación, el <a#1>024</a> también atiende a familiares.
+1c7175	<strong>Un apoyo, no un tratamiento</strong>Funcionan mejor acompañadas de un psicólogo. Todo se guarda solo en tu navegador. Si te sientes desbordado/a, detente y mira <a#0>ayuda urgente</a>.
+4ac308	<strong>Un apoyo, no un tratamiento</strong>Si hace semanas que te sientes mal, has tenido ataques de pánico repetidos o no duermes desde hace meses, habla con tu médico o un psicólogo. <a#0>Encontrar ayuda</a>
+316285	<strong>Urgente: peligro para ti o para otra persona</strong>No esperes. Llama ahora.
+ce06f4	<strong>Urgencias hospitalarias:</strong> si hay riesgo grave e inmediato.
+261a46	En el trabajo
+200bf2	ANAR
+4ce439	ANAR – niños y adolescentes
+88d17c	<b>Mito:</b> La ansiedad siempre es mala.<br><b#0>Realidad:</b> Es una respuesta natural que nos protege. Se convierte en problema cuando es intensa, constante y desproporcionada.
+9de9b8	Antes
+8e9d92	Antes de una reunión
+c916fb	Antes de empezar
+7e6749	Terminar y pedir feedback
+d7d83b	Acompañar a alguien con sufrimiento psicológico no es fácil. Tú también mereces apoyo.
+87f4ff	Activación conductual para la depresión, diario de sueño y registro de pánico.
+e5ac3d	Activación conductual para la depresión, diario de sueño y registro de pánico. Herramientas de TCC que se guardan solo en tu dispositivo.
+394f52	Activación conductual, diario de sueño y registro de pánico
+18ad75	Activación conductual, diario de sueño y registro de pánico.
+155c04	Activar el asistente
+75d8c4	Actividad (pequeña y concreta)
+1c0fea	Actividad planificada (activación conductual)
+4c5db5	Adicciones y consumo problemático
+9475d1	Añadir a la escala
+b7bdf3	Ayer…
+4372ae	Ayuda a volver al presente cuando la ansiedad o los pensamientos te invaden.
+7d1422	Ayuda con rutinas básicas: dormir, comer, salir a caminar.
+7c3a16	Ayuda confidencial y gratuita para menores de hasta 18 años, 24 h. También en el 116 111. Familiares y centros escolares: 600 50 51 52.
+270d85	Ayuda gratuita y confidencial para menores de hasta 18 años, 24 h.
+6f7d31	En el centro educativo: el tutor/a o el orientador/a / psicopedagogo/a pueden ayudar.
+35fa6a	Alcohol
+5b94ed	Otros trastornos del sueño (apnea, somnolencia, pesadillas)
+2998d3	Otras veces que ha ido bien, qué hizo la otra persona...
+478c46	Con el médico de cabecera (CAP)
+7d835c	Con quién hablar
+1d01c2	Con un familiar o amigo
+e74dee	Anótalo después, cuando ya estés más calmado/a. Ver el patrón ayuda a perder el miedo.
+d84ad2	Ansiedad por la salud (hipocondría)
+84876a	Ansiedad prevista: <output#0>60</output>/100
+402330	Ansiedad social: herramientas de TCC
+666672	Ansiedad social: herramientas de TCC | Psicòleg
+eb9608	Antecedentes en la familia, si los conoces.
+d97f10	Anterior
+a7cd0d	Apunta cómo te sientes. Se guarda solo en tu dispositivo.
+e896c6	Apúntalo cada mañana (2 minutos). Con una o dos semanas de datos, tú y el profesional podéis ver patrones.
+b0a655	Este sitio web tiene una finalidad exclusivamente informativa y educativa. <strong>No ofrece diagnóstico, tratamiento ni asesoramiento médico o psicológico personalizado</strong> y no sustituye la consulta con un profesional sanitario cualificado. Nunca ignores el consejo de un profesional ni abandones un tratamiento por lo que hayas leído aquí.
+d24693	Esta web no envía notificaciones. Puedes descargar un archivo de calendario (.ics) y abrirlo con tu calendario (Google, Apple, Outlook…) para que te lo recuerde él.
+dc4ace	Ahora, cuánto me lo creo: <output#0>40</output>%
+8d0187	Arranca Ollama permitiendo esta web y descarga un modelo. En el terminal:
+5fce0e	Asistente de IA (opcional)
+8e22b3	Asistente de TCC con IA
+cbb0a7	Asistente de TCC con IA para la ansiedad social | Psicòleg
+20f7f2	Asistente experimental de IA que se ejecuta en tu dispositivo para practicar conversaciones sociales y reformular pensamientos con TCC.
+c6c27d	Atención privada y asociaciones
+4140b8	Atención sanitaria pública en Cataluña
+7df180	Atención sanitaria telefónica 24 h; orienta hacia los servicios de salud.
+df4ad8	Detener
+aa029f	Autolesiones y pensamientos suicidas
+b122dd	Aviso legal y médico
+a1decc	Aviso legal y médico de la web de salud mental.
+cf95d7	Aviso legal y médico | Psicòleg
+2c914b	Aviso médico
+6d680c	Busca un momento tranquilo, sin prisas ni distracciones. Puede ser caminando o por mensaje, si te cuesta cara a cara.

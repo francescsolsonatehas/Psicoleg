@@ -1,0 +1,130 @@
+ae655b	Print or download the records from the tools, make a backup and create reminders for your calendar. All on your device.
+060055	Print or download your records to take to your appointment, make backups and create reminders.
+a58b5d	Print or save as PDF
+b982bc	Read up with the <a#0>condition sheets</a>.
+03a449	Clear information in everyday language for teenagers and young people: how to tell if you need help, how to say it and who to call.
+e0597e	Clear, friendly information for teenagers and young people.
+08f769	Clear information about mental health, self-help tools and resources to find professional help in Catalonia.
+9c2fae	Clear information, practical self-help tools and routes to finding a professional. No judgement, no sign-up, no data collected.
+edc946	Insomnia and sleep problems
+45041b	Peak intensity: <output#0>60</output>/100
+eca898	Exposure ladder, thought record and behavioural experiments to work on social anxiety with CBT.
+855f8e	Judging, blaming or joking about their condition.
+b7bd20	Your doctor handles the sick leave. The sick note that reaches your employer does not include the diagnosis.
+8bd948	The website will only talk to your Ollama at <code>localhost</code>; nothing leaves your computer. Some browsers (e.g. Safari) block this connection from an https website.
+a6c5a1	Mind reading (I think I know what they are thinking)
+45fdf3	Backups, printable summaries and reminders (.ics) are generated in your browser and downloaded to your device; they never pass through any server. If you share these files, you decide where they go.
+221644	The data lives only in this browser and device. If you clear the browser’s data, it will be lost: that is why a backup is a good idea.
+97c4c7	The tools (mood log, thought diary, behavioural activation, sleep diary, panic log and social anxiety tools) and your preferences (dark mode, text size) are stored <strong>only in your browser</strong> using its local storage (localStorage). Nothing is sent to any server. You can delete them at any time from the tools themselves or by clearing the site data in your browser.
+750c49	My data and reminders
+80f3e6	My data: print, backup and reminders | Psicòleg
+ebfab6	Your activities
+70d8d7	The Inter and Poppins typefaces are distributed under the SIL Open Font License 1.1.
+2bb221	Llama 3.2 · 1B (~0.9 GB) · light, more limited
+54c90e	Llama 3.2 · 3B (~2.3 GB) · recommended, heavier
+bb5ac8	Read sheets based on reliable sources such as the WHO and clinical guidelines.
+70bef2	List social situations you avoid or find hard, and rate the fear from 0 (none) to 100 (maximum). Start with the low scores and work up gradually. Repeat each situation until the fear goes down.
+3096b4	Suicide prevention line
+04ac40	Bad
+593b8d	Dizziness
+d97cd6	Long nap
+b9812a	Minutes awake during the night
+9e0682	Minutes until I fell asleep
+7df30e	Look around you and name, quietly or in your head, five things you can see.
+d0b649	Medium
+a7b93d	Mode
+68c2cc	Model
+e2d2d4	Ollama model
+6ff829	Very good
+2d5d1e	Very bad
+371506	Show the summary
+c456db	Movement
+438f7e	Clear
+203d63	Night of
+74cac3	Nothing is downloaded until you ask. Conversations are <strong>not stored or sent anywhere</strong>: they stay on the screen and disappear when you close the page.
+481ef6	You are not alone in this
+11becf	We found no results. Try another term.
+9478c2	No cookies are used. The typefaces are served from this same site, so no requests are made to Google Fonts or other third parties. Hosting is on GitHub Pages, which may log technical connection data (such as the IP address) under its own privacy policy.
+e2df3b	Only if you activate the assistant on the <a#0>social anxiety</a> page does your browser download the WebLLM library from <strong>jsDelivr</strong> and the model from <strong>Hugging Face</strong>; these services may log technical data such as your IP address. The model runs on your device and conversations are <strong>neither sent nor stored</strong>. If you choose Ollama, the website only connects to <code>localhost</code> on your computer.
+3e2cf8	Note (optional)
+ed08f7	Nausea
+a0a7c6	Breathlessness or chest tightness
+50a53f	Offer to go with them to their first appointment with the doctor or psychologist.
+5b0b49	Where to go in Catalonia: CAP, CSMA, helplines.
+131480	Where were you and what was happening?
+b50444	Where do you want it to run?
+c284f4	PHQ-9 · Mood
+9c4ebb	Palpitations
+80a042	Screen in bed
+75b428	Exposure step (social anxiety)
+a8ac49	Pattern
+45a252	More realistic alternative thought
+417497	For after a situation (or before). Put your predictions to the test.
+e45a0b	For family members and carers
+068c3c	For family members and carers | Psicòleg
+703ff7	For young people
+48806f	Where would you like to start?
+7ffe43	Personalisation (everything is about me)
+80f0a8	Pleasure and leisure
+e096b9	Pleasure I think it will give: <output#0>3</output>/10
+7366e2	Plan
+cb86e9	Plan experiment
+52b61a	Privacy policy: no accounts, no cookies, data only in your browser.
+5ac5cc	Fear of dying
+81147c	Fear of losing control
+b9e590	Expected fear: <output#0>40</output>/100
+deaf34	Name the thought, look at the evidence and find a more balanced version.
+f8c74f	Putting words to what is happening to you is a big step. Here are ideas and phrases to start with family, your GP and at work.
+56bf8f	They may ask for a blood test to rule out physical causes (for example thyroid problems or anaemia).
+acc2ed	They may propose follow-up, treatment or a referral to a psychologist or a mental health centre (CSMA).
+786d96	You can bring someone with you. If you don’t feel listened to, you have the right to ask for another appointment or a second opinion.
+f246dc	You can ask for reasonable changes: flexible hours, working from home some days, sharing out tasks, breaks, or reducing a temporary workload. Some example phrases:
+bfc0af	You can simply say: “My doctor has signed me off for health reasons”.
+5abe86	You can say: <em>“I haven’t been feeling well for a while and I don’t know what to do. Can you help me?”</em>. That is enough. More ideas in the <a#0>“How to talk about it” guide</a>.
+bf0f11	Practise social conversations and reframe thoughts with a model that runs on your device.
+eac8d4	Practise social conversations, reframe thoughts and prepare behavioural experiments with an AI model that runs on your device.
+ee79ad	Practise a social conversation
+19821a	Ask directly and calmly how they are. Asking doesn’t make anything worse.
+193803	Useful questions
+f0ba4a	Press start and it will guide you step by step.
+388a35	Press start whenever you are ready.
+e23cff	Prepare a behavioural experiment
+6ee604	Ready?
+4defc2	Suicide prevention
+7422ed	Privacy and cookies
+c84bb1	Privacy and cookies | Psicòleg
+3d25be	Promising to keep secrets if their life is at risk.
+22010a	Intellectual property
+c23fac	Try not to use “safety behaviours” (avoiding eye contact, looking at your phone, repeating your script). They make us believe we only cope thanks to them.
+8ec3d1	Evidence for
+5e233f	Evidence against
+5b0eac	Psicòleg – Mental health: information, tools and resources
+2f5b82	Box: 4 · 4 · 4 · 4
+4940cc	When you are feeling low, the urge is to do less, and that makes mood worse. The idea is the opposite: <strong>act first, and motivation will follow</strong>. Plan small activities, then note how much pleasure and sense of achievement they really gave you.
+0eb344	How much I believe it now: <output#0>60</output>%
+c4477d	What thought came into your head?
+b90904	What I think will happen
+f868d8	What I think will happen or what they thought of me
+101e9b	What I will do (specific and small)
+d23fd2	What happened today?
+50ef0f	What would you like to include?
+193b01	What would I tell a friend who thought this?
+a7092f	What would I say to a good friend in this situation?
+56e3d3	What to bring
+9dc233	What can happen
+b3ce31	What you can say
+cd7b57	What did you fear would happen?
+3aa66c	What happened or what will happen? With whom?
+ddf3c4	What happened? Where were you?
+a64230	What I did (and what happened?)
+b234ef	What it is best to avoid
+54c51e	What is normal and what is less so
+0b5b07	Short questionnaires that measure symptoms of depression and anxiety over the last two weeks.
+f75c64	Indicative questionnaires on symptoms of depression and anxiety, with recommendations and referral to professionals.
+baf9b8	Indicative questionnaires on mood and anxiety.
+a3cd88	Reminder
+4a2e6e	Reframe a thought (Socratic questions)
+641d00	Mood log
+8d4e4e	Okay
+b040ec	Respect their pace: sometimes help is just being there.
+adda31	Breathe

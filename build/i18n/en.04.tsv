@@ -1,0 +1,141 @@
+3ef4f1	1 · Very bad
+67d6ac	1. Activate the assistant
+fd0eae	1. Understand
+31e26b	1. Situation
+950ba8	2 · Bad
+afbc4d	2. Automatic thought
+2f48a5	2. Practise
+953642	2. Choose what you want to do
+35c889	3 · Okay
+7c1b21	3. Ask for help
+f77d45	3. Emotion and intensity (0-100)
+9d5fe5	4 · Good
+a07d0c	4. Evidence for the thought
+92bbd8	5 things you see
+8cff45	5 · Very good
+1ec290	5. Evidence against it
+f1278e	6. A more balanced alternative thought
+4f2312	<a#0>With family and friends</a><a#1>With your doctor</a><a#2>At work</a>
+50b699	<a#0>Canal Salut</a>: the Government of Catalonia’s official health portal.
+2247dc	<a#0>Official College of Psychology of Catalonia</a>: you can check that a psychologist is registered.
+b29102	<a#0>More resources</a><a#1>Understanding what I feel</a>
+ea8878	<a#0>I need help now</a> <a#1>I want to understand what I feel</a> <a#2>Tools for everyday life</a>
+36b8b1	<a#0>Open the tools</a>
+c003ed	<a#0>Open</a>
+521ee7	<a#0>Try the assistant</a>
+8e2c4a	<a#0>Help resources</a>
+a84fa2	<a#0>Salut Mental Catalunya</a>: federation of associations of people with mental health problems and their families.
+676f5d	<a#0>Find help</a><a#1>For family</a>
+8b8d57	<a#0>← Social anxiety tools</a>
+01cbfc	<a#0>← Tools</a>
+52acd9	<a#0>← All tools</a>
+6dcbac	<span#0>Self-help</span>
+4cd515	<span#0>How are you feeling now?</span>
+fe3db2	<span#0>Experimental · optional</span>
+fcbe82	<span#0>Practical guide</span>
+0632d0	<span#0>Your data</span>
+5a334c	<span#0>Indicative</span>
+651572	<span#0>For young people</span>
+4206a2	<span#0>For those who support someone</span>
+6f3df0	<span#0>Ready?</span>
+dccc68	<span#0>Resources</span>
+3c3301	<span#0>Mental health · in English</span>
+129c8a	<span#0>CBT · self-help</span>
+a98497	<span#0>Cognitive behavioural therapy</span>
+9063e2	<span><strong>In the browser</strong> (recommended): private and nothing to install. Needs a recent desktop Chrome or Edge (WebGPU).</span>
+f19005	<span><strong>Local Ollama</strong>: if you already have it installed on your computer. Allows better models.</span>
+5699ad	<span>Add to what I already have (without duplicating)</span>
+bec120	<span>I understand this is an experimental AI, not a therapist, and that it may say incorrect things. I accept the download described.</span>
+ec38aa	<span>Replace what I have</span>
+0ae1f5	<strong>This doesn’t define you</strong>Going through a hard time doesn’t make you weak or less important. And with help, most people get better.
+852667	<strong>This website does not replace a professional</strong>It does not diagnose or prescribe treatment. If you are in crisis, call 112 or 024. You can have a better life, and asking for help is an act of courage.
+7b11de	<strong>Please note</strong>If an exercise makes you uncomfortable or feel worse, stop it. If you are in crisis, go to <a#0>urgent help</a>.
+0727bc	<strong>CAP (primary care centre):</strong> the family doctor is the first step. They can assess, advise and refer to mental health services.
+d4d268	<strong>CAS:</strong> Centres for addiction care and follow-up.
+4bc256	<strong>CSMA / CSMIJ:</strong> Adult and Child and Youth Mental Health Centres. Access is normally by referral.
+4b0b84	<strong>Tips</strong>Start with things that take 5-10 minutes. Pick some that give you pleasure <em>and</em> others that give you a sense of achievement. Don’t wait until you feel like it: plan the moment (day and time). If low mood lasts for weeks or you have thoughts of harming yourself, get help now: 024 or 112.
+a102a8	<strong>Sleep:</strong> regular schedules and phone out of bed. Sleep changes mood a lot. <a#0>Sleep diary</a>
+11ec5d	<strong>During a panic attack</strong>The symptoms are very unpleasant but <strong>not dangerous</strong>, and they pass: they usually peak within about 10 minutes. Breathe out slowly (in for 4 seconds, out for 6), let the sensation pass without fighting it and remind yourself: “this is panic, it will pass”. If it is your first time or you have chest pain that doesn’t go away, call 112.
+5c045e	<strong>In short</strong>This website does not collect personal data, has no user accounts and uses no cookies or third-party analytics.
+a49e0e	<strong>Outside Catalonia</strong>In the rest of Spain, 024 is free and works nationwide. Outside Spain, check the local emergency service.
+752890	<strong>Thank you for saying it. How you feel matters.</strong>This tool cannot help you with this, but there are people who can: call <a#0><b>024</b></a> (free, 24 h) now, or <a#1><b>112</b></a> if there is immediate danger. If you can, don’t stay alone. <a#2>More resources</a>
+0c005f	<strong>Sleep hygiene</strong>Regular schedule (weekends too) · daylight in the morning · less caffeine after noon · no alcohol to get to sleep · screens out of bed · if you don’t fall asleep in about 20 minutes, get up and do something calm until you feel sleepy. The bed is for sleeping. For persistent insomnia, CBT-I is the recommended treatment: <a#0>read the sheet</a>.
+dc0d1f	<strong>What if it’s too hard?</strong>That’s normal. Take smaller steps or talk to a psychologist: CBT with exposure is the best-evidenced treatment for social anxiety. <a#0>Read the sheet</a> · <a#1>Find help</a>
+5009b4	<strong>Your health matters</strong>Looking after yourself is not failing at work. If you can’t go on, talking to a professional is the first step.
+7695b0	<strong>Your privacy</strong>There are no accounts or servers. Your records are stored only in your browser and you can delete them whenever you like.
+e9e38e	<strong>Better with a professional</strong>This assistant is a complement for practising. CBT works best with a psychologist. <a#0>Find help</a>
+4c45df	<strong>Move:</strong> a walk, dancing, sport. A little every day is worth more than a lot on a single day.
+cf8c61	<strong>Don’t cut yourself off completely:</strong> a message to a friend is already a lot.
+eba3f5	<strong>It doesn’t have to be perfect</strong>You don’t need to have it all figured out or find the exact words. You can start by just saying “I’m not feeling well”.
+40b8df	<strong>Don’t keep it secret</strong> if someone wants to harm themselves: tell an adult. It isn’t betraying them: it’s caring for them.
+f4517e	<strong>This is not a diagnosis</strong>Results do not replace a clinical assessment. Your answers are not sent anywhere: they are calculated on your device.
+fa3b76	<strong>It is not a therapist</strong>It is an experimental AI and can be wrong, especially in Catalan. It does not diagnose or replace a professional. If you are in crisis, call <a#0>024</a> or <a#1>112</a>.
+201d8f	<strong>For technical reasons, English works better</strong>Small AI models that run on your device understand and write English (and Spanish) noticeably better than Catalan, where they tend to make mistakes or lose the thread. That is why the assistant chats in English by default. The rest of the website is available in your language.
+0177cb	<strong>To learn more</strong>Read the <a#0>panic disorder</a> sheet and try the <a#1>guided breathing</a>.
+9c4b67	<strong>Take it to your appointment</strong>You can <a#0>print or download</a> these records to show your doctor or psychologist.
+75a208	<strong>Putting a name to what you feel:</strong> the <a#0>mood log</a> and the <a#1>thought diary</a>.
+aaecef	<strong>Breathe and pause:</strong> <a#0>guided breathing</a> or <a#1>5-4-3-2-1</a> when anxiety rises.
+89882c	<strong>If you want to hurt yourself right now or fear for your life</strong>Call <a#0>900 20 20 10 (ANAR, free)</a>, <a#1>024</a> or <a#2>112</a> now. You can also tell a trusted adult. Right now.
+fb5b23	<strong>If you are thinking of harming yourself</strong>Say it out loud. It will be treated as a priority and you won’t be judged. If it is urgent, call <a#0>024</a> or <a#1>112</a>.
+f385a1	<strong>If you suspect they are thinking of harming themselves</strong>Ask them directly and calmly. Asking does not increase the risk. If there is immediate danger, don’t leave them alone and call <a#0>112</a>. For guidance, <a#1>024</a> also supports relatives.
+1c7175	<strong>A support, not a treatment</strong>They work better alongside a psychologist. Everything is stored only in your browser. If you feel overwhelmed, stop and see <a#0>urgent help</a>.
+4ac308	<strong>A support, not a treatment</strong>If you have felt unwell for weeks, have had repeated panic attacks or have not slept well for months, talk to your doctor or a psychologist. <a#0>Find help</a>
+316285	<strong>Urgent: danger to you or to someone else</strong>Don’t wait. Call now.
+ce06f4	<strong>Hospital emergency departments:</strong> if there is serious, immediate risk.
+261a46	At work
+200bf2	ANAR
+4ce439	ANAR – children and teenagers
+88d17c	<b>Myth:</b> Anxiety is always bad.<br><b#0>Fact:</b> It is a natural response that protects us. It becomes a problem when it is intense, constant and out of proportion.
+9de9b8	Before
+8e9d92	Before a meeting
+c916fb	Before you start
+7e6749	Finish and ask for feedback
+d7d83b	Supporting someone who is suffering psychologically is not easy. You deserve support too.
+87f4ff	Behavioural activation for depression, sleep diary and panic log.
+e5ac3d	Behavioural activation for depression, sleep diary and panic log. CBT tools stored only on your device.
+394f52	Behavioural activation, sleep diary and panic log
+18ad75	Behavioural activation, sleep diary and panic log.
+155c04	Activate the assistant
+75d8c4	Activity (small and specific)
+1c0fea	Planned activity (behavioural activation)
+4c5db5	Addictions and problematic use
+9475d1	Add to the ladder
+b7bdf3	Yesterday…
+4372ae	Helps bring you back to the present when anxiety or thoughts overwhelm you.
+7d1422	Help with basic routines: sleeping, eating, going for a walk.
+7c3a16	Confidential, free help for under-18s, 24 h. Also on 116 111. Relatives and schools: 600 50 51 52.
+270d85	Free, confidential help for under-18s, 24 h.
+6f7d31	At school: your tutor or the school counsellor / educational psychologist can help.
+35fa6a	Alcohol
+5b94ed	Other sleep disorders (apnoea, sleepiness, nightmares)
+2998d3	Other times it went well, what the other person did...
+478c46	With your GP (CAP)
+7d835c	Who to talk to
+1d01c2	With a relative or friend
+e74dee	Note it down afterwards, once you are calmer. Seeing the pattern helps reduce the fear.
+d84ad2	Health anxiety (hypochondria)
+84876a	Expected anxiety: <output#0>60</output>/100
+402330	Social anxiety: CBT tools
+666672	Social anxiety: CBT tools | Psicòleg
+eb9608	Family medical history, if you know it.
+d97f10	Previous
+a7cd0d	Note how you feel. It is stored only on your device.
+e896c6	Note it down every morning (2 minutes). With one or two weeks of data, you and the professional can spot patterns.
+b0a655	This website is for information and education only. <strong>It does not offer diagnosis, treatment or personalised medical or psychological advice</strong> and does not replace a consultation with a qualified health professional. Never ignore a professional’s advice or stop a treatment because of something you read here.
+d24693	This website does not send notifications. You can download a calendar file (.ics) and open it with your calendar (Google, Apple, Outlook…) so that it reminds you.
+dc4ace	Now, how much I believe it: <output#0>40</output>%
+8d0187	Start Ollama allowing this website and download a model. In the terminal:
+5fce0e	AI assistant (optional)
+8e22b3	CBT assistant with AI
+cbb0a7	CBT assistant with AI for social anxiety | Psicòleg
+20f7f2	Experimental AI assistant that runs on your device to practise social conversations and reframe thoughts using CBT.
+c6c27d	Private care and associations
+4140b8	Public healthcare in Catalonia
+7df180	Telephone health service 24 h; directs you to health services.
+df4ad8	Stop
+aa029f	Self-harm and suicidal thoughts
+b122dd	Legal and medical notice
+a1decc	Legal and medical notice of the mental health website.
+cf95d7	Legal and medical notice | Psicòleg
+2c914b	Medical notice
+6d680c	Pick a calm moment, without rush or distractions. It can be while walking or by message, if face to face is hard.

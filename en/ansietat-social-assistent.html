@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CBT assistant with AI for social anxiety | Psicòleg</title>
+<meta name="description" content="Experimental AI assistant that runs on your device to practise social conversations and reframe thoughts using CBT.">
+<link rel="canonical" href="https://francescsolsonatehas.github.io/Psicoleg/en/ansietat-social-assistent.html">
+<link rel="icon" type="image/svg+xml" href="../img/favicon.svg">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<meta name="theme-color" content="#3f7d6e">
+<meta property="og:title" content="CBT assistant with AI for social anxiety | Psicòleg">
+<meta property="og:description" content="Experimental AI assistant that runs on your device to practise social conversations and reframe thoughts using CBT.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://francescsolsonatehas.github.io/Psicoleg/en/ansietat-social-assistent.html">
+<meta property="og:site_name" content="Psicòleg">
+<meta property="og:locale" content="en_GB">
+<meta property="og:image" content="https://francescsolsonatehas.github.io/Psicoleg/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="font" type="font/woff2" href="../fonts/inter-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="../fonts/poppins-700-latin.woff2" crossorigin>
+<link rel="stylesheet" href="../css/style.css">
+<script>try{var t=localStorage.getItem('psi-theme');if(!t&&matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t)document.documentElement.setAttribute('data-theme',t);var f=localStorage.getItem('psi-fs');if(f)document.documentElement.style.setProperty('--fs',f)}catch(e){}</script>
+
+<link rel="alternate" hreflang="ca" href="https://francescsolsonatehas.github.io/Psicoleg/ansietat-social-assistent.html">
+<link rel="alternate" hreflang="es" href="https://francescsolsonatehas.github.io/Psicoleg/es/ansietat-social-assistent.html">
+<link rel="alternate" hreflang="en" href="https://francescsolsonatehas.github.io/Psicoleg/en/ansietat-social-assistent.html">
+<link rel="alternate" hreflang="x-default" href="https://francescsolsonatehas.github.io/Psicoleg/ansietat-social-assistent.html">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="container nav">
+  <a class="brand" href="index.html"><svg viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3f7d6e"/><stop offset="1" stop-color="#6c8ebf"/></linearGradient></defs><circle cx="20" cy="20" r="19" fill="url(#g)"/><path d="M20 28c-6-4-9-7.5-9-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 3.500-3 7-9 11z" fill="#fff" opacity=".95"/></svg><span>Psicòleg</span></a>
+  <nav aria-label="Main navigation"><ul id="menu"><li><a href="index.html">Home</a></li><li><a href="trastorns.html">Conditions</a></li><li><a href="eines.html" aria-current="page">Tools</a></li><li><a href="cribratges.html">Screening</a></li><li><a href="parlar-ne.html">How to talk about it</a></li><li><a href="joves.html">Young people</a></li><li><a href="familiars.html">Family</a></li><li><a href="ajuda.html">Find help</a></li></ul></nav>
+  <div class="tools">
+    <nav class="langsw" aria-label="Idioma / Idioma / Language"><a href="../ansietat-social-assistent.html" lang="ca" hreflang="ca">CA</a><a href="../es/ansietat-social-assistent.html" lang="es" hreflang="es">ES</a><a href="ansietat-social-assistent.html" lang="en" hreflang="en" aria-current="true">EN</a></nav>
+    <button class="icon-btn" id="fs-down" aria-label="Decrease text size">A−</button>
+    <button class="icon-btn" id="fs-up" aria-label="Increase text size">A+</button>
+    <button class="icon-btn" id="theme" aria-label="Switch between light and dark mode">🌓</button>
+    <button class="icon-btn menu-btn" id="menu-btn" aria-label="Open the menu" aria-expanded="false" aria-controls="menu">☰</button>
+  </div>
+</div></header>
+<main id="main">
+
+<section class="page-hero"><div class="container narrow">
+  <p class="crumbs"><a href="ansietat-social-eines.html">← Social anxiety tools</a></p>
+  <span class="eyebrow">Experimental · optional</span><h1>CBT assistant with AI</h1>
+  <p class="lead muted">Practise social conversations, reframe thoughts and prepare behavioural experiments with an AI model that runs on your device.</p>
+  <div class="notice warn"><strong>It is not a therapist</strong>It is an experimental AI and can be wrong, especially in Catalan. It does not diagnose or replace a professional. If you are in crisis, call <a href="tel:024">024</a> or <a href="tel:112">112</a>.</div>
+</div></section>
+<section style="padding-top:10px"><div class="container narrow">
+
+<div class="tool" id="a-setup">
+  <h2>1. Activate the assistant</h2>
+  <p class="muted">Nothing is downloaded until you ask. Conversations are <strong>not stored or sent anywhere</strong>: they stay on the screen and disappear when you close the page.</p>
+  <fieldset class="field" style="border:0;padding:0"><legend class="lbl">Where do you want it to run?</legend>
+    <label class="chk"><input type="radio" name="engine" value="web" checked> <span><strong>In the browser</strong> (recommended): private and nothing to install. Needs a recent desktop Chrome or Edge (WebGPU).</span></label>
+    <label class="chk" style="margin-top:8px"><input type="radio" name="engine" value="ollama"> <span><strong>Local Ollama</strong>: if you already have it installed on your computer. Allows better models.</span></label>
+  </fieldset>
+
+  <div class="field"><label for="a-lang">Conversation language</label>
+    <select id="a-lang"><option value="es" selected>Español</option><option value="en">English</option><option value="ca">Català</option></select></div>
+  <div class="notice soft" id="a-lang-note"><strong>For technical reasons, English works better</strong>Small AI models that run on your device understand and write English (and Spanish) noticeably better than Catalan, where they tend to make mistakes or lose the thread. That is why the assistant chats in English by default. The rest of the website is available in your language.</div>
+
+  <div id="a-web-box">
+    <div class="field"><label for="a-model">Model</label>
+      <select id="a-model">
+        <option value="Llama-3.2-3B-Instruct-q4f16_1-MLC">Llama 3.2 · 3B (~2.3 GB) · recommended, heavier</option>
+        <option value="gemma-2-2b-it-q4f16_1-MLC">Gemma 2 · 2B (~1.5 GB) · balanced</option>
+        <option value="Llama-3.2-1B-Instruct-q4f16_1-MLC">Llama 3.2 · 1B (~0.9 GB) · light, more limited</option>
+      </select></div>
+    <p class="muted" style="font-size:.9rem">When you activate it, the library from <strong>jsDelivr</strong> and the model from <strong>Hugging Face</strong> will be downloaded (third-party services, which may log your IP address). It is stored in the browser cache.</p>
+  </div>
+
+  <div id="a-oll-box" hidden>
+    <p class="muted" style="font-size:.9rem">Start Ollama allowing this website and download a model. In the terminal:</p>
+    <pre class="code">OLLAMA_ORIGINS=https://francescsolsonatehas.github.io ollama serve
+ollama pull llama3.2</pre>
+    <button class="btn btn-outline btn-sm" id="a-oll-check" type="button">Detect Ollama</button>
+    <div class="field" id="a-oll-sel" hidden style="margin-top:12px"><label for="a-oll-model">Ollama model</label><select id="a-oll-model"></select></div>
+    <p class="muted" style="font-size:.9rem;margin-top:10px">The website will only talk to your Ollama at <code>localhost</code>; nothing leaves your computer. Some browsers (e.g. Safari) block this connection from an https website.</p>
+  </div>
+
+  <label class="chk" style="margin:16px 0"><input type="checkbox" id="a-consent"> <span>I understand this is an experimental AI, not a therapist, and that it may say incorrect things. I accept the download described.</span></label>
+  <button class="btn btn-primary" id="a-load" disabled>Activate the assistant</button>
+  <div class="progress" id="a-progress" hidden><i id="a-bar"></i></div>
+  <p id="a-status" class="muted" aria-live="polite"></p>
+</div>
+
+<div id="a-chat" hidden>
+  <div class="tool">
+    <h2>2. Choose what you want to do</h2>
+    <div class="field"><label for="a-mode">Mode</label>
+      <select id="a-mode">
+        <option value="roleplay">Practise a social conversation</option>
+        <option value="reformula">Reframe a thought (Socratic questions)</option>
+        <option value="experiment">Prepare a behavioural experiment</option>
+      </select></div>
+    <div id="a-role-opts" class="grid grid-2">
+      <div class="field"><label for="a-scenario">Scene</label>
+        <select id="a-scenario"><option value="feina">Work colleague (coffee)</option><option value="veí">Neighbour (lift)</option><option value="botiga">Shop assistant</option><option value="desconegut">Stranger at the stop</option><option value="reunio">Before a meeting</option><option value="entrevista">Job interview</option></select></div>
+      <div class="field"><label for="a-level">Difficulty</label>
+        <select id="a-level"><option value="facil">Easy</option><option value="mitja">Medium</option><option value="dificil">Hard</option></select></div>
+    </div>
+    <div class="btn-row"><button class="btn btn-primary btn-sm" id="a-start">Start</button><button class="btn btn-outline btn-sm" id="a-reset" type="button">Clear</button></div>
+  </div>
+
+  <div class="tool">
+    <div class="chat-log" id="a-log" role="log" aria-live="polite" aria-label="Conversation"></div>
+    <div class="notice warn" id="a-crisis" role="alert" hidden><strong>Thank you for saying it. How you feel matters.</strong>This tool cannot help you with this, but there are people who can: call <a href="tel:024"><b>024</b></a> (free, 24 h) now, or <a href="tel:112"><b>112</b></a> if there is immediate danger. If you can, don’t stay alone. <a href="ajuda.html">More resources</a></div>
+    <form id="a-form" class="chat-form">
+      <label for="a-input" class="sr-only" style="position:absolute;left:-999px">Your message</label>
+      <input type="text" id="a-input" maxlength="500" autocomplete="off" placeholder="Type here...">
+      <button class="btn btn-primary btn-sm" id="a-send" type="submit">Send</button>
+      <button class="btn btn-outline btn-sm" id="a-stop" type="button" hidden>Stop</button>
+    </form>
+    <div class="btn-row"><button class="btn btn-outline btn-sm" id="a-end" type="button">Finish and ask for feedback</button></div>
+  </div>
+</div>
+
+<div class="notice soft"><strong>Better with a professional</strong>This assistant is a complement for practising. CBT works best with a psychologist. <a href="ajuda.html">Find help</a></div>
+</div></section>
+</main>
+<footer class="site-footer"><div class="container">
+  <div class="foot">
+    <div><p class="fh">Psicòleg</p><p>Information and tools to look after your mental health. Informational content: it does not replace care from a health professional.</p></div>
+    <div><p class="fh">Sections</p><ul><li><a href="index.html">Home</a></li><li><a href="trastorns.html">Conditions</a></li><li><a href="eines.html">Tools</a></li><li><a href="cribratges.html">Screening</a></li><li><a href="parlar-ne.html">How to talk about it</a></li><li><a href="joves.html">Young people</a></li><li><a href="familiars.html">Family</a></li><li><a href="ajuda.html">Find help</a></li></ul></div>
+    <div><p class="fh">Legal</p><ul><li><a href="avis-legal.html">Legal and medical notice</a></li><li><a href="privacitat.html">Privacy and cookies</a></li></ul></div>
+  </div>
+  <p class="copy">© 2026 Psicòleg. The Inter and Poppins typefaces are distributed under the SIL OFL 1.1 licence.</p>
+</div></footer>
+<div class="sos" role="region" aria-label="Urgent help">
+  <span>🆘 Do you need help now?</span> <a href="tel:112">112 Emergencies</a> <a href="tel:024">024 Suicide prevention (24 h, free)</a> <a class="sos-btn" href="ajuda.html">More resources</a>
+</div>
+<script src="../js/lang/en.js" defer></script>
+<script src="../js/i18n.js" defer></script>
+<script src="../js/main.js" defer></script>
+<script src="../js/lectura.js" defer></script>
+<script type="module" src="../js/assistent.js"></script>
+</body>
+</html>

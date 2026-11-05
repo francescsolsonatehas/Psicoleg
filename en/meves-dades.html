@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My data: print, backup and reminders | Psicòleg</title>
+<meta name="description" content="Print or download the records from the tools, make a backup and create reminders for your calendar. All on your device.">
+<link rel="canonical" href="https://francescsolsonatehas.github.io/Psicoleg/en/meves-dades.html">
+<link rel="icon" type="image/svg+xml" href="../img/favicon.svg">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<meta name="theme-color" content="#3f7d6e">
+<meta property="og:title" content="My data: print, backup and reminders | Psicòleg">
+<meta property="og:description" content="Print or download the records from the tools, make a backup and create reminders for your calendar. All on your device.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://francescsolsonatehas.github.io/Psicoleg/en/meves-dades.html">
+<meta property="og:site_name" content="Psicòleg">
+<meta property="og:locale" content="en_GB">
+<meta property="og:image" content="https://francescsolsonatehas.github.io/Psicoleg/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="font" type="font/woff2" href="../fonts/inter-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="../fonts/poppins-700-latin.woff2" crossorigin>
+<link rel="stylesheet" href="../css/style.css">
+<script>try{var t=localStorage.getItem('psi-theme');if(!t&&matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t)document.documentElement.setAttribute('data-theme',t);var f=localStorage.getItem('psi-fs');if(f)document.documentElement.style.setProperty('--fs',f)}catch(e){}</script>
+
+<link rel="alternate" hreflang="ca" href="https://francescsolsonatehas.github.io/Psicoleg/meves-dades.html">
+<link rel="alternate" hreflang="es" href="https://francescsolsonatehas.github.io/Psicoleg/es/meves-dades.html">
+<link rel="alternate" hreflang="en" href="https://francescsolsonatehas.github.io/Psicoleg/en/meves-dades.html">
+<link rel="alternate" hreflang="x-default" href="https://francescsolsonatehas.github.io/Psicoleg/meves-dades.html">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="container nav">
+  <a class="brand" href="index.html"><svg viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3f7d6e"/><stop offset="1" stop-color="#6c8ebf"/></linearGradient></defs><circle cx="20" cy="20" r="19" fill="url(#g)"/><path d="M20 28c-6-4-9-7.5-9-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 3.500-3 7-9 11z" fill="#fff" opacity=".95"/></svg><span>Psicòleg</span></a>
+  <nav aria-label="Main navigation"><ul id="menu"><li><a href="index.html">Home</a></li><li><a href="trastorns.html">Conditions</a></li><li><a href="eines.html" aria-current="page">Tools</a></li><li><a href="cribratges.html">Screening</a></li><li><a href="parlar-ne.html">How to talk about it</a></li><li><a href="joves.html">Young people</a></li><li><a href="familiars.html">Family</a></li><li><a href="ajuda.html">Find help</a></li></ul></nav>
+  <div class="tools">
+    <nav class="langsw" aria-label="Idioma / Idioma / Language"><a href="../meves-dades.html" lang="ca" hreflang="ca">CA</a><a href="../es/meves-dades.html" lang="es" hreflang="es">ES</a><a href="meves-dades.html" lang="en" hreflang="en" aria-current="true">EN</a></nav>
+    <button class="icon-btn" id="fs-down" aria-label="Decrease text size">A−</button>
+    <button class="icon-btn" id="fs-up" aria-label="Increase text size">A+</button>
+    <button class="icon-btn" id="theme" aria-label="Switch between light and dark mode">🌓</button>
+    <button class="icon-btn menu-btn" id="menu-btn" aria-label="Open the menu" aria-expanded="false" aria-controls="menu">☰</button>
+  </div>
+</div></header>
+<main id="main">
+
+<section class="page-hero"><div class="container narrow">
+  <p class="crumbs no-print"><a href="eines.html">← Tools</a></p>
+  <span class="eyebrow">Your data</span><h1>My data and reminders</h1>
+  <p class="lead muted no-print">Everything you note in the tools is stored only in your browser. Here you can print it, make a backup or set up reminders for your calendar.</p>
+</div></section>
+<section style="padding-top:10px"><div class="container narrow">
+
+<div class="tool no-print" id="resum">
+  <h2>📦 What you have stored</h2>
+  <ul class="log" id="d-count"></ul>
+  <p class="muted" style="font-size:.9rem">The data lives only in this browser and device. If you clear the browser’s data, it will be lost: that is why a backup is a good idea.</p>
+</div>
+
+<div class="tool" id="imprimir">
+  <h2>🖨️ To take to your appointment</h2>
+  <p class="muted no-print">Generates a readable summary to show your doctor or psychologist. You can print it, save it as a PDF or download it as text.</p>
+  <fieldset class="field no-print" style="border:0;padding:0"><legend class="lbl">What would you like to include?</legend>
+    <div class="chk-grid" id="d-pick"></div></fieldset>
+  <div class="btn-row no-print"><button class="btn btn-primary btn-sm" id="d-view">Show the summary</button><button class="btn btn-outline btn-sm" id="d-print">Print or save as PDF</button><button class="btn btn-outline btn-sm" id="d-txt">Download (.txt)</button></div>
+  <div id="d-out" class="report" hidden></div>
+</div>
+
+<div class="tool no-print" id="copia">
+  <h2>💾 Backup</h2>
+  <p class="muted">Download a file with all your data, or restore an earlier one (for example on another device).</p>
+  <div class="btn-row"><button class="btn btn-primary btn-sm" id="d-export">Download backup (.json)</button></div>
+  <div class="field" style="margin-top:18px"><label for="d-file">Import a backup</label><input type="file" id="d-file" accept=".json,application/json"></div>
+  <fieldset class="field" style="border:0;padding:0"><legend class="lbl">When importing…</legend>
+    <label class="chk"><input type="radio" name="d-mode" value="merge" checked> <span>Add to what I already have (without duplicating)</span></label>
+    <label class="chk" style="margin-top:6px"><input type="radio" name="d-mode" value="replace"> <span>Replace what I have</span></label></fieldset>
+  <button class="btn btn-outline btn-sm" id="d-import" disabled>Import</button>
+  <p id="d-msg" class="muted" aria-live="polite" style="margin-top:12px"></p>
+</div>
+
+<div class="tool no-print" id="recordatoris">
+  <h2>⏰ Gentle reminders for your calendar</h2>
+  <p class="muted">This website does not send notifications. You can download a calendar file (.ics) and open it with your calendar (Google, Apple, Outlook…) so that it reminds you.</p>
+  <div class="grid grid-2">
+    <div class="field"><label for="r-what">Reminder</label>
+      <select id="r-what">
+        <option value="anim">Mood log</option>
+        <option value="resp">Guided breathing</option>
+        <option value="son">Sleep diary</option>
+        <option value="activitat">Planned activity (behavioural activation)</option>
+        <option value="pensaments">Thought diary</option>
+        <option value="exposicio">Exposure step (social anxiety)</option>
+      </select></div>
+    <div class="field"><label for="r-time">Time</label><input type="time" id="r-time" value="21:00"></div>
+    <div class="field"><label for="r-freq">Frequency</label>
+      <select id="r-freq"><option value="daily">Every day</option><option value="weekdays">Monday to Friday</option><option value="weekly">Once a week</option></select></div>
+    <div class="field"><label for="r-weeks">For how many weeks</label>
+      <select id="r-weeks"><option value="2">2</option><option value="4" selected>4</option><option value="8">8</option><option value="12">12</option></select></div>
+  </div>
+  <button class="btn btn-primary btn-sm" id="r-make">Download reminder (.ics)</button>
+  <p class="muted" style="font-size:.9rem;margin-top:12px">The file only contains a friendly title and a link to this website, never your data.</p>
+</div>
+
+<div class="tool no-print" id="esborrar">
+  <h2>🗑️ Delete everything</h2>
+  <p class="muted">Permanently deletes all the tool data in this browser. This cannot be undone.</p>
+  <button class="btn btn-outline btn-sm" id="d-wipe">Delete all data</button>
+</div>
+
+</div></section>
+</main>
+<footer class="site-footer"><div class="container">
+  <div class="foot">
+    <div><p class="fh">Psicòleg</p><p>Information and tools to look after your mental health. Informational content: it does not replace care from a health professional.</p></div>
+    <div><p class="fh">Sections</p><ul><li><a href="index.html">Home</a></li><li><a href="trastorns.html">Conditions</a></li><li><a href="eines.html">Tools</a></li><li><a href="cribratges.html">Screening</a></li><li><a href="parlar-ne.html">How to talk about it</a></li><li><a href="joves.html">Young people</a></li><li><a href="familiars.html">Family</a></li><li><a href="ajuda.html">Find help</a></li></ul></div>
+    <div><p class="fh">Legal</p><ul><li><a href="avis-legal.html">Legal and medical notice</a></li><li><a href="privacitat.html">Privacy and cookies</a></li></ul></div>
+  </div>
+  <p class="copy">© 2026 Psicòleg. The Inter and Poppins typefaces are distributed under the SIL OFL 1.1 licence.</p>
+</div></footer>
+<div class="sos" role="region" aria-label="Urgent help">
+  <span>🆘 Do you need help now?</span> <a href="tel:112">112 Emergencies</a> <a href="tel:024">024 Suicide prevention (24 h, free)</a> <a class="sos-btn" href="ajuda.html">More resources</a>
+</div>
+<script src="../js/lang/en.js" defer></script>
+<script src="../js/i18n.js" defer></script>
+<script src="../js/main.js" defer></script>
+<script src="../js/lectura.js" defer></script>
+<script src="../js/dades.js" defer></script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-name: Enllaços
+name: Enllaços i traduccions
 
 on:
   push:
@@ -12,13 +12,17 @@ permissions:
   contents: read
 
 jobs:
-  links:
+  checks:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Traduccions completes i pàgines al dia
+        run: |
+          python3 build/build.py --strict
+          git diff --exit-code --stat || (echo "Les pàgines generades no coincideixen amb el codi font: executa python3 build/build.py i fes commit." && exit 1)
       - name: Enllaços interns, ancores i telèfons
         run: python3 scripts/check-links.py
       - name: Enllaços externs (només setmanal o manual)

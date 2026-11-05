@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Social anxiety: CBT tools | Psicòleg</title>
+<meta name="description" content="Exposure ladder, thought record and behavioural experiments to work on social anxiety with CBT.">
+<link rel="canonical" href="https://francescsolsonatehas.github.io/Psicoleg/en/ansietat-social-eines.html">
+<link rel="icon" type="image/svg+xml" href="../img/favicon.svg">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<meta name="theme-color" content="#3f7d6e">
+<meta property="og:title" content="Social anxiety: CBT tools | Psicòleg">
+<meta property="og:description" content="Exposure ladder, thought record and behavioural experiments to work on social anxiety with CBT.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://francescsolsonatehas.github.io/Psicoleg/en/ansietat-social-eines.html">
+<meta property="og:site_name" content="Psicòleg">
+<meta property="og:locale" content="en_GB">
+<meta property="og:image" content="https://francescsolsonatehas.github.io/Psicoleg/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="font" type="font/woff2" href="../fonts/inter-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="../fonts/poppins-700-latin.woff2" crossorigin>
+<link rel="stylesheet" href="../css/style.css">
+<script>try{var t=localStorage.getItem('psi-theme');if(!t&&matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t)document.documentElement.setAttribute('data-theme',t);var f=localStorage.getItem('psi-fs');if(f)document.documentElement.style.setProperty('--fs',f)}catch(e){}</script>
+
+<link rel="alternate" hreflang="ca" href="https://francescsolsonatehas.github.io/Psicoleg/ansietat-social-eines.html">
+<link rel="alternate" hreflang="es" href="https://francescsolsonatehas.github.io/Psicoleg/es/ansietat-social-eines.html">
+<link rel="alternate" hreflang="en" href="https://francescsolsonatehas.github.io/Psicoleg/en/ansietat-social-eines.html">
+<link rel="alternate" hreflang="x-default" href="https://francescsolsonatehas.github.io/Psicoleg/ansietat-social-eines.html">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="container nav">
+  <a class="brand" href="index.html"><svg viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3f7d6e"/><stop offset="1" stop-color="#6c8ebf"/></linearGradient></defs><circle cx="20" cy="20" r="19" fill="url(#g)"/><path d="M20 28c-6-4-9-7.5-9-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 3.500-3 7-9 11z" fill="#fff" opacity=".95"/></svg><span>Psicòleg</span></a>
+  <nav aria-label="Main navigation"><ul id="menu"><li><a href="index.html">Home</a></li><li><a href="trastorns.html">Conditions</a></li><li><a href="eines.html" aria-current="page">Tools</a></li><li><a href="cribratges.html">Screening</a></li><li><a href="parlar-ne.html">How to talk about it</a></li><li><a href="joves.html">Young people</a></li><li><a href="familiars.html">Family</a></li><li><a href="ajuda.html">Find help</a></li></ul></nav>
+  <div class="tools">
+    <nav class="langsw" aria-label="Idioma / Idioma / Language"><a href="../ansietat-social-eines.html" lang="ca" hreflang="ca">CA</a><a href="../es/ansietat-social-eines.html" lang="es" hreflang="es">ES</a><a href="ansietat-social-eines.html" lang="en" hreflang="en" aria-current="true">EN</a></nav>
+    <button class="icon-btn" id="fs-down" aria-label="Decrease text size">A−</button>
+    <button class="icon-btn" id="fs-up" aria-label="Increase text size">A+</button>
+    <button class="icon-btn" id="theme" aria-label="Switch between light and dark mode">🌓</button>
+    <button class="icon-btn menu-btn" id="menu-btn" aria-label="Open the menu" aria-expanded="false" aria-controls="menu">☰</button>
+  </div>
+</div></header>
+<main id="main">
+
+<section class="page-hero"><div class="container narrow">
+  <p class="crumbs"><a href="eines.html">← All tools</a></p>
+  <span class="eyebrow">Cognitive behavioural therapy</span><h1>Social anxiety: CBT tools</h1>
+  <p class="lead muted">Three tools to work on the fear of being judged: ranking what you avoid, questioning thoughts and testing them in practice.</p>
+  <div class="notice"><strong>A support, not a treatment</strong>They work better alongside a psychologist. Everything is stored only in your browser. If you feel overwhelmed, stop and see <a href="ajuda.html#urgent">urgent help</a>.</div>
+</div></section>
+<section style="padding-top:10px"><div class="container narrow">
+
+<div class="tool" id="exposicio">
+  <h2>🪜 1. Exposure ladder</h2>
+  <p class="muted">List social situations you avoid or find hard, and rate the fear from 0 (none) to 100 (maximum). Start with the low scores and work up gradually. Repeat each situation until the fear goes down.</p>
+  <div class="field"><label for="x-sit">Situation</label><input type="text" id="x-sit" maxlength="140" placeholder="E.g.: greet a neighbour, ask a stranger the time..."></div>
+  <div class="field"><label for="x-score">Expected fear: <output id="x-out">40</output>/100</label><input type="range" id="x-score" min="0" max="100" step="5" value="40" style="width:100%"></div>
+  <button class="btn btn-primary btn-sm" id="x-add">Add to the ladder</button>
+  <ol class="log" id="x-list" style="margin-top:18px;list-style:none"></ol>
+  <p class="muted" style="font-size:.9rem">Tip: choose a step that gives you about 30-50 fear, not the hardest one. Staying in the situation until the anxiety drops teaches you that you can tolerate it.</p>
+  <div class="btn-row"><button class="btn btn-outline btn-sm" id="x-clear">Delete the ladder</button></div>
+</div>
+
+<div class="tool" id="pensaments-soc">
+  <h2>🧠 2. Social thought record</h2>
+  <p class="muted">For after a situation (or before). Put your predictions to the test.</p>
+  <div class="field"><label for="p-sit">Social situation</label><textarea id="p-sit" placeholder="What happened or what will happen? With whom?"></textarea></div>
+  <div class="field"><label for="p-pred">What I think will happen or what they thought of me</label><textarea id="p-pred" placeholder="E.g.: they will think I’m boring"></textarea></div>
+  <div class="field"><label for="p-b1">How much I believe it now: <output id="p-o1">60</output>%</label><input type="range" id="p-b1" min="0" max="100" step="5" value="60" style="width:100%"></div>
+  <fieldset class="field" style="border:0;padding:0;margin:0 0 14px"><legend class="lbl">Distortions I recognise (optional)</legend><div class="chk-grid"><label class="chk"><input type="checkbox" name="dist" value="0"> Mind reading (I think I know what they are thinking)</label><label class="chk"><input type="checkbox" name="dist" value="1"> Catastrophising (I see it as worse than it is)</label><label class="chk"><input type="checkbox" name="dist" value="2"> Personalisation (everything is about me)</label><label class="chk"><input type="checkbox" name="dist" value="3"> Labelling (“I’m a failure”)</label><label class="chk"><input type="checkbox" name="dist" value="4"> Mental filter (I only see the negative)</label><label class="chk"><input type="checkbox" name="dist" value="5"> Should statements (rigid demands)</label></div></fieldset>
+  <div class="field"><label for="p-for">Evidence for</label><textarea id="p-for" placeholder="Concrete facts, not feelings"></textarea></div>
+  <div class="field"><label for="p-ag">Evidence against</label><textarea id="p-ag" placeholder="Other times it went well, what the other person did..."></textarea></div>
+  <div class="field"><label for="p-alt">More realistic alternative thought</label><textarea id="p-alt" placeholder="What would I say to a good friend in this situation?"></textarea></div>
+  <div class="field"><label for="p-b2">Now, how much I believe it: <output id="p-o2">40</output>%</label><input type="range" id="p-b2" min="0" max="100" step="5" value="40" style="width:100%"></div>
+  <div class="btn-row"><button class="btn btn-primary btn-sm" id="p-save">Save</button><button class="btn btn-outline btn-sm" id="p-clear">Delete entries</button></div>
+  <h3 style="margin-top:24px">Previous entries</h3><ul class="log" id="p-log"></ul>
+</div>
+
+<div class="tool" id="experiments">
+  <h2>🔬 3. Behavioural experiments</h2>
+  <p class="muted">A test of your prediction. First write what you think will happen, then do it and note what really happened.</p>
+  <h3>Before</h3>
+  <div class="field"><label for="e-do">What I will do (specific and small)</label><input type="text" id="e-do" maxlength="160" placeholder="E.g.: say good morning to a colleague and ask a question"></div>
+  <div class="field"><label for="e-pred">What I think will happen</label><input type="text" id="e-pred" maxlength="200" placeholder="E.g.: they will go quiet and look at me oddly"></div>
+  <div class="field"><label for="e-a1">Expected anxiety: <output id="e-o1">60</output>/100</label><input type="range" id="e-a1" min="0" max="100" step="5" value="60" style="width:100%"></div>
+  <p class="muted" style="font-size:.9rem">Try not to use “safety behaviours” (avoiding eye contact, looking at your phone, repeating your script). They make us believe we only cope thanks to them.</p>
+  <button class="btn btn-primary btn-sm" id="e-add">Plan experiment</button>
+  <h3 style="margin-top:24px">Your experiments</h3>
+  <ul class="log" id="e-list"></ul>
+  <div class="btn-row"><button class="btn btn-outline btn-sm" id="e-clear">Delete experiments</button></div>
+</div>
+
+<div class="card" style="margin-bottom:28px"><h2>🤖 AI assistant (experimental)</h2><p class="muted">Practise social conversations and reframe thoughts with a model that runs on your device.</p><div class="btn-row"><a class="btn btn-primary btn-sm" href="ansietat-social-assistent.html">Try the assistant</a></div></div>
+
+<div class="notice soft"><strong>What if it’s too hard?</strong>That’s normal. Take smaller steps or talk to a psychologist: CBT with exposure is the best-evidenced treatment for social anxiety. <a href="trastorns/ansietat-social.html">Read the sheet</a> · <a href="ajuda.html">Find help</a></div>
+</div></section>
+</main>
+<footer class="site-footer"><div class="container">
+  <div class="foot">
+    <div><p class="fh">Psicòleg</p><p>Information and tools to look after your mental health. Informational content: it does not replace care from a health professional.</p></div>
+    <div><p class="fh">Sections</p><ul><li><a href="index.html">Home</a></li><li><a href="trastorns.html">Conditions</a></li><li><a href="eines.html">Tools</a></li><li><a href="cribratges.html">Screening</a></li><li><a href="parlar-ne.html">How to talk about it</a></li><li><a href="joves.html">Young people</a></li><li><a href="familiars.html">Family</a></li><li><a href="ajuda.html">Find help</a></li></ul></div>
+    <div><p class="fh">Legal</p><ul><li><a href="avis-legal.html">Legal and medical notice</a></li><li><a href="privacitat.html">Privacy and cookies</a></li></ul></div>
+  </div>
+  <p class="copy">© 2026 Psicòleg. The Inter and Poppins typefaces are distributed under the SIL OFL 1.1 licence.</p>
+</div></footer>
+<div class="sos" role="region" aria-label="Urgent help">
+  <span>🆘 Do you need help now?</span> <a href="tel:112">112 Emergencies</a> <a href="tel:024">024 Suicide prevention (24 h, free)</a> <a class="sos-btn" href="ajuda.html">More resources</a>
+</div>
+<script src="../js/lang/en.js" defer></script>
+<script src="../js/i18n.js" defer></script>
+<script src="../js/main.js" defer></script>
+<script src="../js/lectura.js" defer></script>
+<script src="../js/social.js" defer></script>
+</body>
+</html>
