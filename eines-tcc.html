@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eines de TCC: activació conductual, son i pànic | Psicòleg</title>
+<meta name="description" content="Activació conductual per a la depressió, diari de son i registre de pànic. Eines de TCC que es guarden només al teu dispositiu.">
+<link rel="canonical" href="https://francescsolsonatehas.github.io/Psicoleg/eines-tcc.html">
+<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta name="theme-color" content="#3f7d6e">
+<meta property="og:title" content="Eines de TCC: activació conductual, son i pànic | Psicòleg">
+<meta property="og:description" content="Activació conductual per a la depressió, diari de son i registre de pànic. Eines de TCC que es guarden només al teu dispositiu.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://francescsolsonatehas.github.io/Psicoleg/eines-tcc.html">
+<meta property="og:site_name" content="Psicòleg">
+<meta property="og:locale" content="ca_ES">
+<meta property="og:image" content="https://francescsolsonatehas.github.io/Psicoleg/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="font" type="font/woff2" href="fonts/inter-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/poppins-700-latin.woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<script>try{var t=localStorage.getItem('psi-theme');if(!t&&matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t)document.documentElement.setAttribute('data-theme',t);var f=localStorage.getItem('psi-fs');if(f)document.documentElement.style.setProperty('--fs',f)}catch(e){}</script>
+
+</head>
+<body>
+<a class="skip" href="#main">Salta al contingut</a>
+<header class="site-header"><div class="container nav">
+  <a class="brand" href="index.html"><svg viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3f7d6e"/><stop offset="1" stop-color="#6c8ebf"/></linearGradient></defs><circle cx="20" cy="20" r="19" fill="url(#g)"/><path d="M20 28c-6-4-9-7.5-9-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 3.500-3 7-9 11z" fill="#fff" opacity=".95"/></svg><span>Psicòleg</span></a>
+  <nav aria-label="Navegació principal"><ul id="menu"><li><a href="index.html">Inici</a></li><li><a href="trastorns.html">Trastorns</a></li><li><a href="eines.html" aria-current="page">Eines</a></li><li><a href="cribratges.html">Cribratges</a></li><li><a href="parlar-ne.html">Com parlar-ne</a></li><li><a href="joves.html">Joves</a></li><li><a href="familiars.html">Familiars</a></li><li><a href="ajuda.html">Trobar ajuda</a></li></ul></nav>
+  <div class="tools">
+    <button class="icon-btn" id="fs-down" aria-label="Reduir la mida del text">A−</button>
+    <button class="icon-btn" id="fs-up" aria-label="Augmentar la mida del text">A+</button>
+    <button class="icon-btn" id="theme" aria-label="Canviar entre mode clar i fosc">🌓</button>
+    <button class="icon-btn menu-btn" id="menu-btn" aria-label="Obrir el menú" aria-expanded="false" aria-controls="menu">☰</button>
+  </div>
+</div></header>
+<main id="main">
+
+<section class="page-hero"><div class="container narrow">
+  <p class="crumbs"><a href="eines.html">← Totes les eines</a></p>
+  <span class="eyebrow">TCC · autoajuda</span><h1>Activació conductual, diari de son i registre de pànic</h1>
+  <p class="lead muted">Tres eines de teràpia cognitivo-conductual per a la depressió, l'insomni i l'ansietat. Es guarden només al teu navegador.</p>
+  <div class="notice"><strong>Un suport, no un tractament</strong>Si fa setmanes que et sents malament, t'han passat atacs de pànic repetits o no dorms des de fa mesos, parla-ho amb el teu metge o un psicòleg. <a href="ajuda.html">Trobar ajuda</a></div>
+</div></section>
+<section style="padding-top:10px"><div class="container narrow">
+
+<div class="tool" id="activacio">
+  <h2>🌱 Activació conductual (depressió)</h2>
+  <p class="muted">Quan estàs decaigut/da, l'impuls és fer menys, i això empitjora l'ànim. La idea és al revés: <strong>fer primer, i la motivació ja vindrà</strong>. Planifica activitats petites, i anota després quin plaer i domini t'han donat de veritat.</p>
+  <div class="field"><label for="ba-act">Activitat (petita i concreta)</label><input type="text" id="ba-act" maxlength="140" placeholder="Ex.: caminar 10 minuts, trucar a una amiga, fer una dutxa"></div>
+  <div class="field"><label for="ba-cat">Tipus</label>
+    <select id="ba-cat"><option value="cura">Cura personal</option><option value="social">Social</option><option value="moviment">Moviment</option><option value="domini">Tasques i responsabilitats</option><option value="plaer">Plaer i oci</option></select></div>
+  <div class="field"><label for="ba-pl">Plaer que crec que tindrà: <output id="ba-opl">3</output>/10</label><input type="range" id="ba-pl" min="0" max="10" step="1" value="3" style="width:100%"></div>
+  <div class="field"><label for="ba-mas">Sensació de domini (haver-ho aconseguit): <output id="ba-omas">3</output>/10</label><input type="range" id="ba-mas" min="0" max="10" step="1" value="3" style="width:100%"></div>
+  <button class="btn btn-primary btn-sm" id="ba-add">Planificar</button>
+  <p class="muted" id="ba-sum" aria-live="polite" style="margin-top:14px"></p>
+  <h3 style="margin-top:20px">Les teves activitats</h3>
+  <ul class="log" id="ba-list"></ul>
+  <div class="btn-row"><button class="btn btn-outline btn-sm" id="ba-clear">Esborrar activitats</button></div>
+  <div class="notice soft" style="margin-top:18px"><strong>Consells</strong>Comença amb coses de 5-10 minuts. Tria-ne que et donin plaer <em>i</em> d'altres que et donin sensació de domini. No esperis tenir ganes: planifica el moment (dia i hora). Si l'ànim baix dura setmanes o pensaments de fer-te mal, consulta ja: 024 o 112.</div>
+</div>
+
+<div class="tool" id="son">
+  <h2>🌙 Diari de son</h2>
+  <p class="muted">Apunta-ho cada matí (2 minuts). Amb una o dues setmanes de dades, tu i el professional podeu veure patrons.</p>
+  <div class="grid grid-2">
+    <div class="field"><label for="sl-date">Nit del dia</label><input type="date" id="sl-date"></div>
+    <div class="field"><label for="sl-q">Com he dormit?</label><select id="sl-q"><option value="1">1 · Molt malament</option><option value="2">2 · Malament</option><option value="3" selected>3 · Regular</option><option value="4">4 · Bé</option><option value="5">5 · Molt bé</option></select></div>
+    <div class="field"><label for="sl-bed">Hora d'anar al llit</label><input type="time" id="sl-bed" value="23:00"></div>
+    <div class="field"><label for="sl-wake">Hora de llevar-me</label><input type="time" id="sl-wake" value="07:00"></div>
+    <div class="field"><label for="sl-lat">Minuts fins a adormir-me</label><input type="text" id="sl-lat" inputmode="numeric" maxlength="3" value="15"></div>
+    <div class="field"><label for="sl-awk">Minuts desperta a la nit</label><input type="text" id="sl-awk" inputmode="numeric" maxlength="3" value="0"></div>
+  </div>
+  <fieldset class="field" style="border:0;padding:0"><legend class="lbl">Ahir…</legend>
+    <div class="chk-grid">
+      <label class="chk"><input type="checkbox" name="slflag" value="0"> Cafeïna a la tarda o nit</label>
+      <label class="chk"><input type="checkbox" name="slflag" value="1"> Alcohol</label>
+      <label class="chk"><input type="checkbox" name="slflag" value="2"> Pantalla al llit</label>
+      <label class="chk"><input type="checkbox" name="slflag" value="3"> Migdiada llarga</label>
+      <label class="chk"><input type="checkbox" name="slflag" value="4"> Exercici durant el dia</label>
+    </div></fieldset>
+  <div class="field"><label for="sl-note">Nota (opcional)</label><input type="text" id="sl-note" maxlength="200" placeholder="Estrès, dolor, pensaments..."></div>
+  <button class="btn btn-primary btn-sm" id="sl-save">Desar</button>
+  <div class="spark" id="sl-spark" aria-hidden="true"></div>
+  <p class="muted" id="sl-sum" aria-live="polite"></p>
+  <ul class="log" id="sl-list"></ul>
+  <div class="btn-row"><button class="btn btn-outline btn-sm" id="sl-clear">Esborrar diari</button></div>
+  <div class="notice soft" style="margin-top:18px"><strong>Higiene del son</strong>Horari regular (també el cap de setmana) · llum del dia al matí · menys cafeïna a partir del migdia · sense alcohol per dormir · pantalles fora del llit · si no dorms en uns 20 minuts, aixeca't i fes alguna cosa tranquil·la fins que tinguis son. El llit és per dormir. Per a l'insomni persistent, la TCC-I és el tractament recomanat: <a href="trastorns/insomni.html">llegeix la fitxa</a>.</div>
+</div>
+
+<div class="tool" id="panic">
+  <h2>💨 Registre de pànic</h2>
+  <div class="notice warn" role="note"><strong>Durant un atac de pànic</strong>Els símptomes són molt desagradables però <strong>no són perillosos</strong> i passen: solen arribar al màxim en uns 10 minuts. Expira lent (4 segons inspirar, 6 expirar), deixa que la sensació passi sense lluitar-hi i recorda't: «és pànic, passarà». Si és la primera vegada o tens dolor al pit que no passa, truca al 112.</div>
+  <p class="muted" style="margin-top:14px">Anota'l després, quan ja estiguis més calmat/da. Veure el patró ajuda a perdre la por.</p>
+  <div class="field"><label for="pa-int">Intensitat màxima: <output id="pa-oint">60</output>/100</label><input type="range" id="pa-int" min="0" max="100" step="5" value="60" style="width:100%"></div>
+  <div class="field"><label for="pa-min">Durada aproximada (minuts)</label><input type="text" id="pa-min" inputmode="numeric" maxlength="3" placeholder="Ex.: 10"></div>
+  <fieldset class="field" style="border:0;padding:0"><legend class="lbl">Símptomes</legend>
+    <div class="chk-grid">
+      <label class="chk"><input type="checkbox" name="pasym" value="0"> Palpitacions</label>
+      <label class="chk"><input type="checkbox" name="pasym" value="1"> Ofec o pressió al pit</label>
+      <label class="chk"><input type="checkbox" name="pasym" value="2"> Sudoració</label>
+      <label class="chk"><input type="checkbox" name="pasym" value="3"> Tremolors</label>
+      <label class="chk"><input type="checkbox" name="pasym" value="4"> Marejos</label>
+      <label class="chk"><input type="checkbox" name="pasym" value="5"> Formigueig</label>
+      <label class="chk"><input type="checkbox" name="pasym" value="6"> Nàusees</label>
+      <label class="chk"><input type="checkbox" name="pasym" value="7"> Sensació d'irrealitat</label>
+      <label class="chk"><input type="checkbox" name="pasym" value="8"> Por de perdre el control</label>
+      <label class="chk"><input type="checkbox" name="pasym" value="9"> Por de morir</label>
+    </div></fieldset>
+  <div class="field"><label for="pa-ctx">On era i què passava?</label><input type="text" id="pa-ctx" maxlength="200" placeholder="Ex.: al metro, molt ple"></div>
+  <div class="field"><label for="pa-fear">Què temia que passaria?</label><input type="text" id="pa-fear" maxlength="200" placeholder="Ex.: que m'ofegués o em desmaiés"></div>
+  <div class="field"><label for="pa-did">Què vaig fer (i va passar?)</label><input type="text" id="pa-did" maxlength="200" placeholder="Ex.: vaig sortir; després va baixar"></div>
+  <button class="btn btn-primary btn-sm" id="pa-save">Desar</button>
+  <p class="muted" id="pa-sum" aria-live="polite" style="margin-top:14px"></p>
+  <ul class="log" id="pa-list"></ul>
+  <div class="btn-row"><button class="btn btn-outline btn-sm" id="pa-clear">Esborrar registre</button></div>
+  <div class="notice soft" style="margin-top:18px"><strong>Per saber-ne més</strong>Llegeix la fitxa de <a href="trastorns/trastorn-de-panic.html">trastorn de pànic</a> i prova la <a href="eines.html#respiracio">respiració guiada</a>.</div>
+</div>
+
+<div class="notice soft"><strong>Porta-ho a la consulta</strong>Pots <a href="meves-dades.html">imprimir o descarregar</a> aquests registres per ensenyar-los al teu metge o psicòleg.</div>
+</div></section>
+</main>
+<footer class="site-footer"><div class="container">
+  <div class="foot">
+    <div><p class="fh">Psicòleg</p><p>Informació i eines per cuidar la salut mental. Contingut informatiu: no substitueix l'atenció d'un professional sanitari.</p></div>
+    <div><p class="fh">Seccions</p><ul><li><a href="index.html">Inici</a></li><li><a href="trastorns.html">Trastorns</a></li><li><a href="eines.html">Eines</a></li><li><a href="cribratges.html">Cribratges</a></li><li><a href="parlar-ne.html">Com parlar-ne</a></li><li><a href="joves.html">Joves</a></li><li><a href="familiars.html">Familiars</a></li><li><a href="ajuda.html">Trobar ajuda</a></li></ul></div>
+    <div><p class="fh">Legal</p><ul><li><a href="avis-legal.html">Avís legal i mèdic</a></li><li><a href="privacitat.html">Privacitat i cookies</a></li></ul></div>
+  </div>
+  <p class="copy">© 2026 Psicòleg. Les tipografies Inter i Poppins es distribueixen sota la llicència SIL OFL 1.1.</p>
+</div></footer>
+<div class="sos" role="region" aria-label="Ajuda urgent">
+  <span>🆘 Necessites ajuda ara?</span>
+  <a href="tel:112">112 Emergències</a>
+  <a href="tel:024">024 Conducta suïcida (24 h, gratuït)</a>
+  <a class="sos-btn" href="ajuda.html">Més recursos</a>
+</div>
+<script src="js/main.js" defer></script>
+<script src="js/lectura.js" defer></script>
+<script src="js/tcc.js" defer></script>
+</body>
+</html>

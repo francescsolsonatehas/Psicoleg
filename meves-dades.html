@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les meves dades: imprimir, còpia i recordatoris | Psicòleg</title>
+<meta name="description" content="Imprimeix o descarrega els registres de les eines, fes-ne una còpia de seguretat i crea recordatoris per a l&#x27;agenda. Tot al teu dispositiu.">
+<link rel="canonical" href="https://francescsolsonatehas.github.io/Psicoleg/meves-dades.html">
+<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta name="theme-color" content="#3f7d6e">
+<meta property="og:title" content="Les meves dades: imprimir, còpia i recordatoris | Psicòleg">
+<meta property="og:description" content="Imprimeix o descarrega els registres de les eines, fes-ne una còpia de seguretat i crea recordatoris per a l&#x27;agenda. Tot al teu dispositiu.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://francescsolsonatehas.github.io/Psicoleg/meves-dades.html">
+<meta property="og:site_name" content="Psicòleg">
+<meta property="og:locale" content="ca_ES">
+<meta property="og:image" content="https://francescsolsonatehas.github.io/Psicoleg/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="font" type="font/woff2" href="fonts/inter-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/poppins-700-latin.woff2" crossorigin>
+<link rel="stylesheet" href="css/style.css">
+<script>try{var t=localStorage.getItem('psi-theme');if(!t&&matchMedia('(prefers-color-scheme: dark)').matches)t='dark';if(t)document.documentElement.setAttribute('data-theme',t);var f=localStorage.getItem('psi-fs');if(f)document.documentElement.style.setProperty('--fs',f)}catch(e){}</script>
+
+</head>
+<body>
+<a class="skip" href="#main">Salta al contingut</a>
+<header class="site-header"><div class="container nav">
+  <a class="brand" href="index.html"><svg viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3f7d6e"/><stop offset="1" stop-color="#6c8ebf"/></linearGradient></defs><circle cx="20" cy="20" r="19" fill="url(#g)"/><path d="M20 28c-6-4-9-7.5-9-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 3.500-3 7-9 11z" fill="#fff" opacity=".95"/></svg><span>Psicòleg</span></a>
+  <nav aria-label="Navegació principal"><ul id="menu"><li><a href="index.html">Inici</a></li><li><a href="trastorns.html">Trastorns</a></li><li><a href="eines.html" aria-current="page">Eines</a></li><li><a href="cribratges.html">Cribratges</a></li><li><a href="parlar-ne.html">Com parlar-ne</a></li><li><a href="joves.html">Joves</a></li><li><a href="familiars.html">Familiars</a></li><li><a href="ajuda.html">Trobar ajuda</a></li></ul></nav>
+  <div class="tools">
+    <button class="icon-btn" id="fs-down" aria-label="Reduir la mida del text">A−</button>
+    <button class="icon-btn" id="fs-up" aria-label="Augmentar la mida del text">A+</button>
+    <button class="icon-btn" id="theme" aria-label="Canviar entre mode clar i fosc">🌓</button>
+    <button class="icon-btn menu-btn" id="menu-btn" aria-label="Obrir el menú" aria-expanded="false" aria-controls="menu">☰</button>
+  </div>
+</div></header>
+<main id="main">
+
+<section class="page-hero"><div class="container narrow">
+  <p class="crumbs no-print"><a href="eines.html">← Eines</a></p>
+  <span class="eyebrow">Les teves dades</span><h1>Les meves dades i recordatoris</h1>
+  <p class="lead muted no-print">Tot el que apuntes a les eines es guarda només al teu navegador. Aquí pots imprimir-ho, fer-ne una còpia o preparar recordatoris per a l'agenda.</p>
+</div></section>
+<section style="padding-top:10px"><div class="container narrow">
+
+<div class="tool no-print" id="resum">
+  <h2>📦 Què tens guardat</h2>
+  <ul class="log" id="d-count"></ul>
+  <p class="muted" style="font-size:.9rem">Les dades viuen només en aquest navegador i dispositiu. Si esborres les dades del navegador, es perdran: per això convé fer una còpia.</p>
+</div>
+
+<div class="tool" id="imprimir">
+  <h2>🖨️ Per portar a la consulta</h2>
+  <p class="muted no-print">Genera un resum llegible per ensenyar al teu metge o psicòleg. Pots imprimir-lo, desar-lo com a PDF o descarregar-lo com a text.</p>
+  <fieldset class="field no-print" style="border:0;padding:0"><legend class="lbl">Què hi vols incloure?</legend>
+    <div class="chk-grid" id="d-pick"></div></fieldset>
+  <div class="btn-row no-print"><button class="btn btn-primary btn-sm" id="d-view">Mostrar el resum</button><button class="btn btn-outline btn-sm" id="d-print">Imprimir o desar com a PDF</button><button class="btn btn-outline btn-sm" id="d-txt">Descarregar (.txt)</button></div>
+  <div id="d-out" class="report" hidden></div>
+</div>
+
+<div class="tool no-print" id="copia">
+  <h2>💾 Còpia de seguretat</h2>
+  <p class="muted">Descarrega un fitxer amb totes les teves dades, o recupera'n un d'abans (per exemple en un altre dispositiu).</p>
+  <div class="btn-row"><button class="btn btn-primary btn-sm" id="d-export">Descarregar còpia (.json)</button></div>
+  <div class="field" style="margin-top:18px"><label for="d-file">Importar una còpia</label><input type="file" id="d-file" accept=".json,application/json"></div>
+  <fieldset class="field" style="border:0;padding:0"><legend class="lbl">En importar…</legend>
+    <label class="chk"><input type="radio" name="d-mode" value="merge" checked> <span>Afegir al que ja tinc (sense duplicar)</span></label>
+    <label class="chk" style="margin-top:6px"><input type="radio" name="d-mode" value="replace"> <span>Substituir el que tinc</span></label></fieldset>
+  <button class="btn btn-outline btn-sm" id="d-import" disabled>Importar</button>
+  <p id="d-msg" class="muted" aria-live="polite" style="margin-top:12px"></p>
+</div>
+
+<div class="tool no-print" id="recordatoris">
+  <h2>⏰ Recordatoris suaus per a l'agenda</h2>
+  <p class="muted">Aquesta web no envia notificacions. Pots descarregar un fitxer de calendari (.ics) i obrir-lo amb el teu calendari (Google, Apple, Outlook…) perquè t'ho recordi ell.</p>
+  <div class="grid grid-2">
+    <div class="field"><label for="r-what">Recordatori</label>
+      <select id="r-what">
+        <option value="anim">Registre d'ànim</option>
+        <option value="resp">Respiració guiada</option>
+        <option value="son">Diari de son</option>
+        <option value="activitat">Activitat planificada (activació conductual)</option>
+        <option value="pensaments">Diari de pensaments</option>
+        <option value="exposicio">Pas d'exposició (ansietat social)</option>
+      </select></div>
+    <div class="field"><label for="r-time">Hora</label><input type="time" id="r-time" value="21:00"></div>
+    <div class="field"><label for="r-freq">Freqüència</label>
+      <select id="r-freq"><option value="daily">Cada dia</option><option value="weekdays">De dilluns a divendres</option><option value="weekly">Un cop a la setmana</option></select></div>
+    <div class="field"><label for="r-weeks">Durant quantes setmanes</label>
+      <select id="r-weeks"><option value="2">2</option><option value="4" selected>4</option><option value="8">8</option><option value="12">12</option></select></div>
+  </div>
+  <button class="btn btn-primary btn-sm" id="r-make">Descarregar recordatori (.ics)</button>
+  <p class="muted" style="font-size:.9rem;margin-top:12px">El fitxer només conté un títol amable i un enllaç a aquesta web, mai les teves dades.</p>
+</div>
+
+<div class="tool no-print" id="esborrar">
+  <h2>🗑️ Esborrar-ho tot</h2>
+  <p class="muted">Elimina de manera definitiva totes les dades de les eines d'aquest navegador. No es pot desfer.</p>
+  <button class="btn btn-outline btn-sm" id="d-wipe">Esborrar totes les dades</button>
+</div>
+
+</div></section>
+</main>
+<footer class="site-footer"><div class="container">
+  <div class="foot">
+    <div><p class="fh">Psicòleg</p><p>Informació i eines per cuidar la salut mental. Contingut informatiu: no substitueix l'atenció d'un professional sanitari.</p></div>
+    <div><p class="fh">Seccions</p><ul><li><a href="index.html">Inici</a></li><li><a href="trastorns.html">Trastorns</a></li><li><a href="eines.html">Eines</a></li><li><a href="cribratges.html">Cribratges</a></li><li><a href="parlar-ne.html">Com parlar-ne</a></li><li><a href="joves.html">Joves</a></li><li><a href="familiars.html">Familiars</a></li><li><a href="ajuda.html">Trobar ajuda</a></li></ul></div>
+    <div><p class="fh">Legal</p><ul><li><a href="avis-legal.html">Avís legal i mèdic</a></li><li><a href="privacitat.html">Privacitat i cookies</a></li></ul></div>
+  </div>
+  <p class="copy">© 2026 Psicòleg. Les tipografies Inter i Poppins es distribueixen sota la llicència SIL OFL 1.1.</p>
+</div></footer>
+<div class="sos" role="region" aria-label="Ajuda urgent">
+  <span>🆘 Necessites ajuda ara?</span>
+  <a href="tel:112">112 Emergències</a>
+  <a href="tel:024">024 Conducta suïcida (24 h, gratuït)</a>
+  <a class="sos-btn" href="ajuda.html">Més recursos</a>
+</div>
+<script src="js/main.js" defer></script>
+<script src="js/lectura.js" defer></script>
+<script src="js/dades.js" defer></script>
+</body>
+</html>

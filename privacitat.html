@@ -29,7 +29,7 @@
 <a class="skip" href="#main">Salta al contingut</a>
 <header class="site-header"><div class="container nav">
   <a class="brand" href="index.html"><svg viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3f7d6e"/><stop offset="1" stop-color="#6c8ebf"/></linearGradient></defs><circle cx="20" cy="20" r="19" fill="url(#g)"/><path d="M20 28c-6-4-9-7.5-9-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 3.500-3 7-9 11z" fill="#fff" opacity=".95"/></svg><span>Psicòleg</span></a>
-  <nav aria-label="Navegació principal"><ul id="menu"><li><a href="index.html">Inici</a></li><li><a href="trastorns.html">Trastorns</a></li><li><a href="eines.html">Eines</a></li><li><a href="cribratges.html">Cribratges</a></li><li><a href="familiars.html">Familiars</a></li><li><a href="ajuda.html">Trobar ajuda</a></li></ul></nav>
+  <nav aria-label="Navegació principal"><ul id="menu"><li><a href="index.html">Inici</a></li><li><a href="trastorns.html">Trastorns</a></li><li><a href="eines.html">Eines</a></li><li><a href="cribratges.html">Cribratges</a></li><li><a href="parlar-ne.html">Com parlar-ne</a></li><li><a href="joves.html">Joves</a></li><li><a href="familiars.html">Familiars</a></li><li><a href="ajuda.html">Trobar ajuda</a></li></ul></nav>
   <div class="tools">
     <button class="icon-btn" id="fs-down" aria-label="Reduir la mida del text">A−</button>
     <button class="icon-btn" id="fs-up" aria-label="Augmentar la mida del text">A+</button>
@@ -40,11 +40,12 @@
 <main id="main">
 
 <section class="page-hero"><div class="container narrow"><h1>Privacitat i cookies</h1></div></section>
-<section style="padding-top:10px"><div class="container narrow article">
+<section style="padding-top:10px"><div class="container narrow article" data-read>
   <div class="notice soft"><strong>En resum</strong>Aquest web no recull dades personals, no té comptes d'usuari, no fa servir cookies ni analítica de tercers.</div>
   <h2>Dades que es guarden</h2>
-  <p>Les eines (registre d'ànim, diari de pensaments) i les preferències (mode fosc, mida del text) es guarden <strong>únicament al teu navegador</strong> mitjançant el seu emmagatzematge local (localStorage). No s'envien a cap servidor. Pots esborrar-les en qualsevol moment des de les mateixes eines o esborrant les dades del lloc al navegador.</p>
+  <p>Les eines (registre d'ànim, diari de pensaments, activació conductual, diari de son, registre de pànic i eines d'ansietat social) i les preferències (mode fosc, mida del text) es guarden <strong>únicament al teu navegador</strong> mitjançant el seu emmagatzematge local (localStorage). No s'envien a cap servidor. Pots esborrar-les en qualsevol moment des de les mateixes eines o esborrant les dades del lloc al navegador.</p>
   <p>Els resultats dels cribratges es calculen al teu dispositiu i no es desen.</p>
+  <p>Les còpies de seguretat, els resums per imprimir i els recordatoris (.ics) es generen al teu navegador i es descarreguen al teu dispositiu; mai passen per cap servidor. Si comparteixes aquests fitxers, ets tu qui en decideix el destí.</p>
   <h2>Cookies i tercers</h2>
   <p>No s'utilitzen cookies. Les tipografies es serveixen des d'aquest mateix lloc, de manera que no es fan peticions a Google Fonts ni a altres tercers. L'allotjament es fa a GitHub Pages, que pot registrar dades tècniques de connexió (com l'adreça IP) segons la seva pròpia política de privacitat.</p>
   <h2>Assistent d'IA (opcional)</h2>
@@ -56,9 +57,9 @@
 </main>
 <footer class="site-footer"><div class="container">
   <div class="foot">
-    <div><h4>Psicòleg</h4><p>Informació i eines per cuidar la salut mental. Contingut informatiu: no substitueix l'atenció d'un professional sanitari.</p></div>
-    <div><h4>Seccions</h4><ul><li><a href="index.html">Inici</a></li><li><a href="trastorns.html">Trastorns</a></li><li><a href="eines.html">Eines</a></li><li><a href="cribratges.html">Cribratges</a></li><li><a href="familiars.html">Familiars</a></li><li><a href="ajuda.html">Trobar ajuda</a></li></ul></div>
-    <div><h4>Legal</h4><ul><li><a href="avis-legal.html">Avís legal i mèdic</a></li><li><a href="privacitat.html">Privacitat i cookies</a></li></ul></div>
+    <div><p class="fh">Psicòleg</p><p>Informació i eines per cuidar la salut mental. Contingut informatiu: no substitueix l'atenció d'un professional sanitari.</p></div>
+    <div><p class="fh">Seccions</p><ul><li><a href="index.html">Inici</a></li><li><a href="trastorns.html">Trastorns</a></li><li><a href="eines.html">Eines</a></li><li><a href="cribratges.html">Cribratges</a></li><li><a href="parlar-ne.html">Com parlar-ne</a></li><li><a href="joves.html">Joves</a></li><li><a href="familiars.html">Familiars</a></li><li><a href="ajuda.html">Trobar ajuda</a></li></ul></div>
+    <div><p class="fh">Legal</p><ul><li><a href="avis-legal.html">Avís legal i mèdic</a></li><li><a href="privacitat.html">Privacitat i cookies</a></li></ul></div>
   </div>
   <p class="copy">© 2026 Psicòleg. Les tipografies Inter i Poppins es distribueixen sota la llicència SIL OFL 1.1.</p>
 </div></footer>
@@ -69,6 +70,7 @@
   <a class="sos-btn" href="ajuda.html">Més recursos</a>
 </div>
 <script src="js/main.js" defer></script>
+<script src="js/lectura.js" defer></script>
 
 </body>
 </html>
