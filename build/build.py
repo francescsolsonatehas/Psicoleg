@@ -3,7 +3,8 @@ import os, html, sys
 sys.path.insert(0, os.path.dirname(__file__))
 import i18n
 import jsi18n
-from data import CONDITIONS, GROUPS
+import searchindex
+from data import CONDITIONS, GROUPS, REVIEWERS, CONTENT_UPDATED
 
 OUT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = "https://francescsolsonatehas.github.io/Psicoleg/"
@@ -13,6 +14,8 @@ e = html.escape
 NAV = [("index.html", "Inici"), ("trastorns.html", "Trastorns"), ("eines.html", "Eines"),
        ("cribratges.html", "Cribratges"), ("parlar-ne.html", "Com parlar-ne"), ("joves.html", "Joves"), ("familiars.html", "Familiars"), ("ajuda.html", "Trobar ajuda")]
 
+FOOT_EXTRA = [("pla.html", "El meu pla"), ("cerca.html", "Cerca i índex")]
+
 LOGO = '<svg viewBox="0 0 40 40" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3f7d6e"/><stop offset="1" stop-color="#6c8ebf"/></linearGradient></defs><circle cx="20" cy="20" r="19" fill="url(#g)"/><path d="M20 28c-6-4-9-7.5-9-11a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 3.500-3 7-9 11z" fill="#fff" opacity=".95"/></svg>'
 
 
@@ -20,6 +23,7 @@ def page(path, title, desc, body, current="", root="", extra_head="", ld=""):
     AC = ' aria-current="page"'
     nav = "".join(
         f'<li><a href="{root}{h}"{AC if h == current else ""}>{t}</a></li>' for h, t in NAV)
+    foot_nav = "".join(f'<li><a href="{root}{h}">{t}</a></li>' for h, t in NAV + FOOT_EXTRA)
     url = BASE + path
     return f'''<!DOCTYPE html>
 <html lang="ca">
@@ -55,6 +59,7 @@ def page(path, title, desc, body, current="", root="", extra_head="", ld=""):
   <nav aria-label="Navegació principal"><ul id="menu">{nav}</ul></nav>
   <div class="tools">
     <!--LANGSW-->
+    <a class="icon-btn" href="{root}cerca.html" aria-label="Cercar al web"{AC if current == "cerca.html" else ""}>🔍</a>
     <button class="icon-btn" id="fs-down" aria-label="Reduir la mida del text">A−</button>
     <button class="icon-btn" id="fs-up" aria-label="Augmentar la mida del text">A+</button>
     <button class="icon-btn" id="theme" aria-label="Canviar entre mode clar i fosc">🌓</button>
@@ -67,8 +72,8 @@ def page(path, title, desc, body, current="", root="", extra_head="", ld=""):
 <footer class="site-footer"><div class="container">
   <div class="foot">
     <div><p class="fh">{NAME}</p><p>Informació i eines per cuidar la salut mental. Contingut informatiu: no substitueix l'atenció d'un professional sanitari.</p></div>
-    <div><p class="fh">Seccions</p><ul>{"".join(f'<li><a href="{root}{h}">{t}</a></li>' for h, t in NAV)}</ul></div>
-    <div><p class="fh">Legal</p><ul><li><a href="{root}avis-legal.html">Avís legal i mèdic</a></li><li><a href="{root}privacitat.html">Privacitat i cookies</a></li></ul></div>
+    <div><p class="fh">Seccions</p><ul>{foot_nav}</ul></div>
+    <div><p class="fh">Legal</p><ul><li><a href="{root}fonts-i-revisio.html">Qui ho revisa i fonts</a></li><li><a href="{root}avis-legal.html">Avís legal i mèdic</a></li><li><a href="{root}privacitat.html">Privacitat i cookies</a></li></ul></div>
   </div>
   <p class="copy">© 2026 {NAME}. Les tipografies Inter i Poppins es distribueixen sota la llicència SIL OFL 1.1.</p>
 </div></footer>
@@ -96,6 +101,7 @@ def with_scripts(h, scripts=()):
 
 UNITS = {}
 MISSING = {"es": set(), "en": set()}
+PAGES = {}  # (llengua, ruta) -> HTML final, per construir l'índex del cercador
 
 
 def _write(path, content):
@@ -110,6 +116,7 @@ def write(path, content):
         res, miss = i18n.localized(path, content, UNITS)
         for lang, (p, h) in res.items():
             _write(p, h)
+            PAGES[(lang, path)] = h
         for lang in ("es", "en"):
             MISSING[lang] |= miss[lang]
     else:
@@ -123,8 +130,24 @@ def li(items):
 SOURCES = ('<p class="sources"><strong>Fonts per ampliar informació:</strong> '
            '<a href="https://www.who.int/health-topics/mental-health" rel="noopener">OMS – Salut mental</a> · '
            '<a href="https://canalsalut.gencat.cat" rel="noopener">Canal Salut (Generalitat de Catalunya)</a> · '
-           '<a href="https://www.nice.org.uk/guidance/conditions-and-diseases/mental-health-and-behavioural-conditions" rel="noopener">Guies clíniques NICE</a>. '
-           'Classificacions de referència: CIE-11 i DSM-5-TR. Contingut orientatiu pendent de revisió per un professional col·legiat.</p>')
+           '<a href="https://www.nice.org.uk/guidance/conditions-and-diseases/mental-health-behavioural-and-neurodevelopmental-conditions" rel="noopener">Guies clíniques NICE</a>. '
+           'Classificacions de referència: CIE-11 i DSM-5-TR.</p>')
+
+
+def review_note(root=""):
+    """Línia de revisió professional i data d'actualització (al peu de fitxes i guies)."""
+    link = f'<a href="{root}fonts-i-revisio.html">Qui ho revisa i fonts</a>'
+    if REVIEWERS:
+        who = "; ".join(f'{e(r["name"])} ({e(r["role"])}, {e(r["college"])}, {e(r["date"])})' for r in REVIEWERS)
+        return f'<p class="sources"><strong>Revisió professional:</strong> {who}. {link}.</p>'
+    return (f'<p class="sources"><strong>Revisió professional:</strong> pendent. '
+            f'Contingut actualitzat el {CONTENT_UPDATED}. {link}.</p>')
+
+
+def add_review(body, root=""):
+    i = body.rindex("</div></section>")
+    return body[:i] + review_note(root) + "\n" + body[i:]
+
 
 # ---------- Fitxes de trastorns ----------
 for c in CONDITIONS:
@@ -152,6 +175,7 @@ for c in CONDITIONS:
   <h2>Consells per a familiars i amics</h2>{li(c["family"])}
   <div class="btn-row"><a class="btn btn-primary" href="../ajuda.html">Trobar ajuda</a><a class="btn btn-outline" href="../eines.html">Eines d'autoajuda</a></div>
   {SOURCES}
+  {review_note('../')}
 </div></section>'''
     ld = f'<script type="application/ld+json">{{"@context":"https://schema.org","@type":"MedicalWebPage","name":"{e(c["name"])}","inLanguage":"ca","about":{{"@type":"MedicalCondition","name":"{e(c["name"])}"}}}}</script>'
     write(f"trastorns/{c['slug']}.html", with_scripts(
@@ -187,11 +211,14 @@ tiles = [("🫁", "Respira", "Exercicis guiats de respiració per calmar-te en p
          ("📓", "Registre d'ànim", "Apunta com et sents. Es guarda només al teu dispositiu.", "eines.html#anim"),
          ("🧠", "Diari de pensaments", "Una eina de teràpia cognitiva per mirar els pensaments amb distància.", "eines.html#pensaments"),
          ("📋", "Cribratges PHQ-9 i GAD-7", "Qüestionaris orientatius sobre ànim i ansietat.", "cribratges.html"),
+         ("🧭", "El meu pla", "Respon cinc preguntes i rep un pla de petits passos pensat per a tu.", "pla.html"),
          ("📚", "Entendre el que sento", "Fitxes sobre 21 trastorns i condicions.", "trastorns.html"),
          ("🌱", "Eines de TCC", "Activació conductual, diari de son i registre de pànic.", "eines-tcc.html"),
          ("💬", "Com parlar-ne", "Frases i consells per dir-ho a la família, al metge i a la feina.", "parlar-ne.html"),
          ("🧑‍🎓", "Per a joves", "Informació clara i propera per a adolescents i joves.", "joves.html"),
-         ("🏥", "Trobar ajuda professional", "On acudir a Catalunya: CAP, CSMA, línies d'ajuda.", "ajuda.html")]
+         ("🏥", "Trobar ajuda professional", "On acudir a Catalunya: CAP, CSMA, línies d'ajuda.", "ajuda.html"),
+         ("🔎", "Cerca i índex", "Cerca per paraules a tot el web o busca un tema a l'índex alfabètic.", "cerca.html"),
+         ("🔬", "Qui ho revisa i fonts", "D'on surt la informació, com es revisa i què encara està pendent.", "fonts-i-revisio.html")]
 tcards = "".join(f'<a class="card" href="{h}"><span class="ico" aria-hidden="true">{i}</span><h3>{t}</h3><p class="muted">{d}</p></a>' for i, t, d, h in tiles)
 body = f'''
 <section class="hero"><div class="container hero-grid">
@@ -298,6 +325,8 @@ body = '''
   <h3 style="margin-top:24px">Entrades anteriors</h3>
   <ul class="log" id="t-log"></ul>
 </div>
+
+<div class="card" style="margin-bottom:28px"><h2>🧭 El meu pla</h2><p class="muted">Cinc preguntes sobre les últimes dues setmanes i una proposta de petits passos, amb enllaços a les eines.</p><div class="btn-row"><a class="btn btn-primary btn-sm" href="pla.html">Fer el meu pla</a></div></div>
 
 <div class="card" style="margin-bottom:28px"><h2>🌱 Més eines de TCC</h2><p class="muted">Activació conductual per a la depressió, diari de son i registre de pànic.</p><div class="btn-row"><a class="btn btn-primary btn-sm" href="eines-tcc.html">Obrir les eines</a></div></div>
 
@@ -502,6 +531,7 @@ body = """
 
 <div class="btn-row"><a class="btn btn-primary" href="ajuda.html">Trobar ajuda</a><a class="btn btn-outline" href="familiars.html">Per a familiars</a></div>
 </div></section>"""
+body = add_review(body)
 write("parlar-ne.html", with_scripts(page("parlar-ne.html", f"Com parlar-ne: família, metge i feina | {NAME}", "Guia pràctica amb frases i consells per parlar de salut mental amb la família, el metge de capçalera i a la feina.", body, "parlar-ne.html")))
 
 # ---------- Joves ----------
@@ -568,6 +598,7 @@ body = """
 <div class="notice soft"><strong>Això no et defineix</strong>Passar-ho malament no et fa dèbil ni menys important. I amb ajuda, la majoria de les persones milloren.</div>
 <div class="btn-row"><a class="btn btn-primary" href="ajuda.html">Més recursos</a><a class="btn btn-outline" href="trastorns.html">Entendre el que sento</a></div>
 </div></section>"""
+body = add_review(body)
 write("joves.html", with_scripts(page("joves.html", f"Salut mental per a joves | {NAME}", "Informació clara i en llenguatge proper per a adolescents i joves: com saber si necessites ajuda, com dir-ho i on trucar.", body, "joves.html")))
 
 # ---------- Les meves dades: exportar, còpia, recordatoris ----------
@@ -612,6 +643,7 @@ body = """
   <div class="grid grid-2">
     <div class="field"><label for="r-what">Recordatori</label>
       <select id="r-what">
+        <option value="pla">El meu pla</option>
         <option value="anim">Registre d'ànim</option>
         <option value="resp">Respiració guiada</option>
         <option value="son">Diari de son</option>
@@ -636,7 +668,7 @@ body = """
 </div>
 
 </div></section>"""
-write("meves-dades.html", with_scripts(page("meves-dades.html", f"Les meves dades: imprimir, còpia i recordatoris | {NAME}", "Imprimeix o descarrega els registres de les eines, fes-ne una còpia de seguretat i crea recordatoris per a l'agenda. Tot al teu dispositiu.", body, "eines.html"), ["js/dades.js"]))
+write("meves-dades.html", with_scripts(page("meves-dades.html", f"Les meves dades: imprimir, còpia i recordatoris | {NAME}", "Imprimeix o descarrega els registres de les eines, fes-ne una còpia de seguretat i crea recordatoris per a l'agenda. Tot al teu dispositiu.", body, "eines.html"), ["js/plan-cat.js", "js/dades.js"]))
 
 # ---------- Assistent IA (experimental) ----------
 body = """
@@ -794,6 +826,7 @@ body = '''
   <p>Cuidar també desgasta. Busca espais propis, parla amb algú de confiança i considera associacions de familiars, on hi ha persones que han passat per situacions semblants.</p>
   <div class="btn-row"><a class="btn btn-primary" href="ajuda.html">Recursos d'ajuda</a></div>
 </div></section>'''
+body = add_review(body)
 write("familiars.html", with_scripts(page("familiars.html", f"Per a familiars i cuidadors | {NAME}", "Com acompanyar una persona amb sofriment psicològic: què dir, què evitar i com cuidar-se.", body, "familiars.html")))
 
 # ---------- Legals ----------
@@ -819,7 +852,7 @@ body = '''
 <section style="padding-top:10px"><div class="container narrow article" data-read>
   <div class="notice soft"><strong>En resum</strong>Aquest web no recull dades personals, no té comptes d'usuari, no fa servir cookies ni analítica de tercers.</div>
   <h2>Dades que es guarden</h2>
-  <p>Les eines (registre d'ànim, diari de pensaments, activació conductual, diari de son, registre de pànic i eines d'ansietat social) i les preferències (mode fosc, mida del text) es guarden <strong>únicament al teu navegador</strong> mitjançant el seu emmagatzematge local (localStorage). No s'envien a cap servidor. Pots esborrar-les en qualsevol moment des de les mateixes eines o esborrant les dades del lloc al navegador.</p>
+  <p>Les eines (registre d'ànim, diari de pensaments, activació conductual, diari de son, registre de pànic, eines d'ansietat social i el pla personal) i les preferències (mode fosc, mida del text) es guarden <strong>únicament al teu navegador</strong> mitjançant el seu emmagatzematge local (localStorage). No s'envien a cap servidor. Pots esborrar-les en qualsevol moment des de les mateixes eines o esborrant les dades del lloc al navegador.</p>
   <p>Els resultats dels cribratges es calculen al teu dispositiu i no es desen.</p>
   <p>Les còpies de seguretat, els resums per imprimir i els recordatoris (.ics) es generen al teu navegador i es descarreguen al teu dispositiu; mai passen per cap servidor. Si comparteixes aquests fitxers, ets tu qui en decideix el destí.</p>
   <h2>Cookies i tercers</h2>
@@ -832,12 +865,138 @@ body = '''
 </div></section>'''
 write("privacitat.html", with_scripts(page("privacitat.html", f"Privacitat i cookies | {NAME}", "Política de privacitat: sense comptes, sense cookies, dades només al teu navegador.", body)))
 
+# ---------- El meu pla ----------
+PLA_Q = ["Has dormit malament: t'ha costat adormir-te, t'has despertat sovint o massa d'hora?",
+         "T'has sentit trist/a o sense ganes de fer coses que abans t'agradaven?",
+         "T'has sentit nerviós/a, intranquil·l/a o amb preocupacions que no pots aturar?",
+         "T'has sentit desbordat/da, amb massa coses a sobre (feina, estudis, casa)?",
+         "T'has sentit sol/a o has evitat estar amb altra gent?"]
+PLA_OPTS = ["Gens", "Alguns dies", "Més de la meitat dels dies", "Gairebé cada dia"]
+PLA_SAFE = ["No", "Alguns dies", "Sovint"]
+
+
+def radios(name, opts):
+    return '<div class="opts">' + "".join(
+        f'<label><input type="radio" name="{name}" value="{i}"> <span>{e(o)}</span></label>' for i, o in enumerate(opts)) + "</div>"
+
+
+qs = "".join(f'<fieldset class="q"><legend>{i + 1}. {e(q)}</legend>{radios(f"q{i}", PLA_OPTS)}</fieldset>' for i, q in enumerate(PLA_Q))
+body = f'''
+<section class="page-hero"><div class="container narrow">
+  <span class="eyebrow">Autoajuda</span><h1>El meu pla</h1>
+  <p class="lead muted">Respon cinc preguntes sobre les últimes dues setmanes i rebràs una proposta de petits passos, amb enllaços a les eines d'aquest web. Pots canviar els passos que no t'encaixin.</p>
+  <div class="notice"><strong>Una guia, no un diagnòstic</strong>El pla és orientatiu i no substitueix un professional. Les respostes i el pla es guarden només al teu navegador.</div>
+</div></section>
+<section style="padding-top:10px"><div class="container narrow">
+
+<div class="tool" id="p-quiz">
+  <h2>📝 Les últimes dues setmanes</h2>
+  <p class="muted">Amb quina freqüència t'ha passat això durant les últimes dues setmanes? No hi ha respostes bones ni dolentes.</p>
+  <form id="p-form" novalidate>
+    {qs}
+    <fieldset class="q"><legend>Opcional: has pensat que seria millor no ser aquí o has pensat a fer-te mal?</legend>{radios("s", PLA_SAFE)}</fieldset>
+    <div class="btn-row"><button type="button" class="btn btn-primary" id="p-go">Veure el meu pla</button></div>
+    <p id="p-err" class="muted" aria-live="polite"></p>
+  </form>
+</div>
+
+<div class="tool" id="p-plan" hidden>
+  <h2>🧭 El teu pla</h2>
+  <p class="muted" id="p-date"></p>
+  <div id="p-crisis" class="notice warn" role="alert" hidden><strong>Gràcies per dir-ho</strong>Pensar a fer-se mal és més comú del que sembla i se'n pot parlar. Truca ara al <a href="tel:024">024</a> (gratuït, 24 h) o, si estàs en perill immediat, al <a href="tel:112">112</a>. No cal que ho passis sol/a.</div>
+  <div id="p-heavy" class="notice" hidden><strong>Val la pena parlar-ne amb algú</strong>Les teves respostes indiquen que fa dies que ho passes malament. Un pla d'autoajuda ajuda, però no n'hi ha prou per a tot: parla-ho amb el teu metge de capçalera o amb un psicòleg. <a href="parlar-ne.html#metge">Com fer-ho</a> · <a href="ajuda.html">Trobar ajuda</a></div>
+  <h3>Com has estat</h3>
+  <ul class="log" id="p-areas"></ul>
+  <h3 style="margin-top:24px">Els teus passos</h3>
+  <p class="muted">Tria els que et semblin possibles aquesta setmana. Si un pas no et va bé, canvia'l per un altre.</p>
+  <ol class="plan" id="p-steps"></ol>
+  <p id="p-msg" class="muted" aria-live="polite"></p>
+  <div class="btn-row"><a class="btn btn-primary btn-sm" href="meves-dades.html#recordatoris">Posar un recordatori a l'agenda</a><button type="button" class="btn btn-outline btn-sm" id="p-redo">Tornar a respondre</button><button type="button" class="btn btn-outline btn-sm" id="p-wipe">Esborrar el pla</button></div>
+  <p class="muted" style="font-size:.9rem;margin-top:18px">Si tens menys de 18 anys, mira també la pàgina <a href="joves.html">per a joves</a>. Si les dificultats duren més de dues setmanes o afecten el teu dia a dia, <a href="ajuda.html">busca ajuda professional</a>.</p>
+</div>
+
+</div></section>'''
+write("pla.html", with_scripts(page("pla.html", f"El meu pla: petits passos per cuidar-te | {NAME}", "Respon cinc preguntes i rep un pla personal de petits passos amb enllaços a les eines. Es guarda només al teu dispositiu.", body, "eines.html"), ["js/plan-cat.js", "js/pla.js"]))
+
+# ---------- Cerca i índex ----------
+body = '''
+<section class="page-hero"><div class="container narrow">
+  <span class="eyebrow">Cercador</span><h1>Cerca i índex</h1>
+  <p class="lead muted">Cerca per paraules a tot el web o busca el tema a l'índex alfabètic.</p>
+  <form role="search" id="c-form" novalidate>
+    <label for="c-q" class="lbl" style="display:block;font-weight:600;margin-bottom:6px">Què busques?</label>
+    <input id="c-q" class="search" type="search" autocomplete="off" placeholder="Ex.: dormir, pànic, parlar amb el metge...">
+  </form>
+</div></section>
+<section style="padding-top:10px"><div class="container narrow">
+  <p id="c-count" class="muted" aria-live="polite"></p>
+  <ul id="c-results" class="sr-list"></ul>
+  <div id="c-az">
+    <h2>Índex alfabètic</h2>
+    <nav id="c-letters" class="az-nav" aria-label="Lletres de l'índex"></nav>
+    <div id="c-groups"></div>
+  </div>
+  <noscript><p>El cercador necessita JavaScript. Pots consultar directament les <a href="trastorns.html">fitxes de trastorns</a>, les <a href="eines.html">eines</a>, <a href="parlar-ne.html">com parlar-ne</a> i <a href="ajuda.html">on trobar ajuda</a>.</p></noscript>
+</div></section>'''
+write("cerca.html", with_scripts(page("cerca.html", f"Cerca i índex alfabètic | {NAME}", "Cerca per paraules a tot el web i índex alfabètic de fitxes, eines i guies.", body, "cerca.html"), ["js/cerca.js"]))
+
+# ---------- Qui ho revisa i fonts ----------
+if REVIEWERS:
+    rev_items = "".join(
+        f'<li><strong>{e(r["name"])}</strong> – {e(r["role"])}, {e(r["college"])}. Revisió: {e(r["date"])}. Àmbit: {e(r["scope"])}.</li>' for r in REVIEWERS)
+    rev_block = f'<ul>{rev_items}</ul>'
+else:
+    rev_block = ('<div class="notice"><strong>Pendent</strong>Aquest web encara no ha estat revisat per cap professional col·legiat de la salut mental. '
+                 'Fins que ho estigui, considera tot el contingut com a informació general i consulta sempre un professional.</div>'
+                 '<p>[Pendent: nom, número de col·legiat/da, especialitat i data de revisió del professional o professionals revisors.]</p>')
+body = f'''
+<section class="page-hero"><div class="container narrow">
+  <span class="eyebrow">Transparència</span><h1>Qui ho revisa i d'on surt la informació</h1>
+  <p class="lead muted">Una web de salut mental ha de poder explicar d'on surt el que diu. Aquí tens, sense maquillar, com s'ha fet i què encara està pendent.</p>
+</div></section>
+<section style="padding-top:10px"><div class="container narrow article" data-read>
+  <h2>Revisió professional</h2>
+  {rev_block}
+  <p>Quan hi hagi un professional revisor, es revisaran les fitxes de trastorns, les eines i els qüestionaris, els telèfons i recursos, i les traduccions. Cada fitxa i guia indicarà si té revisió i quan es va fer.</p>
+
+  <h2>Com s'ha elaborat el contingut</h2>
+  <ul>
+    <li>Els textos s'han redactat amb l'ajuda d'una eina d'intel·ligència artificial, a partir de les fonts públiques que s'indiquen més avall. Són una síntesi divulgativa: no contenen recerca original ni experiència clínica.</li>
+    <li>Les versions en castellà i en anglès són traduccions fetes amb la mateixa eina, sense revisió d'un traductor ni d'un professional.</li>
+    <li>Els qüestionaris PHQ-9 i GAD-7 són adaptacions de les escales originals, d'ús lliure, i no són versions validades oficialment en cap de les tres llengües.</li>
+    <li>Les eines d'autoajuda es basen en tècniques conegudes de la teràpia cognitivo-conductual. Són un suport, no un tractament.</li>
+  </ul>
+
+  <h2>Fonts de referència</h2>
+  <ul>
+    <li><a href="https://www.who.int/health-topics/mental-health" rel="noopener">Organització Mundial de la Salut – Salut mental</a></li>
+    <li><a href="https://canalsalut.gencat.cat" rel="noopener">Canal Salut (Generalitat de Catalunya)</a></li>
+    <li><a href="https://www.nice.org.uk/guidance/conditions-and-diseases/mental-health-behavioural-and-neurodevelopmental-conditions" rel="noopener">NICE – Guies clíniques de salut mental</a></li>
+    <li><a href="https://portal.guiasalud.es" rel="noopener">GuíaSalud – Guies de pràctica clínica del Sistema Nacional de Salut</a></li>
+    <li><a href="https://icd.who.int" rel="noopener">CIE-11 (OMS)</a> i <a href="https://www.psychiatry.org/psychiatrists/practice/dsm" rel="noopener">DSM-5-TR (American Psychiatric Association)</a>, com a classificacions de referència</li>
+    <li>Kroenke K, Spitzer RL, Williams JBW. The PHQ-9: validity of a brief depression severity measure. <em>J Gen Intern Med</em>. 2001;16(9):606-613.</li>
+    <li>Spitzer RL, Kroenke K, Williams JBW, Löwe B. A brief measure for assessing generalized anxiety disorder: the GAD-7. <em>Arch Intern Med</em>. 2006;166(10):1092-1097.</li>
+  </ul>
+
+  <h2>Actualitzacions i errades</h2>
+  <p>Última actualització del contingut: {CONTENT_UPDATED}. Els telèfons i els serveis poden canviar: comprova'ls sempre en les webs oficials. Si detectes una errada o una informació que cal actualitzar, consulta les dades de contacte de l'<a href="avis-legal.html">avís legal</a>.</p>
+
+  <h2>Què no fa aquest web</h2>
+  <ul>
+    <li>No diagnostica ni recomana medicació o tractaments.</li>
+    <li>No substitueix la consulta amb un professional sanitari.</li>
+    <li>No recull dades personals: <a href="privacitat.html">així ho expliquem</a>.</li>
+  </ul>
+  <div class="btn-row"><a class="btn btn-primary" href="ajuda.html">Trobar ajuda professional</a><a class="btn btn-outline" href="avis-legal.html">Avís legal i mèdic</a></div>
+</div></section>'''
+write("fonts-i-revisio.html", with_scripts(page("fonts-i-revisio.html", f"Qui ho revisa i fonts | {NAME}", "Com s'ha elaborat el contingut, quines fonts s'han fet servir i què està pendent de revisió professional.", body, "")))
+
 # ---------- 404 ----------
 body = '''<section class="hero"><div class="container narrow"><h1>Pàgina no trobada</h1><p class="lead">Potser l'enllaç ha canviat. Torna a l'inici o consulta els recursos.</p><div class="btn-row"><a class="btn btn-primary" href="/Psicoleg/index.html">Inici</a><a class="btn btn-outline" href="/Psicoleg/ajuda.html">Trobar ajuda</a></div></div></section>'''
 write("404.html", with_scripts(page("404.html", f"Pàgina no trobada | {NAME}", "Pàgina no trobada", body, root="/Psicoleg/")))
 
 # ---------- sitemap / robots ----------
-urls = ["index.html", "trastorns.html", "eines.html", "eines-tcc.html", "ansietat-social-eines.html", "ansietat-social-assistent.html", "cribratges.html", "ajuda.html", "familiars.html", "parlar-ne.html", "joves.html", "meves-dades.html", "avis-legal.html", "privacitat.html"] + [f"trastorns/{c['slug']}.html" for c in CONDITIONS]
+urls = ["index.html", "trastorns.html", "eines.html", "eines-tcc.html", "ansietat-social-eines.html", "ansietat-social-assistent.html", "cribratges.html", "ajuda.html", "familiars.html", "parlar-ne.html", "joves.html", "pla.html", "cerca.html", "meves-dades.html", "fonts-i-revisio.html", "avis-legal.html", "privacitat.html"] + [f"trastorns/{c['slug']}.html" for c in CONDITIONS]
 
 
 def sm_entry(u):
@@ -848,6 +1007,10 @@ def sm_entry(u):
 write("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + "".join(sm_entry(u) for u in urls) + "</urlset>\n")
 write("robots.txt", f"User-agent: *\nAllow: /\nSitemap: {BASE}sitemap.xml\n")
 write("img/favicon.svg", LOGO.replace('<svg ', '<svg xmlns="http://www.w3.org/2000/svg" '))
+
+# Índex del cercador (a partir de les pàgines ja traduïdes)
+for lang, (n, size) in searchindex.build(PAGES, urls, i18n.LANGS).items():
+    print(f"cercador {lang}: {n} entrades, {size // 1024} KB")
 
 # Unitats de text (per traduir) i traduccions que falten
 os.makedirs(os.path.join(os.path.dirname(os.path.abspath(__file__)), "i18n"), exist_ok=True)

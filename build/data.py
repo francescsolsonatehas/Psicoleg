@@ -173,3 +173,14 @@ CONDITIONS = [
 ]
 
 GROUPS = ["Ansietat i relacionats","Estat d'ànim","Trauma i dol","Alimentació","Psicosis","Personalitat","Neurodesenvolupament","Addiccions","Son","Risc i crisi"]
+
+# ---------- Revisió professional ----------
+# Encara no hi ha cap professional revisor: la llista és buida i el web ho indica de manera visible.
+# Quan n'hi hagi, afegeix-hi un diccionari per persona i torna a executar `python3 build/build.py`:
+#   dict(name="Nom i cognoms", college="Col·legiat/da núm. XXXXX (COPC)", role="Psicòleg/psicòloga clínic/a",
+#        date="novembre de 2026", scope="Fitxes de trastorns i guies")
+# (després caldrà traduir al castellà i a l'anglès les cadenes noves: `python3 build/build.py --strict` les llista).
+REVIEWERS = []
+
+# Data de l'última revisió del contingut pels editors del web (no és una revisió professional).
+CONTENT_UPDATED = "novembre de 2026"

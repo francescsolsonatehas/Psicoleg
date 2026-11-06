@@ -14,7 +14,13 @@
   var DIST=[__('Lectura de ment'),__('Catastrofisme'),__('Personalització'),__('Etiquetatge'),__('Filtre mental'),__('Hauria de')];
 
   /* Cada font: clau, títol, funció que retorna {when, lines[]} per cada entrada, i com ordenar per data. */
+  function planRows(x){
+    var C=window.PSI_PLAN;if(!C)return [];
+    return [[__('Dificultats'),(x.a||[]).map(function(v,i){return C.areas[C.keys[i]]+': '+C.levels[v]}).join('; ')],
+      [__('Passos'),(x.s||[]).map(function(s){var a=C.acts[s.a]&&C.acts[s.a][s.i];return a?a.t+(s.d?' ✓':''):''}).filter(Boolean).join(' | ')]];
+  }
   var SRC=[
+    {k:'psi-plan',t:__('El meu pla'),ts:function(x){return x.t},f:planRows},
     {k:'psi-mood',t:__('Registre d\'estat d\'ànim'),ts:function(x){return x.t},f:function(x){return [[__('Ànim'),(MOOD[x.v]||x.v)+' ('+x.v+'/5)'],[__('Nota'),x.n]]}},
     {k:'psi-thoughts',t:__('Diari de pensaments'),ts:function(x){return x.t},f:function(x){return [[__('Situació'),x.sit],[__('Pensament'),x.th],[__('Emoció'),x.em],[__('A favor'),x.for],[__('En contra'),x.ag],[__('Alternatiu'),x.alt]]}},
     {k:'psi-ba',t:__('Activació conductual'),ts:function(x){return x.id},f:function(x){return [[__('Activitat'),x.t+' ('+(CATS[x.c]||'')+')'],[__('Previst'),__('plaer ')+x.pl+__('/10, domini ')+x.ma+'/10'],[__('Real'),x.done?(__('plaer ')+x.apl+__('/10, domini ')+x.ama+'/10'):'pendent']]}},
@@ -107,6 +113,7 @@
 
   /* Recordatoris .ics */
   var MSG={
+    pla:[__('El meu pla'),__('Un pas petit del teu pla: tria el que et sembli possible avui.'),'pla.html'],
     anim:[__('Un moment per a tu'),__('Com et sents avui? Apunta-ho al registre d\'ànim.'),'eines.html#anim'],
     resp:[__('Una pausa per respirar'),__('Uns minuts de respiració guiada.'),'eines.html#respiracio'],
     son:[__('Diari de son'),__('Apunta com has dormit.'),'eines-tcc.html#son'],

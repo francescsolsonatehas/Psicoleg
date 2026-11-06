@@ -10,6 +10,7 @@ cea121	<a#0>Cribratges</a>
 39b030	<a#0>Joves</a>
 20eb55	<a#0>Familiars</a>
 60fb56	<a#0>Trobar ajuda</a>
+f91698	Cercar al web
 27d193	Reduir la mida del text
 1e2eeb	A−
 ce8bba	Augmentar la mida del text
@@ -41,10 +42,14 @@ c767dd	Escolta sense minimitzar («no és per tant»).
 5ea504	Evita donar-li la raó en cada por, però també forçar-lo a enfrontar-s'hi de cop.
 904705	Anima'l a demanar ajuda i ofereix-te a acompanyar-lo a la primera visita.
 eb39b9	<a#0>Trobar ajuda</a><a#1>Eines d'autoajuda</a>
-9ef52d	<strong>Fonts per ampliar informació:</strong> <a#0>OMS – Salut mental</a> · <a#1>Canal Salut (Generalitat de Catalunya)</a> · <a#2>Guies clíniques NICE</a>. Classificacions de referència: CIE-11 i DSM-5-TR. Contingut orientatiu pendent de revisió per un professional col·legiat.
+5bdb8c	<strong>Fonts per ampliar informació:</strong> <a#0>OMS – Salut mental</a> · <a#1>Canal Salut (Generalitat de Catalunya)</a> · <a#2>Guies clíniques NICE</a>. Classificacions de referència: CIE-11 i DSM-5-TR.
+7af0bd	<strong>Revisió professional:</strong> pendent. Contingut actualitzat el novembre de 2026. <a#0>Qui ho revisa i fonts</a>.
 dee875	Informació i eines per cuidar la salut mental. Contingut informatiu: no substitueix l'atenció d'un professional sanitari.
 2aebd8	Seccions
+5caf2a	<a#0>El meu pla</a>
+6dab32	<a#0>Cerca i índex</a>
 902c91	Legal
+1abbdb	<a#0>Qui ho revisa i fonts</a>
 0c6077	<a#0>Avís legal i mèdic</a>
 be457e	<a#0>Privacitat i cookies</a>
 29a1bb	© 2026 Psicòleg. Les tipografies Inter i Poppins es distribueixen sota la llicència SIL OFL 1.1.
@@ -439,6 +444,8 @@ a7cd0d	Apunta com et sents. Es guarda només al teu dispositiu.
 48c6cb	Una eina de teràpia cognitiva per mirar els pensaments amb distància.
 3139aa	Cribratges PHQ-9 i GAD-7
 baf9b8	Qüestionaris orientatius sobre ànim i ansietat.
+ceae0e	El meu pla
+b96301	Respon cinc preguntes i rep un pla de petits passos pensat per a tu.
 626433	Entendre el que sento
 27783c	Fitxes sobre 21 trastorns i condicions.
 7ef4fc	Eines de TCC
@@ -449,6 +456,10 @@ baf9b8	Qüestionaris orientatius sobre ànim i ansietat.
 e0597e	Informació clara i propera per a adolescents i joves.
 904e31	Trobar ajuda professional
 5b0b49	On acudir a Catalunya: CAP, CSMA, línies d'ajuda.
+ca9484	Cerca i índex
+e739f9	Cerca per paraules a tot el web o busca un tema a l'índex alfabètic.
+06ae8f	Qui ho revisa i fonts
+459bc0	D'on surt la informació, com es revisa i què encara està pendent.
 ba29e5	Com funciona
 fd0eae	1. Entén
 bb5ac8	Llegeix fitxes basades en fonts fiables com l'OMS i les guies clíniques.
@@ -509,6 +520,9 @@ f1278e	6. Pensament alternatiu més equilibrat
 193b01	Què li diria a un amic que pensés això?
 cf959d	Esborrar entrades
 f8356a	Entrades anteriors
+3ec108	🧭 El meu pla
+1a8e51	Cinc preguntes sobre les últimes dues setmanes i una proposta de petits passos, amb enllaços a les eines.
+674d3f	<a#0>Fer el meu pla</a>
 034f08	🌱 Més eines de TCC
 87f4ff	Activació conductual per a la depressió, diari de son i registre de pànic.
 36b8b1	<a#0>Obrir les eines</a>
@@ -917,7 +931,7 @@ c84bb1	Privacitat i cookies | Psicòleg
 7422ed	Privacitat i cookies
 5c045e	<strong>En resum</strong>Aquest web no recull dades personals, no té comptes d'usuari, no fa servir cookies ni analítica de tercers.
 eaebcb	Dades que es guarden
-97c4c7	Les eines (registre d'ànim, diari de pensaments, activació conductual, diari de son, registre de pànic i eines d'ansietat social) i les preferències (mode fosc, mida del text) es guarden <strong>únicament al teu navegador</strong> mitjançant el seu emmagatzematge local (localStorage). No s'envien a cap servidor. Pots esborrar-les en qualsevol moment des de les mateixes eines o esborrant les dades del lloc al navegador.
+80f64a	Les eines (registre d'ànim, diari de pensaments, activació conductual, diari de son, registre de pànic, eines d'ansietat social i el pla personal) i les preferències (mode fosc, mida del text) es guarden <strong>únicament al teu navegador</strong> mitjançant el seu emmagatzematge local (localStorage). No s'envien a cap servidor. Pots esborrar-les en qualsevol moment des de les mateixes eines o esborrant les dades del lloc al navegador.
 47a656	Els resultats dels cribratges es calculen al teu dispositiu i no es desen.
 45fdf3	Les còpies de seguretat, els resums per imprimir i els recordatoris (.ics) es generen al teu navegador i es descarreguen al teu dispositiu; mai passen per cap servidor. Si comparteixes aquests fitxers, ets tu qui en decideix el destí.
 f5db6a	Cookies i tercers
@@ -927,3 +941,69 @@ e2df3b	Només si actives l'assistent de la pàgina d'<a#0>ansietat social</a>, e
 59a7a5	Drets (RGPD)
 19f6b2	Com que no es tracten dades personals, no hi ha dades sobre les quals exercir drets. Si això canvia, s'actualitzarà aquesta pàgina.
 3f0bc3	Dispositiu compartit? Esborra els registres des de l'apartat <a#0>Eines</a> quan hagis acabat.
+ce7900	El meu pla: petits passos per cuidar-te | Psicòleg
+e4c211	Respon cinc preguntes i rep un pla personal de petits passos amb enllaços a les eines. Es guarda només al teu dispositiu.
+181e04	Respon cinc preguntes sobre les últimes dues setmanes i rebràs una proposta de petits passos, amb enllaços a les eines d'aquest web. Pots canviar els passos que no t'encaixin.
+affc27	<strong>Una guia, no un diagnòstic</strong>El pla és orientatiu i no substitueix un professional. Les respostes i el pla es guarden només al teu navegador.
+eefb18	📝 Les últimes dues setmanes
+3fd469	Amb quina freqüència t'ha passat això durant les últimes dues setmanes? No hi ha respostes bones ni dolentes.
+7ac77c	1. Has dormit malament: t'ha costat adormir-te, t'has despertat sovint o massa d'hora?
+7ebf1e	<span>Gens</span>
+308ba5	<span>Alguns dies</span>
+b94da4	<span>Més de la meitat dels dies</span>
+e91303	<span>Gairebé cada dia</span>
+b6131b	2. T'has sentit trist/a o sense ganes de fer coses que abans t'agradaven?
+cebc7a	3. T'has sentit nerviós/a, intranquil·l/a o amb preocupacions que no pots aturar?
+192c25	4. T'has sentit desbordat/da, amb massa coses a sobre (feina, estudis, casa)?
+8fd374	5. T'has sentit sol/a o has evitat estar amb altra gent?
+54b4d1	Opcional: has pensat que seria millor no ser aquí o has pensat a fer-te mal?
+68204b	<span>No</span>
+1f04db	<span>Sovint</span>
+2586cd	Veure el meu pla
+71b4ac	🧭 El teu pla
+8365b5	<strong>Gràcies per dir-ho</strong>Pensar a fer-se mal és més comú del que sembla i se'n pot parlar. Truca ara al <a#0>024</a> (gratuït, 24 h) o, si estàs en perill immediat, al <a#1>112</a>. No cal que ho passis sol/a.
+dd700f	<strong>Val la pena parlar-ne amb algú</strong>Les teves respostes indiquen que fa dies que ho passes malament. Un pla d'autoajuda ajuda, però no n'hi ha prou per a tot: parla-ho amb el teu metge de capçalera o amb un psicòleg. <a#0>Com fer-ho</a> · <a#1>Trobar ajuda</a>
+58b832	Com has estat
+3d1db8	Els teus passos
+d1a815	Tria els que et semblin possibles aquesta setmana. Si un pas no et va bé, canvia'l per un altre.
+f5665a	<a#0>Posar un recordatori a l'agenda</a>
+94b8a0	Tornar a respondre
+dbd9b4	Esborrar el pla
+b554e3	Si tens menys de 18 anys, mira també la pàgina <a#0>per a joves</a>. Si les dificultats duren més de dues setmanes o afecten el teu dia a dia, <a#1>busca ajuda professional</a>.
+c95c4a	Cerca i índex alfabètic | Psicòleg
+257698	Cerca per paraules a tot el web i índex alfabètic de fitxes, eines i guies.
+ae914d	<span#0>Cercador</span>
+28f3aa	Cerca per paraules a tot el web o busca el tema a l'índex alfabètic.
+b5b804	Què busques?
+c5f2e0	Ex.: dormir, pànic, parlar amb el metge...
+5c41cb	Índex alfabètic
+a3615e	Lletres de l'índex
+efe461	Qui ho revisa i fonts | Psicòleg
+bcf194	Com s'ha elaborat el contingut, quines fonts s'han fet servir i què està pendent de revisió professional.
+677dad	<span#0>Transparència</span>
+268a3b	Qui ho revisa i d'on surt la informació
+e2211d	Una web de salut mental ha de poder explicar d'on surt el que diu. Aquí tens, sense maquillar, com s'ha fet i què encara està pendent.
+aa61be	Revisió professional
+6efda7	<strong>Pendent</strong>Aquest web encara no ha estat revisat per cap professional col·legiat de la salut mental. Fins que ho estigui, considera tot el contingut com a informació general i consulta sempre un professional.
+0b1157	[Pendent: nom, número de col·legiat/da, especialitat i data de revisió del professional o professionals revisors.]
+441ba3	Quan hi hagi un professional revisor, es revisaran les fitxes de trastorns, les eines i els qüestionaris, els telèfons i recursos, i les traduccions. Cada fitxa i guia indicarà si té revisió i quan es va fer.
+8cf53f	Com s'ha elaborat el contingut
+0fd0af	Els textos s'han redactat amb l'ajuda d'una eina d'intel·ligència artificial, a partir de les fonts públiques que s'indiquen més avall. Són una síntesi divulgativa: no contenen recerca original ni experiència clínica.
+c3c646	Les versions en castellà i en anglès són traduccions fetes amb la mateixa eina, sense revisió d'un traductor ni d'un professional.
+8d5b90	Els qüestionaris PHQ-9 i GAD-7 són adaptacions de les escales originals, d'ús lliure, i no són versions validades oficialment en cap de les tres llengües.
+1551b2	Les eines d'autoajuda es basen en tècniques conegudes de la teràpia cognitivo-conductual. Són un suport, no un tractament.
+db24c0	Fonts de referència
+4a5eb2	<a#0>Organització Mundial de la Salut – Salut mental</a>
+64d688	<a#0>Canal Salut (Generalitat de Catalunya)</a>
+b15340	<a#0>NICE – Guies clíniques de salut mental</a>
+38a969	<a#0>GuíaSalud – Guies de pràctica clínica del Sistema Nacional de Salut</a>
+e96b5d	<a#0>CIE-11 (OMS)</a> i <a#1>DSM-5-TR (American Psychiatric Association)</a>, com a classificacions de referència
+0e2eea	Kroenke K, Spitzer RL, Williams JBW. The PHQ-9: validity of a brief depression severity measure. <em>J Gen Intern Med</em>. 2001;16(9):606-613.
+f188ee	Spitzer RL, Kroenke K, Williams JBW, Löwe B. A brief measure for assessing generalized anxiety disorder: the GAD-7. <em>Arch Intern Med</em>. 2006;166(10):1092-1097.
+e0a6da	Actualitzacions i errades
+af8cc4	Última actualització del contingut: novembre de 2026. Els telèfons i els serveis poden canviar: comprova'ls sempre en les webs oficials. Si detectes una errada o una informació que cal actualitzar, consulta les dades de contacte de l'<a#0>avís legal</a>.
+9e4d16	Què no fa aquest web
+f6da28	No diagnostica ni recomana medicació o tractaments.
+035c09	No substitueix la consulta amb un professional sanitari.
+f319d7	No recull dades personals: <a#0>així ho expliquem</a>.
+e89a56	<a#0>Trobar ajuda professional</a><a#1>Avís legal i mèdic</a>

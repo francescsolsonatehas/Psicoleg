@@ -1,3 +1,10 @@
+Fitxa
+Eina
+Pàgina
+No hem trobat cap resultat. Prova amb altres paraules.
+1 resultat
+{0} resultats
+No s'ha pogut carregar el cercador.
 Gens
 Alguns dies
 Més de la meitat dels dies
@@ -65,6 +72,9 @@ Personalització
 Etiquetatge
 Filtre mental
 Hauria de
+Dificultats
+Passos
+El meu pla
 Registre d'estat d'ànim
 Ànim
 Nota
@@ -125,6 +135,7 @@ Es substituiran les dades actuals per les del fitxer. Vols continuar?
 Dades importades.
 Vols esborrar de manera definitiva totes les dades de les eines? No es pot desfer.
 Totes les dades s'han esborrat.
+Un pas petit del teu pla: tria el que et sembli possible avui.
 Un moment per a tu
 Com et sents avui? Apunta-ho al registre d'ànim.
 Una pausa per respirar
@@ -175,6 +186,48 @@ Escull primer com et sents.
 Vols esborrar tots els registres d'ànim?
 <li class="muted">Encara no hi ha entrades.</li>
 Vols esborrar totes les entrades del diari?
+Pla creat el {0}.
+feta el {0}
+Obre l'eina
+Canvia
+No hi ha més alternatives per a aquest pas.
+Falten respostes: respon les cinc preguntes per veure el pla.
+Vols esborrar el pla? No es pot desfer.
+Son
+Ansietat i preocupació
+Estrès i sobrecàrrega
+Connexió amb altres
+Cura general
+Sense dificultats
+Dificultats lleus
+Dificultats moderades
+Dificultats importants
+Apunta com dorms durant una setmana amb el diari de son.
+Intenta llevar-te cada dia a la mateixa hora, també els caps de setmana.
+Una hora abans d'anar al llit, deixa les pantalles i fes alguna cosa tranquil·la.
+Prova la relaxació muscular progressiva abans d'anar a dormir.
+Si fa mesos que dorms malament, llegeix la fitxa sobre l'insomni.
+Planifica una activitat petita que et doni plaer o et faci sentir que has avançat.
+Apunta com et sents cada dia, en menys d'un minut.
+Surt a caminar deu minuts, millor amb llum natural.
+Llegeix la fitxa sobre la depressió per saber quan convé demanar ajuda.
+Fes tres minuts de respiració guiada.
+Si et sents desbordat/da, prova el grounding 5-4-3-2-1.
+Escriu el pensament que et preocupa al diari de pensaments i busca'n una versió més equilibrada.
+Reserva 15 minuts del dia per preocupar-te. Si et ve una preocupació fora d'hora, apunta-la i deixa-la per a aquell moment.
+Si tens atacs de pànic, apunta'ls al registre de pànic.
+Fes una llista del que tens pendent i tria només una cosa per fer avui.
+Fes una pausa de cinc minuts sense pantalles durant la jornada.
+Relaxa el cos amb la relaxació muscular progressiva.
+Si la feina t'ofega, mira com parlar-ne al lloc de treball.
+Envia un missatge a una persona de confiança, encara que sigui només per saludar.
+Mira com explicar a algú de confiança com et sents.
+Proposa un pla senzill amb altra gent aquesta setmana (un cafè, una passejada).
+Si et costa parlar-ne, mira com trobar ajuda professional.
+Apunta com et sents al registre d'ànim.
+Fes una passejada curta i fixa't en què veus i sents.
+Dedica uns minuts a alguna cosa que t'agradi, només pel plaer de fer-la.
+Posa't un recordatori suau a l'agenda.
  <span class="muted">→ després: 
 Desfer
 " aria-label="Eliminar">✕</button></li>
