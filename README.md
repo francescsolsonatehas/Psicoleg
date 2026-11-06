@@ -25,6 +25,7 @@ python3 scripts/check-links.py    # enllaços interns, àncores i telèfons (--e
 - Les pàgines `es/` i `en/` es generen traduint cada text per identificador: `build/i18n/<lang>.tsv` (HTML) i `build/i18n/js.<lang>.tsv` (JavaScript). `build/i18n/missing-*.tsv` llista el que falta per traduir.
 - No editis a mà els `.html`, `js/lang/*.js` ni `js/search/*.js`: es reescriuen en generar.
 - **Revisió professional:** `REVIEWERS` a `build/data.py` està buit i el web ho indica com a «pendent». Quan hi hagi un professional revisor, omple'l (hi ha un exemple al comentari), torna a compilar i tradueix les cadenes noves (`--strict` les llista).
+- **No s'indexa als cercadors:** totes les pàgines porten `<meta name="robots" content="noindex, nofollow, noarchive, noimageindex">` (a `page()` de `build/build.py`). Expressament **no hi ha** `sitemap.xml` ni `robots.txt` amb `Disallow`: si Google no pot rastrejar la pàgina, no veu el `noindex`. Per treure les pàgines que ja s'havien indexat, usa l'eina «Eliminacions» de Google Search Console. Per tornar-ho a permetre, treu la línia `robots` de `page()` i recompila.
 - GitHub Actions comprova enllaços i telèfons a cada push i, setmanalment, també els enllaços externs.
 
 > Contingut informatiu. No substitueix un professional sanitari. Cal que un psicòleg o psiquiatre col·legiat revisi el contingut clínic (i les traduccions) abans de difondre'l, i completar les dades del titular a `avis-legal.html`.

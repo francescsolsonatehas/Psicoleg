@@ -30,6 +30,7 @@ def page(path, title, desc, body, current="", root="", extra_head="", ld=""):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
 <title>{e(title)}</title>
 <meta name="description" content="{e(desc)}">
 <link rel="canonical" href="{url}">
@@ -995,17 +996,13 @@ write("fonts-i-revisio.html", with_scripts(page("fonts-i-revisio.html", f"Qui ho
 body = '''<section class="hero"><div class="container narrow"><h1>Pàgina no trobada</h1><p class="lead">Potser l'enllaç ha canviat. Torna a l'inici o consulta els recursos.</p><div class="btn-row"><a class="btn btn-primary" href="/Psicoleg/index.html">Inici</a><a class="btn btn-outline" href="/Psicoleg/ajuda.html">Trobar ajuda</a></div></div></section>'''
 write("404.html", with_scripts(page("404.html", f"Pàgina no trobada | {NAME}", "Pàgina no trobada", body, root="/Psicoleg/")))
 
-# ---------- sitemap / robots ----------
+# ---------- llista de pàgines ----------
+# El web no s'ha d'indexar: cada pàgina duu <meta name="robots" content="noindex…"> (vegeu page()).
+# NO hi ha sitemap.xml (convida a indexar) ni robots.txt amb «Disallow» (si Google no pot
+# rastrejar la pàgina, no veu el noindex i pot acabar llistant-la igualment per l'URL).
 urls = ["index.html", "trastorns.html", "eines.html", "eines-tcc.html", "ansietat-social-eines.html", "ansietat-social-assistent.html", "cribratges.html", "ajuda.html", "familiars.html", "parlar-ne.html", "joves.html", "pla.html", "cerca.html", "meves-dades.html", "fonts-i-revisio.html", "avis-legal.html", "privacitat.html"] + [f"trastorns/{c['slug']}.html" for c in CONDITIONS]
 
 
-def sm_entry(u):
-    alts = "".join(f'<xhtml:link rel="alternate" hreflang="{l}" href="{BASE}{i18n.prefix(l)}{u}"/>' for l in i18n.LANGS)
-    return "".join(f"<url><loc>{BASE}{i18n.prefix(l)}{u}</loc>{alts}</url>\n" for l in i18n.LANGS)
-
-
-write("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + "".join(sm_entry(u) for u in urls) + "</urlset>\n")
-write("robots.txt", f"User-agent: *\nAllow: /\nSitemap: {BASE}sitemap.xml\n")
 write("img/favicon.svg", LOGO.replace('<svg ', '<svg xmlns="http://www.w3.org/2000/svg" '))
 
 # Índex del cercador (a partir de les pàgines ja traduïdes)
