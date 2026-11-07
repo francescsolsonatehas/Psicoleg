@@ -824,6 +824,7 @@ e2d2d4	Model d'Ollama
 8bd948	La web només parlarà amb el teu Ollama a <code>localhost</code>; res no surt del teu ordinador. Alguns navegadors (p. ex. Safari) bloquegen aquesta connexió des d'una web https.
 bec120	<span>Entenc que és una IA experimental, no un terapeuta, i que pot dir coses incorrectes. Accepto la descàrrega descrita.</span>
 155c04	Activar l'assistent
+9d3c55	Marca la casella d'abans per poder activar l'assistent.
 953642	2. Tria què vols fer
 a7b93d	Mode
 ee79ad	Practicar una conversa social
