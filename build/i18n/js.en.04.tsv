@@ -1,1 +1,4 @@
 El navegador té WebGPU però no ha trobat cap targeta gràfica compatible. Prova Chrome o Edge d'escriptori actualitzats, o usa Ollama local.	The browser has WebGPU but could not find a compatible graphics card. Try an up-to-date desktop Chrome or Edge, or use local Ollama.
+No he pogut connectar amb Ollama. Comprova que continua en marxa i torna-ho a provar.	I could not connect to Ollama. Check that it is still running and try again.
+Ollama ha respost amb un error: {0}. Prova un altre model.	Ollama replied with an error: {0}. Try another model.
+Ollama no ha respost a temps (pot estar ocupat carregant un model).	Ollama did not respond in time (it may be busy loading a model).

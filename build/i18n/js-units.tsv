@@ -281,8 +281,11 @@ Carregant la llibreria...
 El teu navegador no admet WebGPU (prova Chrome o Edge d'escriptori recents). Pots usar Ollama local.
 El navegador té WebGPU però no ha trobat cap targeta gràfica compatible. Prova Chrome o Edge d'escriptori actualitzats, o usa Ollama local.
 Descarregant el model...
+Ollama no ha respost a temps (pot estar ocupat carregant un model).
 Ollama funciona però no té cap model. Executa, per exemple: ollama pull llama3.2
+No he pogut connectar amb Ollama. Comprova que continua en marxa i torna-ho a provar.
 Ollama ha retornat un error ({0}).
+Ollama ha respost amb un error: {0}. Prova un altre model.
 Ollama detectat. Escull un model i prem «Activar».
 No he pogut connectar amb Ollama a {0}. {1} Comprova que està en marxa i que permet aquest origen (OLLAMA_ORIGINS).
 Primer prem «Detectar Ollama» i escull un model.

@@ -141,7 +141,15 @@ async function loadWeb() {
   $('a-progress').hidden = true;
 }
 async function detectOllama() {
-  const r = await fetch(OLLAMA + '/api/tags', { signal: AbortSignal.timeout(3000) });
+  /* 3 s era massa just: si Ollama està ocupat carregant un model, tarda a respondre. Dos intents de 8 s. */
+  let r;
+  for (let i = 0; i < 2; i++) {
+    try { r = await fetch(OLLAMA + '/api/tags', { signal: AbortSignal.timeout(8000) }); break; }
+    catch (e) {
+      if (i === 0) continue;
+      throw (e.name === 'AbortError' || e.name === 'TimeoutError') ? new Error(PSI.t('Ollama no ha respost a temps (pot estar ocupat carregant un model).')) : e;
+    }
+  }
   const j = await r.json();
   const names = (j.models || []).map((m) => m.name);
   if (!names.length) throw new Error(PSI.t('Ollama funciona però no té cap model. Executa, per exemple: ollama pull llama3.2'));
@@ -167,15 +175,30 @@ async function generate(mode, onText) {
     for await (const ch of stream) { const d = ch.choices[0]?.delta?.content || ''; out += d; onText(out); if (stopped) break; }
   } else {
     abortCtl = new AbortController();
-    const r = await fetch(OLLAMA + '/api/chat', { method: 'POST', signal: abortCtl.signal,
-      body: JSON.stringify({ model: ollamaModel, messages: msgs, stream: true, options: { temperature: 0.7, num_predict: 260 } }) });
-    if (!r.ok || !r.body) throw new Error(PSI.f('Ollama ha retornat un error ({0}).', [r.status]));
+    let r;
+    try {
+      /* think:false — els models «de raonament» (Qwen3/3.5, DeepSeek-R1…) gasten tots els tokens pensant i no arriben a escriure la resposta («sense resposta»). */
+      r = await fetch(OLLAMA + '/api/chat', { method: 'POST', signal: abortCtl.signal,
+        body: JSON.stringify({ model: ollamaModel, messages: msgs, stream: true, think: false, options: { temperature: 0.7, num_predict: 260 } }) });
+    } catch (e) {
+      if (e.name === 'AbortError') throw e;
+      throw new Error(PSI.t('No he pogut connectar amb Ollama. Comprova que continua en marxa i torna-ho a provar.'));
+    }
+    if (!r.ok || !r.body) {
+      let detail = ''; try { detail = (await r.json()).error || ''; } catch (e) { /* sense cos JSON */ }
+      throw new Error(PSI.f('Ollama ha retornat un error ({0}).', [r.status]) + (detail ? ' ' + detail : ''));
+    }
     const rd = r.body.getReader(), dec = new TextDecoder(); let buf = '';
     for (;;) {
       const { done, value } = await rd.read(); if (done) break;
       buf += dec.decode(value, { stream: true });
       const lines = buf.split('\n'); buf = lines.pop();
-      for (const ln of lines) { if (!ln.trim()) continue; try { const j = JSON.parse(ln); out += (j.message && j.message.content) || ''; onText(out); } catch (e) { /* línia parcial */ } }
+      for (const ln of lines) {
+        if (!ln.trim()) continue;
+        let j; try { j = JSON.parse(ln); } catch (e) { continue; /* línia parcial */ }
+        if (j.error) throw new Error(PSI.f('Ollama ha respost amb un error: {0}. Prova un altre model.', [j.error]));
+        out += (j.message && j.message.content) || ''; onText(out);
+      }
     }
   }
   return out.trim();
