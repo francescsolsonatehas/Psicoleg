@@ -776,7 +776,8 @@ write("cribratges.html", with_scripts(page("cribratges.html", f"Cribratges PHQ-9
 
 # ---------- Ajuda ----------
 def res(t, d, num, href, blue=False):
-    return f'<div class="res"><div><h3>{t}</h3><p>{d}</p></div><a class="num{" blue" if blue else ""}" href="{href}">{num}</a></div>'
+    rel = ' rel="noopener"' if href.startswith("http") else ""
+    return f'<div class="res"><div><h3>{t}</h3><p>{d}</p></div><a class="num{" blue" if blue else ""}" href="{href}"{rel}>{num}</a></div>'
 
 body = f'''
 <section class="page-hero"><div class="container narrow">
@@ -791,6 +792,18 @@ body = f'''
   {res("ANAR – infants i adolescents", "Ajuda confidencial i gratuïta per a menors fins als 18 anys, 24 h. També al 116 111. Familiars i centres escolars: 600 50 51 52.", "900 20 20 10", "tel:900202010", True)}
   {res("Salut Respon (Catalunya)", "Atenció sanitària telefònica 24 h; orienta cap als serveis de salut.", "061", "tel:061", True)}
   {res("Telèfon de l'Esperança", "Suport emocional per escoltar i acompanyar (Barcelona).", "93 414 48 48", "tel:934144848", True)}
+
+  <h2 style="margin-top:2em">Més serveis a Catalunya</h2>
+  {res("Prevenció del suïcidi de Barcelona", "Telèfon gratuït i confidencial, 24 h tots els dies, de l'Ajuntament de Barcelona amb la Fundació Ajuda i Esperança. Per a qui té pensaments de fer-se mal.", "900 92 55 55", "tel:900925555", True)}
+  {res("Xat Joves de Barcelona", "Xat de suport emocional per WhatsApp, gratuït i confidencial, 24 h, per a joves de 14 a 25 anys. Servei de l'Ajuntament de Barcelona.", "679 33 33 63", "https://wa.me/34679333363", True)}
+
+  <h2 style="margin-top:2em">Més serveis a tot Espanya</h2>
+  {res("Telèfon de l'Esperança (xarxa estatal)", "Orientació i suport en crisi emocional, 24 h tots els dies, gratuït i confidencial, atès per voluntariat.", "717 003 717", "tel:717003717", True)}
+  {res("FAD Joventut", "Orientació gratuïta sobre benestar emocional, conductes de risc i addiccions, per a joves i famílies. De dilluns a divendres, de 9 a 21 h.", "900 16 15 15", "tel:900161515", True)}
+  {res("Samaritans (en anglès)", "Suport emocional gratuït per a persones que parlen anglès.", "900 525 100", "tel:900525100", True)}
+  {res("Creu Roja Te Escucha", "Suport psicosocial i emocional gratuït, anònim i confidencial, atès per voluntariat. Cada dia, de 10 a 14 h i de 16 a 20 h.", "900 107 917", "tel:900107917", True)}
+  {res("ACAB (Barcelona)", "Associació contra l'Anorèxia i la Bulímia: orientació per a persones amb trastorns de la conducta alimentària i per a les seves famílies.", "93 454 91 09", "tel:934549109", True)}
+  {res("016 – violència de gènere", "Informació i atenció, gratuïta i confidencial, 24 h, en 53 idiomes. La trucada no surt a la factura, però pot quedar al registre del telèfon: esborra-la si cal.", "016", "tel:016")}
 
   <h2 style="margin-top:2em">Atenció sanitària pública a Catalunya</h2>
   <ul>

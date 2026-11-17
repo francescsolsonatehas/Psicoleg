@@ -17,7 +17,11 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = "https://francescsolsonatehas.github.io/Psicoleg/"
 SITE_PREFIX = "/Psicoleg/"
 # Telèfons verificats. Afegeix-hi un número NOMÉS després d'haver-lo comprovat en una font oficial.
-PHONES = {"112", "024", "061", "900202010", "116111", "934144848", "600505152"}
+PHONES = {
+    "112", "024", "061", "900202010", "116111", "934144848", "600505152",
+    # afegits el 2026-11-17 (verificats a l'Ajuntament de Barcelona, ACAB, La Moncloa i fonts de les entitats)
+    "900925555", "717003717", "900161515", "900525100", "900107917", "934549109", "016",
+}
 SKIP_DIRS = {".git", "node_modules", ".github", "scripts", "build"}
 
 
