@@ -23,16 +23,17 @@
   /* ---- Índex alfabètic ---- */
   var coll=(window.Intl&&Intl.Collator)?new Intl.Collator(PSI.locale,{sensitivity:'base'}):null;
   function cmp(a,b){return coll?coll.compare(a.sk,b.sk):(a.sk<b.sk?-1:a.sk>b.sk?1:0)}
-  function letter(e){var m=e.sk.match(/[a-z]/);return m?m[0].toUpperCase():'#'}
+  function letter(e){var c=e.sk.charAt(0);return /[a-z]/.test(c)?c.toUpperCase():'#'}
+  function lid(l){return 'l-'+(l==='#'?'num':l)}
   function link(e,extra){
     return '<a href="'+esc(e.u)+'">'+esc(e.t)+'</a>'+(extra?' <span class="muted" style="font-size:.85rem">'+esc(extra)+'</span>':'');
   }
   function renderAZ(){
     var items=IDX.slice().sort(cmp),groups={},order=[];
     items.forEach(function(e){var l=letter(e);if(!groups[l]){groups[l]=[];order.push(l)}groups[l].push(e)});
-    $('c-letters').innerHTML=order.map(function(l){return '<a href="#l-'+l+'">'+l+'</a>'}).join('');
+    $('c-letters').innerHTML=order.map(function(l){return '<a href="#'+lid(l)+'">'+l+'</a>'}).join('');
     $('c-groups').innerHTML=order.map(function(l){
-      return '<div class="az-group"><h3 id="l-'+l+'">'+l+'</h3><ul>'+groups[l].map(function(e){
+      return '<div class="az-group"><h3 id="'+lid(l)+'">'+l+'</h3><ul>'+groups[l].map(function(e){
         return '<li>'+link(e,e.k==='e'?KIND.e:'')+'</li>';
       }).join('')+'</ul></div>';
     }).join('');

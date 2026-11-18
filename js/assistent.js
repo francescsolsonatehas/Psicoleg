@@ -90,11 +90,16 @@ function systemFor(mode) {
 }
 
 /* Detecció de crisi: CODI FIX, no depèn del model. Es mira abans d'enviar qualsevol missatge. */
-const CRISIS = [/suicid/, /matar[- ]?me/, /m'?he de matar/, /vull matar-?me/, /no vull (viure|seguir|continuar)/, /voldria (morir|desapar)/,
-  /vull morir/, /morir-?me/, /acabar amb (tot|la meva vida|la vida)/, /fer[- ]?me mal/, /autolesi/, /tallar[- ]?me/, /treure[- ]?me la vida/,
-  /quitarme la vida|quitarse la vida|quiero morir|no quiero vivir|hacerme dano|acabar con todo|quiero desaparecer/,
+const CRISIS = [/suicid/, /matar[- ]?me/, /m'?he de matar/, /vull matar-?me/,
+  /no vull (viure|seguir|continuar)(?!\s+(amb|aquest|aquesta|parlant|practicant|sol|sola|aqui)\b)/,
+  /(voldria|vull) (morir|desapar)/, /morir-?me/, /ganes de (morir|matar)/, /acabar amb (tot|la meva vida|la vida)/,
+  /treure(-?me| me)? la vida/, /fer[- ]?me mal/, /autolesi/, /tallar[- ]?me/, /em tallo\b/,
+  /estaria millor (mort|morta|sense mi)/, /(no te|no veig) (cap )?sentit (a |de )?(viure|seguir)/,
+  /quitarme la vida|quitarse la vida|quiero morir|no quiero (vivir(?!\s+sol[oa]\b)|seguir viviendo|seguir adelante)|hacerme dano|quiero desaparecer|ganas de (morir|matarme|desaparecer)/,
+  /(acabar|terminar) con (todo|mi vida|mi sufrimiento)/, /cortarme(?! (el|las|la) (pelo|unas|flequillo))\b|me corto (las venas|los brazos|las munecas|la piel)/,
+  /estaria mejor (muerto|muerta|sin mi)|mejor muert[oa]/, /(no tiene|no le veo|no veo) (ningun )?sentido (a |de )?(vivir|seguir)/,
   /\bem (vull|voldria|vaig a) (fer mal|matar)|\bme (quiero|quisiera|voy a) (hacer dano|matar)/,
-  /kill(ing)? myself|end(ing)? it all|want to die|end my life|take my (own )?life|don.?t want to (live|be here|go on)|hurt myself|harm myself|self[- ]?harm|better off dead|wish i (was|were) dead|no reason to live/];
+  /kill(ing)? myself|end(ing)? it all|want to (die|disappear)|end(ing)? my (own )?life|take my (own )?life|(don.?t|do not) want to (live|be alive|be here)|(don.?t|do not) want to go on(?=\s*$|[.,!?;]|\s+(anymore|any more|like this|living))|can.?t go on(?=\s*$|[.,!?;]|\s+(anymore|any more|like this))|hurt(ing)? myself|harm(ing)? myself|self[- ]?harm|cut(ting)? (myself|my (wrists|arms|skin))|been cutting|better off dead|wish i (was|were) dead|no reason to live/];
 const norm = (s) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
 const isCrisis = (t) => CRISIS.some((r) => r.test(norm(t)));
 
@@ -255,7 +260,9 @@ $('a-start').addEventListener('click', () => {
 });
 $('a-form').addEventListener('submit', (e) => {
   e.preventDefault();
-  const t = $('a-input').value.trim(); if (!t || busy || history.length === 0) return;
+  const t = $('a-input').value.trim(); if (!t || busy) return;
+  /* Sense conversa començada, només es respon a un missatge de crisi; la resta porta cap al botó «Començar». */
+  if (history.length === 0 && !isCrisis(t)) { $('a-start').focus(); return; }
   $('a-input').value = ''; turn(t, false);
 });
 $('a-stop').addEventListener('click', () => { stopped = true; if (webEngine) webEngine.interruptGenerate(); if (abortCtl) abortCtl.abort(); });

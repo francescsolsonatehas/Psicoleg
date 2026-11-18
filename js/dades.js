@@ -9,7 +9,7 @@
   function hh(m){return Math.floor(m/60)+' h '+('0'+(m%60)).slice(-2)+' min'}
   var MOOD=['',__('Molt malament'),__('Malament'),__('Regular'),__('Bé'),__('Molt bé')];
   var CATS={cura:__('Cura personal'),social:__('Social'),moviment:__('Moviment'),domini:__('Tasques'),plaer:__('Plaer i oci')};
-  var FL=[__('cafeïna tard'),'alcohol',__('pantalla al llit'),__('migdiada llarga'),'exercici'];
+  var FL=[__('cafeïna tard'),'alcohol',__('pantalla al llit'),__('migdiada llarga'),__('exercici')];
   var SYM=[__('Palpitacions'),__('Ofec o pressió al pit'),__('Sudoració'),__('Tremolors'),__('Marejos'),__('Formigueig'),__('Nàusees'),__('Sensació d\'irrealitat'),__('Por de perdre el control'),__('Por de morir')];
   var DIST=[__('Lectura de ment'),__('Catastrofisme'),__('Personalització'),__('Etiquetatge'),__('Filtre mental'),__('Hauria de')];
 
@@ -23,12 +23,12 @@
     {k:'psi-plan',t:__('El meu pla'),ts:function(x){return x.t},f:planRows},
     {k:'psi-mood',t:__('Registre d\'estat d\'ànim'),ts:function(x){return x.t},f:function(x){return [[__('Ànim'),(MOOD[x.v]||x.v)+' ('+x.v+'/5)'],[__('Nota'),x.n]]}},
     {k:'psi-thoughts',t:__('Diari de pensaments'),ts:function(x){return x.t},f:function(x){return [[__('Situació'),x.sit],[__('Pensament'),x.th],[__('Emoció'),x.em],[__('A favor'),x.for],[__('En contra'),x.ag],[__('Alternatiu'),x.alt]]}},
-    {k:'psi-ba',t:__('Activació conductual'),ts:function(x){return x.id},f:function(x){return [[__('Activitat'),x.t+' ('+(CATS[x.c]||'')+')'],[__('Previst'),__('plaer ')+x.pl+__('/10, domini ')+x.ma+'/10'],[__('Real'),x.done?(__('plaer ')+x.apl+__('/10, domini ')+x.ama+'/10'):'pendent']]}},
+    {k:'psi-ba',t:__('Activació conductual'),ts:function(x){return x.id},f:function(x){return [[__('Activitat'),x.t+' ('+(CATS[x.c]||'')+')'],[__('Previst'),__('plaer ')+x.pl+__('/10, domini ')+x.ma+'/10'],[__('Real'),x.done?(__('plaer ')+x.apl+__('/10, domini ')+x.ama+'/10'):__('pendent')]]}},
     {k:'psi-sleep',t:__('Diari de son'),ts:function(x){return x.t},f:function(x){return [[__('Dormit'),hh(x.sleep)+__(' · eficiència ')+x.eff+__('% · qualitat ')+x.q+'/5'],[__('Horari'),__('llit ')+x.bed+__(' · llevar ')+x.wake+__(' · fins adormir-me ')+x.lat+__(' min · desperta ')+x.awk+' min'],[__('Factors'),(x.fl||[]).map(function(i){return FL[i]}).join(', ')],[__('Nota'),x.n]]}},
     {k:'psi-panic',t:__('Registre de pànic'),dtm:true,ts:function(x){return x.t},f:function(x){return [[__('Intensitat'),__('màxim ')+x.i+'/100 · '+x.m+' min'],[__('Símptomes'),(x.s||[]).map(function(i){return SYM[i]}).join(', ')],[__('Situació'),x.c],[__('Temia que'),x.f],[__('Què vaig fer'),x.w]]}},
-    {k:'psi-expo',t:__('Ansietat social · Jerarquia d\'exposició'),ts:function(x){return x.id},f:function(x){return [[__('Situació'),x.t],[__('Por esperada'),x.s+'/100'],[__('Estat'),x.done?('fet'+(x.after!=null?__(' · por real ')+x.after+'/100':'')):'pendent']]}},
+    {k:'psi-expo',t:__('Ansietat social · Jerarquia d\'exposició'),ts:function(x){return x.id},f:function(x){return [[__('Situació'),x.t],[__('Por esperada'),x.s+'/100'],[__('Estat'),x.done?(__('fet')+(x.after!=null?__(' · por real ')+x.after+'/100':'')):__('pendent')]]}},
     {k:'psi-soc-thoughts',t:__('Ansietat social · Registre de pensaments'),ts:function(x){return x.t},f:function(x){return [[__('Situació'),x.sit],[__('Predicció'),x.pred?x.pred+' ('+x.b1+'%)':''],[__('Distorsions'),(x.dist||[]).map(function(i){return DIST[i]}).join(', ')],[__('A favor'),x.f],[__('En contra'),x.a],[__('Alternatiu'),x.alt?x.alt+' ('+x.b2+'%)':'']]}},
-    {k:'psi-experiments',t:__('Ansietat social · Experiments conductuals'),ts:function(x){return x.id},f:function(x){return [[__('Experiment'),x.do],[__('Predicció'),x.pred+__(' · ansietat prevista ')+x.a1],[__('Resultat'),x.res!=null?x.res+__(' · ansietat real ')+x.a2:'pendent'],[__('Après'),x.learn]]}}
+    {k:'psi-experiments',t:__('Ansietat social · Experiments conductuals'),ts:function(x){return x.id},f:function(x){return [[__('Experiment'),x.do],[__('Predicció'),x.pred+__(' · ansietat prevista ')+x.a1],[__('Resultat'),x.res!=null?x.res+__(' · ansietat real ')+x.a2:__('pendent')],[__('Après'),x.learn]]}}
   ];
   var KEYS=SRC.map(function(s){return s.k});
 

@@ -15,7 +15,7 @@
   function renderB(){
     var d=load(BK);
     $('ba-list').innerHTML=d.slice().reverse().map(function(x){
-      var head='<b>'+esc(x.t)+'</b> <span class="badge" title="Categoria">'+esc(CATS[x.c]||'')+'</span>';
+      var head='<b>'+esc(x.t)+'</b> <span class="badge" title="'+esc(__('Categoria'))+'">'+esc(CATS[x.c]||'')+'</span>';
       if(x.done){
         return '<li><span class="when">'+fmt(x.id)+'</span><span class="grow">'+head+__('<br>Plaer: previst ')+x.pl+__(' → real ')+x.apl+__(' · Domini: previst ')+x.ma+__(' → real ')+x.ama+
           '</span><button class="mini" data-act="del" data-id="'+x.id+__('" aria-label="Eliminar">✕</button></li>');
@@ -23,7 +23,7 @@
       return '<li><span class="when">'+fmt(x.id)+'</span><span class="grow">'+head+__('<br>Previst: plaer ')+x.pl+__(' · domini ')+x.ma+
         '<div class="inline-form" data-id="'+x.id+__('"><div class="field"><label>Plaer real (0-10)</label><input type="text" class="b-apl" inputmode="numeric" maxlength="2"></div>')+
         __('<div class="field"><label>Sensació de domini real (0-10)</label><input type="text" class="b-ama" inputmode="numeric" maxlength="2"></div>')+
-        '<button class="btn btn-primary btn-sm" data-act="fin" data-id="'+x.id+__('">L\'he fet</button> <button class="mini" data-act="del" data-id="')+x.id+'">Eliminar</button></div></span></li>';
+        '<button class="btn btn-primary btn-sm" data-act="fin" data-id="'+x.id+__('">L\'he fet</button> <button class="mini" data-act="del" data-id="')+x.id+'">'+__('Eliminar')+'</button></div></span></li>';
     }).join('')||__('<li class="muted">Encara no has planificat cap activitat.</li>');
     var done=d.filter(function(x){return x.done});
     $('ba-sum').textContent=done.length?
@@ -50,8 +50,8 @@
   var SK='psi-sleep',FLAGS=[__('cafeïna tard'),'alcohol',__('pantalla al llit'),__('migdiada llarga'),__('exercici avui')];
   function mins(hm){if(!hm)return null;var p=hm.split(':');return (+p[0])*60+(+p[1])}
   function calc(bed,wake,lat,awk){
-    var b=mins(bed),w=mins(wake);if(b==null||w==null)return null;
-    var inbed=w-b;if(inbed<=0)inbed+=1440;
+    var b=mins(bed),w=mins(wake);if(b==null||w==null||b===w)return null;
+    var inbed=w-b;if(inbed<0)inbed+=1440;
     var sleep=Math.max(0,inbed-lat-awk);
     return {inbed:inbed,sleep:sleep,eff:inbed?Math.round(sleep/inbed*100):0};
   }

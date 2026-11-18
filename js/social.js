@@ -13,7 +13,7 @@
   function renderX(){
     var d=load(XK).sort(function(a,b){return a.s-b.s});
     $('x-list').innerHTML=d.map(function(x){
-      return '<li><span class="badge" title="Por esperada">'+x.s+'</span><span class="grow'+(x.done?' done':'')+'">'+esc(x.t)+(x.after!=null?__(' <span class="muted">→ després: ')+x.after+'</span>':'')+'</span>'+
+      return '<li><span class="badge" title="'+esc(__('Por esperada'))+'">'+x.s+'</span><span class="grow'+(x.done?' done':'')+'">'+esc(x.t)+(x.after!=null?__(' <span class="muted">→ després: ')+x.after+'</span>':'')+'</span>'+
         '<button class="mini" data-act="done" data-id="'+x.id+'">'+(x.done?__('Desfer'):__('Fet'))+'</button> '+
         '<button class="mini" data-act="del" data-id="'+x.id+__('" aria-label="Eliminar">✕</button></li>')}).join('')||__('<li class="muted">Encara no has afegit cap situació.</li>');
   }
@@ -65,7 +65,7 @@
         '<div class="inline-form" data-id="'+x.id+__('"><div class="field"><label>Què ha passat de debò?</label><input type="text" class="r-res" maxlength="200"></div>')+
         __('<div class="field"><label>Ansietat real (0-100)</label><input type="text" class="r-a2" inputmode="numeric" maxlength="3"></div>')+
         __('<div class="field"><label>Què n\'he après?</label><input type="text" class="r-learn" maxlength="200"></div>')+
-        '<button class="btn btn-primary btn-sm" data-act="fin" data-id="'+x.id+__('">Anotar resultat</button> <button class="mini" data-act="del" data-id="')+x.id+'">Eliminar</button></div></span></li>'}).join('')||__('<li class="muted">Encara no has planificat cap experiment.</li>');
+        '<button class="btn btn-primary btn-sm" data-act="fin" data-id="'+x.id+__('">Anotar resultat</button> <button class="mini" data-act="del" data-id="')+x.id+'">'+__('Eliminar')+'</button></div></span></li>'}).join('')||__('<li class="muted">Encara no has planificat cap experiment.</li>');
   }
   $('e-add').addEventListener('click',function(){
     var a=$('e-do').value.trim(),p=$('e-pred').value.trim();if(!a||!p){alert(__('Escriu què faràs i què creus que passarà.'));return}

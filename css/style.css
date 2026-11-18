@@ -11,9 +11,10 @@
   --primary:#3f7d6e;--primary-strong:#2d5f53;--primary-soft:#dcebe5;--accent:#6c8ebf;--accent-soft:#e1eaf5;
   --warm:#f2e7d5;--border:#dde3de;--danger:#b3261e;--danger-soft:#fde8e6;--ok:#2d6a4f;
   --radius:16px;--shadow:0 6px 24px rgba(31,42,40,.07);--maxw:1120px;
-  --fs:1rem;
+  --fs:1rem;color-scheme:light;
 }
 :root[data-theme="dark"]{
+  color-scheme:dark;
   --bg:#121816;--surface:#1b2421;--surface-2:#222d29;--text:#e8efec;--muted:#a3b3ad;
   --primary:#6fb7a3;--primary-strong:#8fd0bd;--primary-soft:#23382f;--accent:#8fb0df;--accent-soft:#222f42;
   --warm:#2c2a22;--border:#2d3a35;--danger:#ff8a80;--danger-soft:#3a1f1d;--ok:#8fd0a8;--shadow:0 6px 24px rgba(0,0,0,.35);
@@ -76,7 +77,7 @@ section{padding:56px 0}
 /* Targetes */
 .grid{display:grid;gap:20px}
 .grid-3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
-.grid-2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.grid-2{grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr))}
 .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
 a.card{display:block;text-decoration:none;color:inherit;transition:transform .2s,border-color .2s}
 a.card:hover{transform:translateY(-4px);border-color:var(--primary)}
@@ -116,13 +117,15 @@ a.card:hover{transform:translateY(-4px);border-color:var(--primary)}
 /* Eines */
 .tool{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);margin-bottom:28px}
 .breath-wrap{display:flex;flex-direction:column;align-items:center;gap:18px;padding:10px 0}
-.breath-circle{width:190px;height:190px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff7,transparent 45%),linear-gradient(135deg,var(--primary),var(--accent));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:1.15rem;text-align:center;transition:transform 4s ease-in-out;transform:scale(.6)}
+.breath-circle{width:190px;height:190px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff7,transparent 45%),linear-gradient(135deg,var(--primary),var(--accent));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:1.25rem;text-align:center;transition:transform 4s ease-in-out;transform:scale(.6)}
+:root[data-theme="dark"] .breath-circle{color:#10201b}
 .breath-circle.inhale{transform:scale(1)}
 .breath-circle.hold{transform:scale(1)}
 .breath-circle.exhale{transform:scale(.6)}
 .field{display:block;margin-bottom:14px}
 .field label,.field .lbl{display:block;font-weight:600;margin-bottom:4px}
-.field input[type=text],.field textarea,.field select{width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--border);background:var(--bg);color:var(--text);font:inherit}
+.field input[type=file]{max-width:100%;font:inherit;color:var(--text)}
+.field input[type=text],.field input[type=time],.field input[type=date],.field textarea,.field select{width:100%;padding:12px 14px;border-radius:10px;border:1px solid var(--border);background:var(--bg);color:var(--text);font:inherit}
 .field textarea{min-height:90px;resize:vertical}
 .mood-row{display:flex;gap:8px;flex-wrap:wrap}
 .mood-row button{color:var(--text);font-size:1.6rem;background:var(--bg);border:2px solid var(--border);border-radius:14px;width:58px;height:58px;cursor:pointer}

@@ -56,6 +56,7 @@ Plaer i oci
 cafeïna tard
 pantalla al llit
 migdiada llarga
+exercici
 Palpitacions
 Ofec o pressió al pit
 Sudoració
@@ -91,6 +92,7 @@ Previst
 plaer 
 /10, domini 
 Real
+pendent
 Diari de son
 Dormit
  · eficiència 
@@ -110,6 +112,7 @@ Què vaig fer
 Ansietat social · Jerarquia d'exposició
 Por esperada
 Estat
+fet
  · por real 
 Ansietat social · Registre de pensaments
 Predicció
@@ -242,11 +245,13 @@ Vols esborrar totes les entrades?
 <div class="field"><label>Ansietat real (0-100)</label><input type="text" class="r-a2" inputmode="numeric" maxlength="3"></div>
 <div class="field"><label>Què n'he après?</label><input type="text" class="r-learn" maxlength="200"></div>
 ">Anotar resultat</button> <button class="mini" data-act="del" data-id="
+Eliminar
 <li class="muted">Encara no has planificat cap experiment.</li>
 Escriu què faràs i què creus que passarà.
 Explica què ha passat.
 Vols esborrar tots els experiments?
 Tasques i responsabilitats
+Categoria
 <br>Plaer: previst 
  → real 
  · Domini: previst 
