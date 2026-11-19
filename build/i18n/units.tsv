@@ -433,7 +433,7 @@ d84ad2	Ansietat per la salut (hipocondria)
 3c3301	<span#0>Salut mental · en català</span>
 72ec41	Un espai tranquil per entendre't i cuidar-te
 9c2fae	Informació clara, eines pràctiques d'autoajuda i camins per trobar un professional. Sense judicis, sense registre, sense recollir dades.
-ea8878	<a#0>Necessito ajuda ara</a> <a#1>Vull entendre el que sento</a> <a#2>Eines per al dia a dia</a>
+e5dbdb	<a#0>Necessito ajuda ara</a> <a#1>Vull entendre el que sento</a> <a#2>Eines d'autoajuda</a>
 852667	<strong>Aquesta web no substitueix un professional</strong>No diagnostica ni prescriu tractaments. Si estàs en crisi, truca al 112 o al 024. Pots tenir una vida millor, i demanar ajuda és un acte de valentia.
 48806f	Per on vols començar?
 adda31	Respira
@@ -460,18 +460,11 @@ ca9484	Cerca i índex
 e739f9	Cerca per paraules a tot el web o busca un tema a l'índex alfabètic.
 06ae8f	Qui ho revisa i fonts
 459bc0	D'on surt la informació, com es revisa i què encara està pendent.
-ba29e5	Com funciona
-fd0eae	1. Entén
-bb5ac8	Llegeix fitxes basades en fonts fiables com l'OMS i les guies clíniques.
-2f48a5	2. Practica
-b42bb5	Utilitza eines senzilles per gestionar el malestar del dia a dia.
-7c1b21	3. Demana ajuda
-8f9af3	Troba el professional o servei que et pot acompanyar.
 7695b0	<strong>La teva privacitat</strong>No hi ha comptes ni servidors. Els registres es guarden únicament al teu navegador i els pots esborrar quan vulguis.
 cfa67e	Eines d'autoajuda: respiració, grounding i registre d'ànim | Psicòleg
 74fb96	Respiració guiada, grounding 5-4-3-2-1, relaxació muscular, registre d'ànim i diari de pensaments. Tot es guarda al teu dispositiu.
-6dcbac	<span#0>Autoajuda</span>
-6aac07	Eines per al dia a dia
+a040a6	<span#0>Dia a dia</span>
+58e048	Eines d'autoajuda
 02b0b6	Exercicis breus basats en tècniques conegudes. Són un suport, no un tractament.
 7b11de	<strong>Atenció</strong>Si algun exercici t'incomoda o et fa sentir pitjor, atura'l. Si estàs en crisi, vés a <a#0>ajuda urgent</a>.
 86a2ad	🌱 Eines de TCC
@@ -962,6 +955,7 @@ e2df3b	Només si actives l'assistent de la pàgina d'<a#0>ansietat social</a>, e
 3f0bc3	Dispositiu compartit? Esborra els registres des de l'apartat <a#0>Eines</a> quan hagis acabat.
 ce7900	El meu pla: petits passos per cuidar-te | Psicòleg
 e4c211	Respon cinc preguntes i rep un pla personal de petits passos amb enllaços a les eines. Es guarda només al teu dispositiu.
+6dcbac	<span#0>Autoajuda</span>
 181e04	Respon cinc preguntes sobre les últimes dues setmanes i rebràs una proposta de petits passos, amb enllaços a les eines d'aquest web. Pots canviar els passos que no t'encaixin.
 affc27	<strong>Una guia, no un diagnòstic</strong>El pla és orientatiu i no substitueix un professional. Les respostes i el pla es guarden només al teu navegador.
 eefb18	📝 Les últimes dues setmanes

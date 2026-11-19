@@ -230,7 +230,7 @@ body = f'''
     <div class="btn-row">
       <a class="btn btn-danger" href="ajuda.html#urgent">Necessito ajuda ara</a>
       <a class="btn btn-primary" href="trastorns.html">Vull entendre el que sento</a>
-      <a class="btn btn-outline" href="eines.html">Eines per al dia a dia</a>
+      <a class="btn btn-outline" href="eines.html">Eines d'autoajuda</a>
     </div>
   </div>
   <div class="orb" aria-hidden="true"></div>
@@ -243,13 +243,7 @@ body = f'''
   <div class="grid grid-3">{tcards}</div>
 </div></section>
 <section><div class="container narrow">
-  <h2>Com funciona</h2>
-  <div class="grid grid-3">
-    <div class="card"><h3>1. Entén</h3><p class="muted">Llegeix fitxes basades en fonts fiables com l'OMS i les guies clíniques.</p></div>
-    <div class="card"><h3>2. Practica</h3><p class="muted">Utilitza eines senzilles per gestionar el malestar del dia a dia.</p></div>
-    <div class="card"><h3>3. Demana ajuda</h3><p class="muted">Troba el professional o servei que et pot acompanyar.</p></div>
-  </div>
-  <div class="notice soft" style="margin-top:28px"><strong>La teva privacitat</strong>No hi ha comptes ni servidors. Els registres es guarden únicament al teu navegador i els pots esborrar quan vulguis.</div>
+  <div class="notice soft"><strong>La teva privacitat</strong>No hi ha comptes ni servidors. Els registres es guarden únicament al teu navegador i els pots esborrar quan vulguis.</div>
 </div></section>'''
 ld = f'<script type="application/ld+json">{{"@context":"https://schema.org","@type":"WebSite","name":"{NAME}","url":"{BASE}","inLanguage":"ca","description":"Informació, eines d\'autoajuda i recursos de salut mental en català."}}</script>'
 write("index.html", with_scripts(page("index.html", f"{NAME} – Salut mental: informació, eines i recursos", "Informació clara sobre salut mental, eines d'autoajuda i recursos per trobar ajuda professional a Catalunya.", body, "index.html", ld=ld)))
@@ -257,7 +251,7 @@ write("index.html", with_scripts(page("index.html", f"{NAME} – Salut mental: i
 # ---------- Eines ----------
 body = '''
 <section class="page-hero"><div class="container narrow">
-  <span class="eyebrow">Autoajuda</span><h1>Eines per al dia a dia</h1>
+  <span class="eyebrow">Dia a dia</span><h1>Eines d'autoajuda</h1>
   <p class="lead muted">Exercicis breus basats en tècniques conegudes. Són un suport, no un tractament.</p>
   <div class="notice"><strong>Atenció</strong>Si algun exercici t'incomoda o et fa sentir pitjor, atura'l. Si estàs en crisi, vés a <a href="ajuda.html#urgent">ajuda urgent</a>.</div>
 </div></section>
