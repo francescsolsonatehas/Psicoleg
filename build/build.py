@@ -158,6 +158,26 @@ for c in CONDITIONS:
         crisi = '<div class="notice soft"><strong>Eines de TCC per a l\'ansietat social</strong>Jerarquia d\'exposició, registre de pensaments i experiments conductuals. <a href="../ansietat-social-eines.html">Obre les eines →</a></div>'
     if c["slug"] in ("depressio", "autolesions-suicidi", "trastorn-limit-personalitat"):
         crisi = '<div class="notice warn" role="alert"><strong>Si estàs en perill ara</strong>Truca al <a href="tel:112">112</a> o al <a href="tel:024">024</a> (gratuït, 24 h). No cal que estiguis sol/a amb això.</div>'
+    extra = ''
+    if c["slug"] == "burnout":
+        extra = """
+  <h2>Eines gratuïtes per al burnout</h2>
+  <p>Totes són gratuïtes i no et demanen cap compte. Les teves dades es guarden només al teu dispositiu.</p>
+  <h3>A aquest web</h3>
+  <ul>
+    <li><strong>Per baixar l'activació:</strong> <a href="../eines.html#respiracio">respiració guiada</a>, <a href="../eines.html#relaxacio">relaxació muscular</a> i <a href="../eines.html#grounding">grounding 5-4-3-2-1</a>.</li>
+    <li><strong>Per recuperar energia:</strong> <a href="../eines-tcc.html#activacio">activació conductual</a> (activitats petites de plaer i de domini) i <a href="../eines-tcc.html#son">diari de son</a>.</li>
+    <li><strong>Per mirar com et sents:</strong> <a href="../eines.html#anim">registre d'ànim</a> i <a href="../eines.html#pensaments">diari de pensaments</a>.</li>
+    <li><strong>Per decidir un primer pas:</strong> <a href="../pla.html">El meu pla</a>, amb cinc preguntes i una proposta de petits passos.</li>
+    <li><strong>Per descartar-ne altres causes:</strong> els <a href="../cribratges.html">cribratges PHQ-9 i GAD-7</a> no mesuren el burnout, però ajuden a veure si hi ha símptomes de depressió o d'ansietat.</li>
+  </ul>
+  <h3>De fonts oficials</h3>
+  <ul>
+    <li><a href="https://www.who.int/publications/i/item/9789240003927" rel="noopener">Guia «Doing What Matters in Times of Stress» de l'OMS</a> (en anglès): tècniques breus per gestionar l'estrès, amb il·lustracions. Tens la <a href="https://www.paho.org/es/documentos/tiempos-estres-haz-lo-que-importa-guia-ilustrada-version-adaptada-para-america-latina" rel="noopener">versió en castellà</a> adaptada per a Amèrica Llatina.</li>
+    <li><a href="https://www.insst.es/noticias-insst/sindrome-de-desgaste-profesional-burnout" rel="noopener">INSST: síndrome de desgast professional (burnout)</a> (en castellà): informació oficial i enllaços a les notes tècniques sobre prevenció i avaluació.</li>
+    <li><a href="https://www.who.int/news/item/28-05-2019-burn-out-an-occupational-phenomenon-international-classification-of-diseases" rel="noopener">OMS: el burnout com a fenomen laboral a la CIE-11</a> (en anglès).</li>
+  </ul>
+  <div class="notice soft"><strong>No és un test de diagnòstic</strong>Hi ha qüestionaris per mesurar el burnout, però són instruments de recerca i no donen un diagnòstic. Si dubtes de com estàs, parla-ho amb un professional.</div>"""
     body = f'''
 <section class="page-hero"><div class="container narrow">
   <p class="crumbs"><a href="../trastorns.html">← Tots els trastorns</a></p>
@@ -172,13 +192,13 @@ for c in CONDITIONS:
   <h2>Símptomes habituals</h2>{li(c["symptoms"])}
   <h2>Mites i realitats</h2>{mites}
   <h2>Quan consultar un professional</h2><p>{e(c["when"])}</p>
-  <h2>Quins tractaments recomanen les guies clíniques</h2><p>{e(c["treatment"])}</p>
-  <h2>Consells per a familiars i amics</h2>{li(c["family"])}
+  <h2>{e(c.get("treatment_title", "Quins tractaments recomanen les guies clíniques"))}</h2><p>{e(c["treatment"])}</p>
+  <h2>Consells per a familiars i amics</h2>{li(c["family"])}{extra}
   <div class="btn-row"><a class="btn btn-primary" href="../ajuda.html">Trobar ajuda</a><a class="btn btn-outline" href="../eines.html">Eines d'autoajuda</a></div>
   {SOURCES}
   {review_note('../')}
 </div></section>'''
-    ld = f'<script type="application/ld+json">{{"@context":"https://schema.org","@type":"MedicalWebPage","name":"{e(c["name"])}","inLanguage":"ca","about":{{"@type":"MedicalCondition","name":"{e(c["name"])}"}}}}</script>'
+    ld = f'<script type="application/ld+json">{{"@context":"https://schema.org","@type":"MedicalWebPage","name":"{e(c["name"])}","inLanguage":"ca","about":{{"@type":"{"Thing" if c["slug"] == "burnout" else "MedicalCondition"}","name":"{e(c["name"])}"}}}}</script>'
     write(f"trastorns/{c['slug']}.html", with_scripts(
         page(f"trastorns/{c['slug']}.html", f"{c['name']} – símptomes i ajuda | {NAME}", c["summary"], body, "trastorns.html", "../", ld=ld)))
 
@@ -213,7 +233,7 @@ tiles = [("🫁", "Respira", "Exercicis guiats de respiració per calmar-te en p
          ("🧠", "Diari de pensaments", "Una eina de teràpia cognitiva per mirar els pensaments amb distància.", "eines.html#pensaments"),
          ("📋", "Cribratges PHQ-9 i GAD-7", "Qüestionaris orientatius sobre ànim i ansietat.", "cribratges.html"),
          ("🧭", "El meu pla", "Respon cinc preguntes i rep un pla de petits passos pensat per a tu.", "pla.html"),
-         ("📚", "Entendre el que sento", "Fitxes sobre 21 trastorns i condicions.", "trastorns.html"),
+         ("📚", "Entendre el que sento", f"Fitxes sobre {len(CONDITIONS)} trastorns i condicions.", "trastorns.html"),
          ("🌱", "Eines de TCC", "Activació conductual, diari de son i registre de pànic.", "eines-tcc.html"),
          ("💬", "Com parlar-ne", "Frases i consells per dir-ho a la família, al metge i a la feina.", "parlar-ne.html"),
          ("🧑‍🎓", "Per a joves", "Informació clara i propera per a adolescents i joves.", "joves.html"),
