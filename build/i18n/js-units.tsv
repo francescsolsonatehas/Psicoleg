@@ -38,9 +38,56 @@ Irritar-me o enfadar-me amb facilitat
 Sentir por, com si pogués passar alguna cosa terrible
 Els símptomes d'ansietat són mínims.
 Poden ser símptomes lleus. Les eines de respiració i grounding poden ajudar; si persisteixen, consulta.
+Mai
+Només alguna vegada
+Algunes vegades
+Moltes vegades
+Sempre
+En un grau molt baix
+En un grau baix
+Una mica
+En un grau alt
+En un grau molt alt
+Burnout personal
+Estat d'esgotament físic i psicològic prolongat.
+Amb quina freqüència et sents cansat/da?
+Amb quina freqüència estàs físicament esgotat/da?
+Amb quina freqüència estàs psicològicament esgotat/da?
+Amb quina freqüència penses «no puc més»?
+Amb quina freqüència et sents esgotat/da?
+Amb quina freqüència et sents feble i propens/a a emmalaltir?
+Burnout relacionat amb la feina
+Estat d'esgotament físic i psicològic prolongat que es percep relacionat amb la teva feina.
+La teva feina és emocionalment esgotadora?
+Et sents cremat/da per la feina?
+Et sents frustrat/da per la teva feina?
+Et sents esgotat/da al final de la jornada laboral?
+Al matí, t'esgota pensar en un altre dia de feina?
+Sents que cada hora de feina és esgotadora?
+Tens prou energia per a la família i els amics durant el temps lliure?
+Burnout relacionat amb el treball amb persones
+Estat d'esgotament físic i psicològic prolongat que es percep relacionat amb la teva feina amb clients, usuaris, pacients, alumnes o altres persones.
+És dur treballar amb clients o usuaris?
+És frustrant treballar amb clients o usuaris?
+Treballar amb clients o usuaris consumeix la teva energia?
+Sents que dónes més del que reps quan treballes amb clients o usuaris?
+Estàs cansat/da de treballar amb clients o usuaris?
+De vegades et preguntes quant de temps podràs continuar treballant amb clients o usuaris?
+<strong>Versió en català: no validada.</strong> És una traducció feta per aquest web a partir de la versió castellana validada, sense revisió d'un traductor ni validació psicomètrica. Fes-ne servir el resultat només com a orientació.
+<strong>Versió en castellà: validada a Espanya.</strong> Els ítems i les opcions de resposta són els de la versió validada per Molinero Ruiz, Basart Gómez-Quintero i Moncada Lluis (2013).
+<strong>Versió en anglès: text original dels autors, no validat per aquest web.</strong> Són els ítems publicats pels autors del CBI. La validació original es va fer amb mostres daneses, no a Espanya ni a Catalunya.
+Només la versió en castellà està validada a Espanya. La catalana és una traducció d'aquest web sense validar, i l'anglesa és el text original dels autors, validat amb mostres daneses.
+Respon pensant en com et sents habitualment. Les dues primeres parts són per a tothom; la tercera només si treballes amb persones.
 Falten {0} pregunta(es) per respondre.
-Puntuació: {0}
+Resultat del CBI
+{0} de 100
+50 o més: un grau alt d'esgotament segons el criteri dels autors.
+Per sota de 50.
+Com més alta és la puntuació (de 0 a 100), més esgotament. Als estudis dels autors, un grau alt d'esgotament es va definir com 50 punts o més. És un criteri de recerca, no un punt de tall clínic ni un diagnòstic.
 Aquest resultat és orientatiu i no és un diagnòstic.
+<div class="notice soft"><strong>Si t'ho estàs passant molt malament</strong>Pots parlar-ne amb el teu metge o amb un psicòleg. Si penses a fer-te mal, truca ara al <a href="tel:024"><b>024</b></a> (gratuït, 24 h) o al <a href="tel:112"><b>112</b></a>.</div>
+<div class="btn-row"><a class="btn btn-primary" href="trastorns/burnout.html">Llegir la fitxa de burnout</a><a class="btn btn-outline" href="ajuda.html">Trobar ajuda</a></div>
+Puntuació: {0}
 <div class="notice warn" role="alert"><strong>Gràcies per ser sincer/a</strong>Has indicat que has tingut pensaments de fer-te mal o de no voler viure. No estàs sol/a, i això es pot tractar. Truca ara al <a href="tel:024"><b>024</b></a> (gratuït, 24 h) o al <a href="tel:112"><b>112</b></a> si hi ha perill immediat, i parla-ho amb una persona de confiança o amb el teu metge.</div>
 <div class="btn-row"><a class="btn btn-primary" href="ajuda.html">Trobar ajuda</a><a class="btn btn-outline" href="eines.html">Eines d'autoajuda</a></div>
 Molt malament

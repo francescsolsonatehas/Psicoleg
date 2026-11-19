@@ -1,6 +1,6 @@
 # Psicòleg
 
-Web de salut mental **en català, castellà i anglès**: fitxes psicoeducatives (22 trastorns i condicions, incloent el burnout), eines d'autoajuda (respiració, grounding, relaxació, registre d'ànim, diari de pensaments, activació conductual, diari de son, registre de pànic), eines de TCC per a l'ansietat social amb assistent d'IA opcional, cribratges PHQ-9 / GAD-7, guies («Com parlar-ne», per a joves, per a familiars) i recursos d'ajuda a Catalunya.
+Web de salut mental **en català, castellà i anglès**: fitxes psicoeducatives (22 trastorns i condicions, incloent el burnout), eines d'autoajuda (respiració, grounding, relaxació, registre d'ànim, diari de pensaments, activació conductual, diari de son, registre de pànic), eines de TCC per a l'ansietat social amb assistent d'IA opcional, cribratges PHQ-9 / GAD-7 / CBI (burnout), guies («Com parlar-ne», per a joves, per a familiars) i recursos d'ajuda a Catalunya.
 
 - HTML + CSS + JavaScript pur, sense dependències en execució. Les pàgines es **generen** amb Python (`build/`).
 - Tipografies pròpies (Inter, Poppins; SIL OFL), sense peticions a tercers.

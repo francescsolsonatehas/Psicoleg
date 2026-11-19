@@ -169,6 +169,7 @@ for c in CONDITIONS:
     <li><strong>Per recuperar energia:</strong> <a href="../eines-tcc.html#activacio">activació conductual</a> (activitats petites de plaer i de domini) i <a href="../eines-tcc.html#son">diari de son</a>.</li>
     <li><strong>Per mirar com et sents:</strong> <a href="../eines.html#anim">registre d'ànim</a> i <a href="../eines.html#pensaments">diari de pensaments</a>.</li>
     <li><strong>Per decidir un primer pas:</strong> <a href="../pla.html">El meu pla</a>, amb cinc preguntes i una proposta de petits passos.</li>
+    <li><strong>Per mesurar l'esgotament:</strong> el <a href="../cribratges.html">qüestionari CBI</a> (Copenhagen Burnout Inventory), de domini públic i orientatiu.</li>
     <li><strong>Per descartar-ne altres causes:</strong> els <a href="../cribratges.html">cribratges PHQ-9 i GAD-7</a> no mesuren el burnout, però ajuden a veure si hi ha símptomes de depressió o d'ansietat.</li>
   </ul>
   <h3>De fonts oficials</h3>
@@ -177,7 +178,7 @@ for c in CONDITIONS:
     <li><a href="https://www.insst.es/noticias-insst/sindrome-de-desgaste-profesional-burnout" rel="noopener">INSST: síndrome de desgast professional (burnout)</a> (en castellà): informació oficial i enllaços a les notes tècniques sobre prevenció i avaluació.</li>
     <li><a href="https://www.who.int/news/item/28-05-2019-burn-out-an-occupational-phenomenon-international-classification-of-diseases" rel="noopener">OMS: el burnout com a fenomen laboral a la CIE-11</a> (en anglès).</li>
   </ul>
-  <div class="notice soft"><strong>No és un test de diagnòstic</strong>Hi ha qüestionaris per mesurar el burnout, però són instruments de recerca i no donen un diagnòstic. Si dubtes de com estàs, parla-ho amb un professional.</div>"""
+  <div class="notice soft"><strong>No és un test de diagnòstic</strong>El qüestionari CBI és un instrument de recerca i no dona un diagnòstic. Si dubtes de com estàs, parla-ho amb un professional.</div>"""
     body = f'''
 <section class="page-hero"><div class="container narrow">
   <p class="crumbs"><a href="../trastorns.html">← Tots els trastorns</a></p>
@@ -231,7 +232,7 @@ write("trastorns.html", with_scripts(
 tiles = [("🫁", "Respira", "Exercicis guiats de respiració per calmar-te en pocs minuts.", "eines.html#respiracio"),
          ("📓", "Registre d'ànim", "Apunta com et sents. Es guarda només al teu dispositiu.", "eines.html#anim"),
          ("🧠", "Diari de pensaments", "Una eina de teràpia cognitiva per mirar els pensaments amb distància.", "eines.html#pensaments"),
-         ("📋", "Cribratges PHQ-9 i GAD-7", "Qüestionaris orientatius sobre ànim i ansietat.", "cribratges.html"),
+         ("📋", "Cribratges PHQ-9, GAD-7 i burnout", "Qüestionaris orientatius sobre ànim, ansietat i burnout.", "cribratges.html"),
          ("🧭", "El meu pla", "Respon cinc preguntes i rep un pla de petits passos pensat per a tu.", "pla.html"),
          ("📚", "Entendre el que sento", f"Fitxes sobre {len(CONDITIONS)} trastorns i condicions.", "trastorns.html"),
          ("🌱", "Eines de TCC", "Activació conductual, diari de son i registre de pànic.", "eines-tcc.html"),
@@ -773,22 +774,28 @@ write("ansietat-social-assistent.html", with_scripts(page("ansietat-social-assis
 # ---------- Cribratges ----------
 body = '''
 <section class="page-hero"><div class="container narrow">
-  <span class="eyebrow">Orientatiu</span><h1>Cribratges: PHQ-9 i GAD-7</h1>
-  <p class="lead muted">Qüestionaris breus que mesuren símptomes de depressió i d'ansietat de les últimes dues setmanes.</p>
+  <span class="eyebrow">Orientatiu</span><h1>Cribratges: PHQ-9, GAD-7 i burnout (CBI)</h1>
+  <p class="lead muted">Qüestionaris breus sobre símptomes de depressió i d'ansietat (les últimes dues setmanes) i sobre l'esgotament o burnout.</p>
   <div class="notice warn"><strong>No és un diagnòstic</strong>Els resultats no substitueixen una valoració clínica. Les respostes no s'envien enlloc: es calculen al teu dispositiu.</div>
 </div></section>
 <section style="padding-top:10px"><div class="container narrow">
   <div class="filters" role="group" aria-label="Escull el qüestionari">
     <button class="chip" id="tab-phq" aria-pressed="true">PHQ-9 · Ànim</button>
     <button class="chip" id="tab-gad" aria-pressed="false">GAD-7 · Ansietat</button>
+    <button class="chip" id="tab-cbi" aria-pressed="false">CBI · Burnout</button>
+  </div>
+  <div id="s-cbi-box" hidden>
+    <div class="notice" id="s-cbi-note"></div>
+    <label class="chk" style="margin:16px 0"><input type="checkbox" id="s-cbi-cl"> <span>Treballo amb persones (clients, usuaris, pacients, alumnes…) la major part del meu temps de feina. Si ho marques, hi ha una tercera part.</span></label>
   </div>
   <p class="muted" id="s-intro"></p>
   <form id="s-form" novalidate></form>
   <div class="btn-row"><button class="btn btn-primary" id="s-calc">Veure resultat</button><button class="btn btn-outline" id="s-reset" type="button">Esborrar respostes</button></div>
   <div class="result" id="s-result" aria-live="polite"></div>
   <p class="muted" style="margin-top:28px;font-size:.88rem">Els ítems són una adaptació al català de les escales PHQ-9 i GAD-7 (Pfizer Inc., d'ús lliure). Han de ser interpretats per un professional.</p>
+  <p class="muted" style="font-size:.88rem">El CBI (Copenhagen Burnout Inventory) és un qüestionari de domini públic: Kristensen TS, Borritz M, Villadsen E, Christensen KB. <em>Work &amp; Stress</em>. 2005;19(3):192-207 (<a href="https://nfa.dk/media/hl5nbers/cbi-first-edition.pdf" rel="noopener">document dels autors</a>, en anglès). La versió en castellà és la validada per Molinero Ruiz E, Basart Gómez-Quintero H, Moncada Lluis S. <em>Rev Esp Salud Pública</em>. 2013;87(2):165-179 (<a href="https://doi.org/10.4321/S1135-57272013000200006" rel="noopener">article</a>, en castellà). Les puntuacions es calculen com ho fan els autors: de 0 a 100, amb la mitjana dels ítems de cada part.</p>
 </div></section>'''
-write("cribratges.html", with_scripts(page("cribratges.html", f"Cribratges PHQ-9 i GAD-7 en català | {NAME}", "Qüestionaris orientatius sobre símptomes de depressió i ansietat, amb recomanacions i derivació a professionals.", body, "cribratges.html"), ["js/cribratges.js"]))
+write("cribratges.html", with_scripts(page("cribratges.html", f"Cribratges PHQ-9, GAD-7 i CBI (burnout) en català | {NAME}", "Qüestionaris orientatius sobre símptomes de depressió, ansietat i burnout, amb recomanacions i derivació a professionals.", body, "cribratges.html"), ["js/cribratges.js"]))
 
 # ---------- Ajuda ----------
 def res(t, d, num, href, blue=False):
@@ -868,7 +875,7 @@ body = '''
   <p>Aquest lloc web té una finalitat exclusivament informativa i educativa. <strong>No ofereix diagnòstic, tractament ni assessorament mèdic o psicològic personalitzat</strong> i no substitueix la consulta amb un professional sanitari qualificat. Mai ignoris el consell d'un professional ni abandonis un tractament per allò que has llegit aquí.</p>
   <p>En cas d'emergència, truca al 112. Si tens pensaments suïcides, truca al 024.</p>
   <h2>Cribratges</h2>
-  <p>Els qüestionaris PHQ-9 i GAD-7 són eines orientatives. Un resultat no confirma ni descarta cap trastorn.</p>
+  <p>Els qüestionaris PHQ-9, GAD-7 i CBI són eines orientatives. Un resultat no confirma ni descarta cap trastorn.</p>
   <h2>Contingut i responsabilitat</h2>
   <p>Es procura que el contingut sigui acurat i basat en fonts reconegudes, però es proporciona «tal com és», sense garanties. El titular no es fa responsable de les decisions preses a partir de la informació del web.</p>
   <h2>Propietat intel·lectual</h2>
@@ -995,6 +1002,7 @@ body = f'''
     <li>Els textos s'han redactat amb l'ajuda d'una eina d'intel·ligència artificial, a partir de les fonts públiques que s'indiquen més avall. Són una síntesi divulgativa: no contenen recerca original ni experiència clínica.</li>
     <li>Les versions en castellà i en anglès són traduccions fetes amb la mateixa eina, sense revisió d'un traductor ni d'un professional.</li>
     <li>Els qüestionaris PHQ-9 i GAD-7 són adaptacions de les escales originals, d'ús lliure, i no són versions validades oficialment en cap de les tres llengües.</li>
+    <li>El qüestionari de burnout CBI és de domini públic. La versió en castellà és la validada a Espanya (2013). La versió en català és una traducció feta amb l'eina d'intel·ligència artificial a partir d'aquella, sense revisió ni validació. La versió en anglès és el text original publicat pels autors, validat amb mostres daneses.</li>
     <li>Les eines d'autoajuda es basen en tècniques conegudes de la teràpia cognitivo-conductual. Són un suport, no un tractament.</li>
   </ul>
 
@@ -1007,6 +1015,8 @@ body = f'''
     <li><a href="https://icd.who.int" rel="noopener">CIE-11 (OMS)</a> i <a href="https://www.psychiatry.org/psychiatrists/practice/dsm" rel="noopener">DSM-5-TR (American Psychiatric Association)</a>, com a classificacions de referència</li>
     <li>Kroenke K, Spitzer RL, Williams JBW. The PHQ-9: validity of a brief depression severity measure. <em>J Gen Intern Med</em>. 2001;16(9):606-613.</li>
     <li>Spitzer RL, Kroenke K, Williams JBW, Löwe B. A brief measure for assessing generalized anxiety disorder: the GAD-7. <em>Arch Intern Med</em>. 2006;166(10):1092-1097.</li>
+    <li>Kristensen TS, Borritz M, Villadsen E, Christensen KB. The Copenhagen Burnout Inventory: a new tool for the assessment of burnout. <em>Work &amp; Stress</em>. 2005;19(3):192-207.</li>
+    <li>Molinero Ruiz E, Basart Gómez-Quintero H, Moncada Lluis S. Fiabilidad y validez del Copenhagen Burnout Inventory para su uso en España. <em>Rev Esp Salud Pública</em>. 2013;87(2):165-179.</li>
   </ul>
 
   <h2>Actualitzacions i errades</h2>

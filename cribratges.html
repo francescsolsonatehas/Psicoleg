@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
-<title>Cribratges PHQ-9 i GAD-7 en català | Psicòleg</title>
-<meta name="description" content="Qüestionaris orientatius sobre símptomes de depressió i ansietat, amb recomanacions i derivació a professionals.">
+<title>Cribratges PHQ-9, GAD-7 i CBI (burnout) en català | Psicòleg</title>
+<meta name="description" content="Qüestionaris orientatius sobre símptomes de depressió, ansietat i burnout, amb recomanacions i derivació a professionals.">
 <link rel="canonical" href="https://francescsolsonatehas.github.io/Psicoleg/cribratges.html">
 <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <meta name="theme-color" content="#3f7d6e">
-<meta property="og:title" content="Cribratges PHQ-9 i GAD-7 en català | Psicòleg">
-<meta property="og:description" content="Qüestionaris orientatius sobre símptomes de depressió i ansietat, amb recomanacions i derivació a professionals.">
+<meta property="og:title" content="Cribratges PHQ-9, GAD-7 i CBI (burnout) en català | Psicòleg">
+<meta property="og:description" content="Qüestionaris orientatius sobre símptomes de depressió, ansietat i burnout, amb recomanacions i derivació a professionals.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://francescsolsonatehas.github.io/Psicoleg/cribratges.html">
 <meta property="og:site_name" content="Psicòleg">
@@ -47,20 +47,26 @@
 <main id="main">
 
 <section class="page-hero"><div class="container narrow">
-  <span class="eyebrow">Orientatiu</span><h1>Cribratges: PHQ-9 i GAD-7</h1>
-  <p class="lead muted">Qüestionaris breus que mesuren símptomes de depressió i d'ansietat de les últimes dues setmanes.</p>
+  <span class="eyebrow">Orientatiu</span><h1>Cribratges: PHQ-9, GAD-7 i burnout (CBI)</h1>
+  <p class="lead muted">Qüestionaris breus sobre símptomes de depressió i d'ansietat (les últimes dues setmanes) i sobre l'esgotament o burnout.</p>
   <div class="notice warn"><strong>No és un diagnòstic</strong>Els resultats no substitueixen una valoració clínica. Les respostes no s'envien enlloc: es calculen al teu dispositiu.</div>
 </div></section>
 <section style="padding-top:10px"><div class="container narrow">
   <div class="filters" role="group" aria-label="Escull el qüestionari">
     <button class="chip" id="tab-phq" aria-pressed="true">PHQ-9 · Ànim</button>
     <button class="chip" id="tab-gad" aria-pressed="false">GAD-7 · Ansietat</button>
+    <button class="chip" id="tab-cbi" aria-pressed="false">CBI · Burnout</button>
+  </div>
+  <div id="s-cbi-box" hidden>
+    <div class="notice" id="s-cbi-note"></div>
+    <label class="chk" style="margin:16px 0"><input type="checkbox" id="s-cbi-cl"> <span>Treballo amb persones (clients, usuaris, pacients, alumnes…) la major part del meu temps de feina. Si ho marques, hi ha una tercera part.</span></label>
   </div>
   <p class="muted" id="s-intro"></p>
   <form id="s-form" novalidate></form>
   <div class="btn-row"><button class="btn btn-primary" id="s-calc">Veure resultat</button><button class="btn btn-outline" id="s-reset" type="button">Esborrar respostes</button></div>
   <div class="result" id="s-result" aria-live="polite"></div>
   <p class="muted" style="margin-top:28px;font-size:.88rem">Els ítems són una adaptació al català de les escales PHQ-9 i GAD-7 (Pfizer Inc., d'ús lliure). Han de ser interpretats per un professional.</p>
+  <p class="muted" style="font-size:.88rem">El CBI (Copenhagen Burnout Inventory) és un qüestionari de domini públic: Kristensen TS, Borritz M, Villadsen E, Christensen KB. <em>Work &amp; Stress</em>. 2005;19(3):192-207 (<a href="https://nfa.dk/media/hl5nbers/cbi-first-edition.pdf" rel="noopener">document dels autors</a>, en anglès). La versió en castellà és la validada per Molinero Ruiz E, Basart Gómez-Quintero H, Moncada Lluis S. <em>Rev Esp Salud Pública</em>. 2013;87(2):165-179 (<a href="https://doi.org/10.4321/S1135-57272013000200006" rel="noopener">article</a>, en castellà). Les puntuacions es calculen com ho fan els autors: de 0 a 100, amb la mitjana dels ítems de cada part.</p>
 </div></section>
 </main>
 <footer class="site-footer"><div class="container">

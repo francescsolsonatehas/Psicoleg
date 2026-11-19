@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
-<title>Cribados PHQ-9 y GAD-7 en español | Psicòleg</title>
-<meta name="description" content="Cuestionarios orientativos sobre síntomas de depresión y ansiedad, con recomendaciones y derivación a profesionales.">
+<title>Cribados PHQ-9, GAD-7 y CBI (burnout) en español | Psicòleg</title>
+<meta name="description" content="Cuestionarios orientativos sobre síntomas de depresión, ansiedad y burnout, con recomendaciones y derivación a profesionales.">
 <link rel="canonical" href="https://francescsolsonatehas.github.io/Psicoleg/es/cribratges.html">
 <link rel="icon" type="image/svg+xml" href="../img/favicon.svg">
 <link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
 <meta name="theme-color" content="#3f7d6e">
-<meta property="og:title" content="Cribados PHQ-9 y GAD-7 en español | Psicòleg">
-<meta property="og:description" content="Cuestionarios orientativos sobre síntomas de depresión y ansiedad, con recomendaciones y derivación a profesionales.">
+<meta property="og:title" content="Cribados PHQ-9, GAD-7 y CBI (burnout) en español | Psicòleg">
+<meta property="og:description" content="Cuestionarios orientativos sobre síntomas de depresión, ansiedad y burnout, con recomendaciones y derivación a profesionales.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://francescsolsonatehas.github.io/Psicoleg/es/cribratges.html">
 <meta property="og:site_name" content="Psicòleg">
@@ -47,20 +47,26 @@
 <main id="main">
 
 <section class="page-hero"><div class="container narrow">
-  <span class="eyebrow">Orientativo</span><h1>Cribados: PHQ-9 y GAD-7</h1>
-  <p class="lead muted">Cuestionarios breves que miden síntomas de depresión y de ansiedad de las últimas dos semanas.</p>
+  <span class="eyebrow">Orientativo</span><h1>Cribados: PHQ-9, GAD-7 y burnout (CBI)</h1>
+  <p class="lead muted">Cuestionarios breves sobre síntomas de depresión y de ansiedad (las últimas dos semanas) y sobre el agotamiento o burnout.</p>
   <div class="notice warn"><strong>No es un diagnóstico</strong>Los resultados no sustituyen una valoración clínica. Las respuestas no se envían a ningún sitio: se calculan en tu dispositivo.</div>
 </div></section>
 <section style="padding-top:10px"><div class="container narrow">
   <div class="filters" role="group" aria-label="Elige el cuestionario">
     <button class="chip" id="tab-phq" aria-pressed="true">PHQ-9 · Ánimo</button>
     <button class="chip" id="tab-gad" aria-pressed="false">GAD-7 · Ansiedad</button>
+    <button class="chip" id="tab-cbi" aria-pressed="false">CBI · Burnout</button>
+  </div>
+  <div id="s-cbi-box" hidden>
+    <div class="notice" id="s-cbi-note"></div>
+    <label class="chk" style="margin:16px 0"><input type="checkbox" id="s-cbi-cl"> <span>Trabajo con personas (clientes, usuarios, pacientes, alumnos…) la mayor parte de mi tiempo de trabajo. Si lo marcas, hay una tercera parte.</span></label>
   </div>
   <p class="muted" id="s-intro"></p>
   <form id="s-form" novalidate></form>
   <div class="btn-row"><button class="btn btn-primary" id="s-calc">Ver resultado</button><button class="btn btn-outline" id="s-reset" type="button">Borrar respuestas</button></div>
   <div class="result" id="s-result" aria-live="polite"></div>
   <p class="muted" style="margin-top:28px;font-size:.88rem">Los ítems son una adaptación al español de las escalas PHQ-9 y GAD-7 (Pfizer Inc., de uso libre). Deben ser interpretados por un profesional.</p>
+  <p class="muted" style="font-size:.88rem">El CBI (Copenhagen Burnout Inventory) es un cuestionario de dominio público: Kristensen TS, Borritz M, Villadsen E, Christensen KB. <em>Work &amp; Stress</em>. 2005;19(3):192-207 (<a href="https://nfa.dk/media/hl5nbers/cbi-first-edition.pdf" rel="noopener">documento de los autores</a>, en inglés). La versión en castellano es la validada por Molinero Ruiz E, Basart Gómez-Quintero H, Moncada Lluis S. <em>Rev Esp Salud Pública</em>. 2013;87(2):165-179 (<a href="https://doi.org/10.4321/S1135-57272013000200006" rel="noopener">artículo</a>, en castellano). Las puntuaciones se calculan como lo hacen los autores: de 0 a 100, con la media de los ítems de cada parte.</p>
 </div></section>
 </main>
 <footer class="site-footer"><div class="container">
