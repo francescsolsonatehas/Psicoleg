@@ -12,7 +12,7 @@ NAME = "Psicòleg"
 e = html.escape
 
 NAV = [("index.html", "Inici"), ("trastorns.html", "Trastorns"), ("eines.html", "Eines"),
-       ("eines-tcc.html", "Eines de TCC"), ("cribratges.html", "Cribratges"), ("parlar-ne.html", "Com parlar-ne"), ("joves.html", "Joves"), ("familiars.html", "Familiars"), ("ajuda.html", "Trobar ajuda")]
+       ("cribratges.html", "Cribratges"), ("parlar-ne.html", "Com parlar-ne"), ("joves.html", "Joves"), ("familiars.html", "Familiars"), ("ajuda.html", "Trobar ajuda")]
 
 FOOT_EXTRA = [("pla.html", "El meu pla"), ("cerca.html", "Cerca i índex")]
 
@@ -263,6 +263,11 @@ body = '''
 </div></section>
 <section style="padding-top:10px"><div class="container narrow">
 
+<div class="grid grid-2 tcc-cards" style="margin-bottom:28px">
+  <div class="card"><h2>🌱 Eines de TCC</h2><p class="muted">Activació conductual per a la depressió, diari de son i registre de pànic.</p><div class="btn-row"><a class="btn btn-primary btn-sm" href="eines-tcc.html">Obrir les eines</a></div></div>
+  <div class="card"><h2>🫥 Ansietat social</h2><p class="muted">Eines específiques de TCC: jerarquia d'exposició, registre de pensaments socials i experiments conductuals.</p><div class="btn-row"><a class="btn btn-primary btn-sm" href="ansietat-social-eines.html">Obrir les eines</a></div></div>
+</div>
+
 <div class="tool" id="respiracio">
   <h2>🫁 Respiració guiada</h2>
   <p class="muted">Segueix el cercle. Escull un patró i respira pel nas si pots.</p>
@@ -329,11 +334,7 @@ body = '''
 
 <div class="card" style="margin-bottom:28px"><h2>🧭 El meu pla</h2><p class="muted">Cinc preguntes sobre les últimes dues setmanes i una proposta de petits passos, amb enllaços a les eines.</p><div class="btn-row"><a class="btn btn-primary btn-sm" href="pla.html">Fer el meu pla</a></div></div>
 
-<div class="card" style="margin-bottom:28px"><h2>🌱 Més eines de TCC</h2><p class="muted">Activació conductual per a la depressió, diari de son i registre de pànic.</p><div class="btn-row"><a class="btn btn-primary btn-sm" href="eines-tcc.html">Obrir les eines</a></div></div>
-
 <div class="card" style="margin-bottom:28px"><h2>📦 Les meves dades</h2><p class="muted">Imprimeix o descarrega els teus registres per portar-los a la consulta, fes còpies i crea recordatoris.</p><div class="btn-row"><a class="btn btn-primary btn-sm" href="meves-dades.html">Obrir</a></div></div>
-
-<div class="card"><h2>🫥 Ansietat social</h2><p class="muted">Eines específiques de TCC: jerarquia d'exposició, registre de pensaments socials i experiments conductuals.</p><div class="btn-row"><a class="btn btn-primary btn-sm" href="ansietat-social-eines.html">Obrir les eines</a></div></div>
 
 </div></section>'''
 write("eines.html", with_scripts(page("eines.html", f"Eines d'autoajuda: respiració, grounding i registre d'ànim | {NAME}", "Respiració guiada, grounding 5-4-3-2-1, relaxació muscular, registre d'ànim i diari de pensaments. Tot es guarda al teu dispositiu.", body, "eines.html"), ["js/eines.js"]))
@@ -394,7 +395,7 @@ body = f"""
 
 <div class="notice soft"><strong>I si em costa massa?</strong>És normal. Fes passos més petits o parla-ho amb un psicòleg: la TCC amb exposició és el tractament amb més evidència per a l'ansietat social. <a href="trastorns/ansietat-social.html">Llegeix la fitxa</a> · <a href="ajuda.html">Trobar ajuda</a></div>
 </div></section>"""
-write("ansietat-social-eines.html", with_scripts(page("ansietat-social-eines.html", f"Ansietat social: eines de TCC | {NAME}", "Jerarquia d'exposició, registre de pensaments i experiments conductuals per treballar l'ansietat social amb TCC.", body, "eines-tcc.html"), ["js/social.js"]))
+write("ansietat-social-eines.html", with_scripts(page("ansietat-social-eines.html", f"Ansietat social: eines de TCC | {NAME}", "Jerarquia d'exposició, registre de pensaments i experiments conductuals per treballar l'ansietat social amb TCC.", body, "eines.html"), ["js/social.js"]))
 
 # ---------- Eines TCC: activació conductual, son, pànic ----------
 body = """
@@ -482,7 +483,7 @@ body = """
 
 <div class="notice soft"><strong>Porta-ho a la consulta</strong>Pots <a href="meves-dades.html">imprimir o descarregar</a> aquests registres per ensenyar-los al teu metge o psicòleg.</div>
 </div></section>"""
-write("eines-tcc.html", with_scripts(page("eines-tcc.html", f"Eines de TCC: activació conductual, son i pànic | {NAME}", "Activació conductual per a la depressió, diari de son i registre de pànic. Eines de TCC que es guarden només al teu dispositiu.", body, "eines-tcc.html"), ["js/tcc.js"]))
+write("eines-tcc.html", with_scripts(page("eines-tcc.html", f"Eines de TCC: activació conductual, son i pànic | {NAME}", "Activació conductual per a la depressió, diari de son i registre de pànic. Eines de TCC que es guarden només al teu dispositiu.", body, "eines.html"), ["js/tcc.js"]))
 
 # ---------- Guia: com parlar-ne ----------
 body = """
@@ -753,7 +754,7 @@ ollama pull llama3.2</pre>
 
 <div class="notice soft"><strong>Millor amb un professional</strong>Aquest assistent és un complement per practicar. La TCC funciona millor acompanyada d'un psicòleg. <a href="ajuda.html">Trobar ajuda</a></div>
 </div></section>"""
-write("ansietat-social-assistent.html", with_scripts(page("ansietat-social-assistent.html", f"Assistent de TCC amb IA per a l'ansietat social | {NAME}", "Assistent experimental d'IA que s'executa al teu dispositiu per practicar converses socials i reformular pensaments amb TCC.", body, "eines-tcc.html"), ["module:js/assistent.js"]))
+write("ansietat-social-assistent.html", with_scripts(page("ansietat-social-assistent.html", f"Assistent de TCC amb IA per a l'ansietat social | {NAME}", "Assistent experimental d'IA que s'executa al teu dispositiu per practicar converses socials i reformular pensaments amb TCC.", body, "eines.html"), ["module:js/assistent.js"]))
 
 # ---------- Cribratges ----------
 body = '''
