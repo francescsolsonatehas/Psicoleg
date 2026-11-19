@@ -50,6 +50,7 @@ section{padding:56px 0}
 .icon-btn{background:transparent;border:1px solid var(--border);color:var(--text);border-radius:10px;padding:6px 10px;cursor:pointer;font:inherit;font-size:.9rem;min-height:38px}
 .icon-btn:hover{background:var(--primary-soft)}
 .menu-btn{display:none}
+@media(min-width:1361px) and (max-width:1560px){.nav ul{gap:0}.nav ul a{padding:8px 7px;font-size:.9rem}}
 @media(max-width:1360px){
   .menu-btn{display:inline-block}
   .nav ul{display:none;position:absolute;left:0;right:0;top:64px;background:var(--surface);flex-direction:column;align-items:stretch;padding:12px 20px;border-bottom:1px solid var(--border);box-shadow:var(--shadow)}
