@@ -23,6 +23,7 @@ f048d5	<span#0>Ansietat i relacionats</span>
 f92070	<strong>Informació, no diagnòstic</strong>Aquesta fitxa és informativa. Només un professional pot valorar la teva situació.
 6d461b	Què és
 a7b435	Totes les persones sentim ansietat de tant en tant. Quan la preocupació és constant, desproporcionada i interfereix en la feina, les relacions o el descans, pot tractar-se d'un trastorn d'ansietat generalitzada (TAG).
+2109de	<strong>Font principal:</strong> <a#0>Canal Salut: Ansietat</a> (en català)
 42c719	Símptomes habituals
 b109d0	Preocupació constant per molts temes (salut, feina, família, diners)
 325fd6	Inquietud, sensació d'estar «al límit»
@@ -42,7 +43,13 @@ c767dd	Escolta sense minimitzar («no és per tant»).
 5ea504	Evita donar-li la raó en cada por, però també forçar-lo a enfrontar-s'hi de cop.
 904705	Anima'l a demanar ajuda i ofereix-te a acompanyar-lo a la primera visita.
 eb39b9	<a#0>Trobar ajuda</a><a#1>Eines d'autoajuda</a>
-5bdb8c	<strong>Fonts per ampliar informació:</strong> <a#0>OMS – Salut mental</a> · <a#1>Canal Salut (Generalitat de Catalunya)</a> · <a#2>Guies clíniques NICE</a>. Classificacions de referència: CIE-11 i DSM-5-TR.
+09f4ce	<strong>Fonts d'aquesta fitxa</strong>
+4752c6	Aquesta fitxa és una síntesi divulgativa feta amb ajuda d'IA a partir d'aquestes fonts. No les substitueix: consulta-les per ampliar o contrastar la informació.
+1b9bc4	<a#0>Canal Salut: Ansietat</a> <span#1>(en català)</span>
+81b710	<a#0>NHS: Generalised anxiety disorder (GAD)</a> <span#1>(en anglès)</span>
+f13117	<a#0>NICE: Generalised anxiety disorder and panic disorder in adults (CG113)</a> <span#1>(en anglès)</span>
+5ac58d	<a#0>OMS: Anxiety disorders</a> <span#1>(en anglès)</span>
+23aa58	Classificacions de referència: CIE-11 i DSM-5-TR.
 7af0bd	<strong>Revisió professional:</strong> pendent. Contingut actualitzat el novembre de 2026. <a#0>Qui ho revisa i fonts</a>.
 dee875	Informació i eines per cuidar la salut mental. Contingut informatiu: no substitueix l'atenció d'un professional sanitari.
 2aebd8	Seccions
@@ -59,6 +66,7 @@ e816b3	Trastorn de pànic i agorafòbia – símptomes i ajuda | Psicòleg
 03a76e	Atacs de pànic inesperats i por que tornin a passar.
 b34659	💨 Trastorn de pànic i agorafòbia
 8b7587	Un atac de pànic és una onada intensa de por que arriba al seu punt màxim en pocs minuts. Quan es repeteixen i genera por constant a patir-ne un altre, parlem de trastorn de pànic. Pot anar acompanyat d'evitar llocs o situacions (agorafòbia).
+1dc782	<strong>Font principal:</strong> <a#0>NHS: Panic disorder</a> (en anglès)
 45b17c	Palpitacions, ofec, pressió al pit
 1a5612	Marejos, formigueig, sudoració o tremolors
 0fe5c0	Sensació d'irrealitat o de perdre el control
@@ -70,11 +78,15 @@ ac7aee	<b>Mite:</b> Un atac de pànic pot provocar un infart.<br><b#0>Realitat:<
 05b829	Durant l'atac, mantén la calma, parla amb veu suau i recorda-li que passarà.
 1cb6a9	No l'ajudis a evitar-ho tot: l'evitació manté el problema.
 29c720	Respecta el seu ritme en l'exposició gradual.
+5407c1	<a#0>NHS: Panic disorder</a> <span#1>(en anglès)</span>
+d10ac1	<a#0>NIMH: Panic Disorder: What You Need to Know</a> <span#1>(en anglès)</span>
+9cf39e	<a#0>MedlinePlus: Trastorno de pánico</a> <span#1>(en castellà)</span>
 e2067c	Trastorn d'ansietat social – símptomes i ajuda | Psicòleg
 3292a7	Por intensa a ser jutjat o avergonyit en situacions socials.
 043f22	🫥 Trastorn d'ansietat social
 5c6e7c	<strong>Eines de TCC per a l'ansietat social</strong>Jerarquia d'exposició, registre de pensaments i experiments conductuals. <a#0>Obre les eines →</a>
 9de722	Va més enllà de la timidesa. Hi ha una por persistent a ser avaluat negativament, que porta a evitar situacions com parlar en públic, conèixer gent o menjar davant dels altres.
+591054	<strong>Font principal:</strong> <a#0>NHS: Social anxiety (social phobia)</a> (en anglès)
 2ebe53	Por intensa abans i durant situacions socials
 787f0d	Roseguera, sudoració, tremolor, veu tremolosa
 23ed67	Anticipar l'escena durant dies
@@ -86,10 +98,14 @@ e2067c	Trastorn d'ansietat social – símptomes i ajuda | Psicòleg
 26b057	No l'obliguis a exposar-se de cop.
 0f01ec	Celebra els petits avenços.
 96c4e1	Evita burlar-te o etiquetar-lo de «vergonyós».
+b269b1	<a#0>NHS: Social anxiety (social phobia)</a> <span#1>(en anglès)</span>
+c3ab65	<a#0>NICE: Social anxiety disorder: recognition, assessment and treatment (CG159)</a> <span#1>(en anglès)</span>
+b81b68	<a#0>NIMH: Social Anxiety Disorder: What You Need to Know</a> <span#1>(en anglès)</span>
 3f5766	Trastorn obsessivocompulsiu (TOC) – símptomes i ajuda | Psicòleg
 d6ae03	Pensaments intrusius (obsessions) i rituals (compulsions) que alleugen l'angoixa breument.
 3de9fa	🔁 Trastorn obsessivocompulsiu (TOC)
 0689a9	Les obsessions són pensaments, imatges o impulsos no desitjats que provoquen angoixa. Les compulsions són conductes o actes mentals repetits per reduir-la. Ocupa molt de temps i interfereix en la vida diària.
+f3296e	<strong>Font principal:</strong> <a#0>Canal Salut: Trastorn obsessivocompulsiu (TOC)</a> (en català)
 cb21a2	Pors de contaminació, d'errors, de fer mal o de tenir «pensaments terribles»
 68a242	Rentar-se, comprovar, ordenar o repetir de forma excessiva
 471aaf	Necessitat de simetria o exactitud
@@ -102,11 +118,17 @@ de0fdd	Demanar tranquil·litat constantment
 922eef	No participis en els rituals ni donis tranquil·litat repetida: sense voler, els reforça.
 70830b	Mostra empatia sense judici.
 3a4c0c	Facilita l'accés a un especialista en TOC.
+653162	<a#0>Canal Salut: Trastorn obsessivocompulsiu (TOC)</a> <span#1>(en català)</span>
+58ca19	<a#0>NHS: Obsessive compulsive disorder (OCD)</a> <span#1>(en anglès)</span>
+95c19b	<a#0>NHS: Treatment of OCD</a> <span#1>(en anglès)</span>
+d5c489	<a#0>NICE: Obsessive-compulsive disorder and body dysmorphic disorder: treatment (CG31)</a> <span#1>(en anglès)</span>
+fcead3	<a#0>NIMH: Obsessive-Compulsive Disorder (OCD)</a> <span#1>(en anglès)</span>
 d06e1a	Trastorn d'estrès posttraumàtic (TEPT) – símptomes i ajuda | Psicòleg
 5460a7	Reaccions persistents després d'una experiència traumàtica.
 fd3d0d	<span#0>Trauma i dol</span>
 226fd4	⚡ Trastorn d'estrès posttraumàtic (TEPT)
 b326fc	Pot aparèixer després d'haver viscut o presenciat un esdeveniment amenaçador (accident, agressió, violència, guerra, pèrdua sobtada). El cos i la ment es queden en «alerta» mesos o anys després.
+99d2de	<strong>Font principal:</strong> <a#0>NHS: PTSD (post-traumatic stress disorder)</a> (en anglès)
 85b239	Records o malsons recurrents
 eaf3f3	Evitar persones, llocs o converses relacionades
 78b8e1	Hipervigilància, ensurts, irritabilitat
@@ -119,12 +141,18 @@ bf03a1	Teràpies centrades en el trauma (TCC centrada en el trauma, EMDR) són l
 e74b3d	No pressionis perquè expliqui el que va passar.
 247df0	Ofereix un entorn previsible i segur.
 094fa2	Cuida't tu també: acompanyar un trauma desgasta.
+b92b48	<a#0>NHS: PTSD (post-traumatic stress disorder)</a> <span#1>(en anglès)</span>
+dc2db1	<a#0>NHS: Treatment of PTSD</a> <span#1>(en anglès)</span>
+53d0ae	<a#0>NICE: Post-traumatic stress disorder (NG116)</a> <span#1>(en anglès)</span>
+53d1fe	<a#0>NIMH: Traumatic Events and Post-Traumatic Stress Disorder (PTSD)</a> <span#1>(en anglès)</span>
+680da8	<a#0>MedlinePlus: Trastorno de estrés postraumático</a> <span#1>(en castellà)</span>
 0675e7	Depressió – símptomes i ajuda | Psicòleg
 ff1afd	Tristesa persistent o pèrdua d'interès que afecta la vida diària.
 8f63f4	<span#0>Estat d'ànim</span>
 8a7077	🌧️ Depressió
 baf518	<strong>Si estàs en perill ara</strong>Truca al <a#0>112</a> o al <a#1>024</a> (gratuït, 24 h). No cal que estiguis sol/a amb això.
 78bfe0	La depressió és més que estar trist uns dies. És un trastorn de l'estat d'ànim que afecta la forma de sentir, pensar i actuar, i que dura setmanes o mesos.
+f3a648	<strong>Font principal:</strong> <a#0>Canal Salut: Depressió</a> (en català)
 c94d2e	Tristesa o buit la major part del dia
 f7661f	Pèrdua d'interès o plaer en les activitats
 df63cd	Canvis en la gana, el pes o el son
@@ -139,10 +167,15 @@ b8d590	Segons la gravetat: psicoteràpia (TCC, activació conductual, teràpia i
 fe6d4f	Escolta sense intentar «animar» a la força.
 836ad3	Proposa petites activitats compartides, sense exigir.
 0f9cb3	Pren seriosament qualsevol comentari sobre no voler viure i pregunta-li directament amb calma.
+d63a7d	<a#0>Canal Salut: Depressió</a> <span#1>(en català)</span>
+3db02f	<a#0>OMS: Depressive disorder (depression)</a> <span#1>(en anglès)</span>
+6bbbac	<a#0>NICE: Depression in adults: treatment and management (NG222)</a> <span#1>(en anglès)</span>
+abb320	<a#0>NHS: Depression in adults</a> <span#1>(en anglès)</span>
 53bb71	Trastorn bipolar – símptomes i ajuda | Psicòleg
 b34bcc	Alternança d'episodis d'ànim elevat (mania/hipomania) i de depressió.
 b0ee2b	🎢 Trastorn bipolar
 8707f1	Es caracteritza per canvis marcats de l'estat d'ànim i de l'energia. Els episodis d'eufòria o irritabilitat intensa s'alternen amb episodis depressius, amb períodes d'estabilitat entremig.
+5249c3	<strong>Font principal:</strong> <a#0>Canal Salut: Trastorn bipolar</a> (en català)
 a6b815	Períodes amb molta energia, poc son i molta activitat
 8e56d1	Idees grandioses, parla accelerada, impulsivitat
 163534	Despeses o conductes de risc
@@ -154,11 +187,16 @@ e718ec	Períodes depressius amb tristesa i falta d'energia
 7d5ab6	Aprèn a reconèixer els senyals d'alerta d'un nou episodi.
 e973d0	Evita discutir idees durant un episodi maníac.
 612319	Ajuda a mantenir horaris regulars de son.
+e8a954	<a#0>Canal Salut: Trastorn bipolar</a> <span#1>(en català)</span>
+98966e	<a#0>OMS: Bipolar disorder</a> <span#1>(en anglès)</span>
+ccba15	<a#0>NICE: Bipolar disorder: assessment and management (CG185)</a> <span#1>(en anglès)</span>
+0df911	<a#0>NHS: Bipolar disorder</a> <span#1>(en anglès)</span>
 09971c	Burnout (esgotament professional) – símptomes i ajuda | Psicòleg
 28e53e	Esgotament causat per un estrès laboral cronificat que no s'ha pogut gestionar.
 64b677	<span#0>Estrès i feina</span>
 8f4913	🔥 Burnout (esgotament professional)
 3641e4	El burnout, o síndrome de desgast ocupacional, és el que pot aparèixer quan l'estrès a la feina es manté durant molt de temps i no es resol. L'Organització Mundial de la Salut (OMS) el descriu a la CIE-11 com un fenomen laboral, no com una malaltia ni un trastorn mental, i només el relaciona amb el context de la feina. No és el mateix que una setmana dura: l'esgotament es manté i canvia la manera de viure la feina. Els símptomes s'assemblen als de la depressió o l'ansietat i poden coincidir-hi, per això convé que ho valori un professional.
+a784d2	<strong>Font principal:</strong> <a#0>OMS: Burn-out an "occupational phenomenon": International Classification of Diseases</a> (en anglès)
 8a90be	Esgotament i sensació de no tenir energia, també després de descansar
 74b819	Distància mental respecte de la feina: cinisme, negativitat o desmotivació
 fd58a2	Sensació de ser menys eficaç, de no arribar a res o de fer-ho tot malament
@@ -190,11 +228,15 @@ e51c70	De fonts oficials
 003fed	<a#0>INSST: síndrome de desgast professional (burnout)</a> (en castellà): informació oficial i enllaços a les notes tècniques sobre prevenció i avaluació.
 f4b0ee	<a#0>OMS: el burnout com a fenomen laboral a la CIE-11</a> (en anglès).
 01b667	<strong>No és un test de diagnòstic</strong>El qüestionari CBI és un instrument de recerca i no dona un diagnòstic. Si dubtes de com estàs, parla-ho amb un professional.
+bc1e0b	<a#0>OMS: Burn-out an "occupational phenomenon": International Classification of Diseases</a> <span#1>(en anglès)</span>
+4a0780	<a#0>INSST: Síndrome de desgaste profesional (burnout)</a> <span#1>(en castellà)</span>
+5a0e0d	<a#0>OMS: Doing What Matters in Times of Stress: An Illustrated Guide</a> <span#1>(en anglès)</span>
 51bbae	Trastorns de la conducta alimentària – símptomes i ajuda | Psicòleg
 60f6b7	Anorèxia, bulímia i trastorn per afartament: una relació afectada amb el menjar i el cos.
 7f0c44	<span#0>Alimentació</span>
 7791c3	🍽️ Trastorns de la conducta alimentària
 547c80	Són problemes de salut mental greus, no capritxos ni una qüestió de voluntat. Inclouen restricció alimentària, afartaments i conductes compensatòries, i una preocupació excessiva pel pes i la imatge corporal.
+d216c1	<strong>Font principal:</strong> <a#0>NHS: Eating disorders</a> (en anglès)
 1418dd	Restricció alimentària o por intensa a engreixar-se
 a69207	Afartaments seguits de culpa i conductes compensatòries
 9df768	Preocupació constant pel pes i el cos
@@ -207,11 +249,17 @@ e4cd6e	Requereix un abordatge multidisciplinari: metge, psicòleg, psiquiatre i 
 537da8	No comentis el pes ni el cos, ni per bé ni per mal.
 425c9f	No forcis a menjar; busca ajuda professional.
 f2a994	Mantén els àpats en família com un espai tranquil.
+b835d0	<a#0>NHS: Eating disorders</a> <span#1>(en anglès)</span>
+ea3c6a	<a#0>NICE: Eating disorders: recognition and treatment (NG69)</a> <span#1>(en anglès)</span>
+a0ac14	<a#0>NIMH: Eating Disorders</a> <span#1>(en anglès)</span>
+063874	<a#0>MedlinePlus: Trastornos de la alimentación</a> <span#1>(en castellà)</span>
+1a23a6	<a#0>ACAB: Associació contra l'Anorèxia i la Bulímia</a> <span#1>(en català)</span>
 a500bb	Esquizofrènia i trastorns psicòtics – símptomes i ajuda | Psicòleg
 e2d6a8	Alteracions en la percepció de la realitat: al·lucinacions, deliris i pensament desorganitzat.
 ca7826	<span#0>Psicosis</span>
 042fbc	🌀 Esquizofrènia i trastorns psicòtics
 a4d7e8	La psicosi implica una pèrdua de contacte amb la realitat. L'esquizofrènia és un dels trastorns psicòtics més coneguts. Amb un tractament adequat, moltes persones tenen una vida plena.
+b8c6cf	<strong>Font principal:</strong> <a#0>Canal Salut: Esquizofrènia</a> (en català)
 d51229	Escoltar veus o veure coses que altres no perceben
 b07167	Idees fixes que no responen a la lògica (deliris)
 805726	Pensament i llenguatge desorganitzats
@@ -224,11 +272,16 @@ e5e513	Tractament antipsicòtic prescrit per psiquiatria, combinat amb psicoeduc
 7a95c9	No discuteixis el contingut dels deliris; mostra't present i tranquil.
 c4587b	Facilita la continuïtat del tractament.
 556d2d	Busca grups de suport per a famílies.
+797114	<a#0>Canal Salut: Esquizofrènia</a> <span#1>(en català)</span>
+ffa5e8	<a#0>OMS: Schizophrenia</a> <span#1>(en anglès)</span>
+3ba9f6	<a#0>NICE: Psychosis and schizophrenia in adults: prevention and management (CG178)</a> <span#1>(en anglès)</span>
+1d3671	<a#0>NHS: Schizophrenia</a> <span#1>(en anglès)</span>
 18b5a3	Trastorn límit de la personalitat – símptomes i ajuda | Psicòleg
 edad1c	Inestabilitat emocional intensa, a les relacions i a la imatge d'un mateix.
 b5813c	<span#0>Personalitat</span>
 294a56	🎭 Trastorn límit de la personalitat
 804a59	Es caracteritza per emocions molt intenses que canvien ràpidament, por a l'abandonament, relacions inestables i impulsivitat. És un trastorn tractable i amb bon pronòstic amb el suport adequat.
+8c9a25	<strong>Font principal:</strong> <a#0>NHS: Borderline personality disorder</a> (en anglès)
 ce9d8f	Por intensa a ser abandonat
 8d3725	Relacions intenses i inestables
 022691	Canvis ràpids d'humor
@@ -242,11 +295,17 @@ de9745	<b>Mite:</b> Són persones manipuladores.<br><b#0>Realitat:</b> Sovint se
 e7dde3	Valida les emocions sense validar totes les conductes.
 2ed292	Posa límits clars i amables.
 9f0444	Busca suport per a tu: acompanyar és exigent.
+cf1b1d	<a#0>NHS: Borderline personality disorder</a> <span#1>(en anglès)</span>
+a40765	<a#0>NHS: Treatment of borderline personality disorder</a> <span#1>(en anglès)</span>
+17e657	<a#0>NICE: Borderline personality disorder: recognition and management (CG78)</a> <span#1>(en anglès)</span>
+5c96be	<a#0>NIMH: Borderline Personality Disorder</a> <span#1>(en anglès)</span>
+125dda	<a#0>MedlinePlus: Trastorno límite de la personalidad</a> <span#1>(en castellà)</span>
 dddbad	TDAH (Trastorn per dèficit d'atenció i hiperactivitat) – símptomes i ajuda | Psicòleg
 e299ed	Dificultats persistents d'atenció, hiperactivitat i/o impulsivitat.
 970f44	<span#0>Neurodesenvolupament</span>
 6da204	⚡ TDAH (Trastorn per dèficit d'atenció i hiperactivitat)
 6f9d99	És un trastorn del neurodesenvolupament que apareix a la infància i pot continuar a l'edat adulta. No és manca d'educació ni de voluntat.
+d0941b	<strong>Font principal:</strong> <a#0>Canal Salut: Trastorn per dèficit d'atenció i hiperactivitat (TDAH)</a> (en català)
 bdd390	Dificultat per mantenir l'atenció
 c1d2b2	Distracció freqüent, oblits
 01cc26	Inquietud motora, dificultat per estar quiet
@@ -259,10 +318,15 @@ c1d2b2	Distracció freqüent, oblits
 b6bd4b	Estructura rutines i divideix tasques en passos.
 350904	Reforça els esforços, no només els resultats.
 61dfff	Evita les etiquetes negatives («gandul», «despistat»).
+11eb38	<a#0>Canal Salut: Trastorn per dèficit d'atenció i hiperactivitat (TDAH)</a> <span#1>(en català)</span>
+fa423d	<a#0>NICE: Attention deficit hyperactivity disorder: diagnosis and management (NG87)</a> <span#1>(en anglès)</span>
+ff19f8	<a#0>NHS: ADHD</a> <span#1>(en anglès)</span>
+9b70ba	<a#0>NIMH: Attention-Deficit/Hyperactivity Disorder (ADHD)</a> <span#1>(en anglès)</span>
 49c200	Trastorn de l'espectre autista (TEA) – símptomes i ajuda | Psicòleg
 dec6ed	Una manera diferent de comunicar-se, relacionar-se i percebre el món.
 51edb1	🧩 Trastorn de l'espectre autista (TEA)
 96bc09	L'autisme és una condició del neurodesenvolupament que dura tota la vida. Cada persona és diferent: les necessitats de suport poden ser molt variades. No és una malaltia que s'hagi de «curar».
+c3b2d1	<strong>Font principal:</strong> <a#0>Canal Salut: Autisme</a> (en català)
 1c357b	Diferències en la comunicació i la interacció social
 d3c834	Interessos intensos i específics
 7dc49d	Necessitat de rutines i dificultat amb els canvis
@@ -274,11 +338,16 @@ cb0cd7	No es tracta l'autisme com a tal, sinó que s'ofereixen suports: interven
 838dc6	Respecta les seves necessitats sensorials i de rutina.
 6a4b3c	Anticipa els canvis amb temps.
 728e8a	Centra't en les fortaleses i els interessos.
+8ad240	<a#0>Canal Salut: Autisme</a> <span#1>(en català)</span>
+84efbd	<a#0>OMS: Autism</a> <span#1>(en anglès)</span>
+5fecca	<a#0>NICE: Autism spectrum disorder in adults: diagnosis and management (CG142)</a> <span#1>(en anglès)</span>
+2cfdf2	<a#0>NHS: Autism</a> <span#1>(en anglès)</span>
 657d0b	Addiccions i consum problemàtic – símptomes i ajuda | Psicòleg
 330f95	Pèrdua de control sobre el consum de substàncies o conductes (joc, pantalles...).
 32e422	<span#0>Addiccions</span>
 8d39a6	🔗 Addiccions i consum problemàtic
 bb1211	L'addicció és una malaltia crònica i tractable. Es caracteritza per la dificultat per controlar el consum malgrat les conseqüències negatives.
+989083	<strong>Font principal:</strong> <a#0>OMS: Alcohol</a> (en anglès)
 45982b	Consumir més del previst o durant més temps
 e17c9d	Intents fallits de reduir o deixar-ho
 a80ada	Tolerància i abstinència
@@ -291,25 +360,36 @@ a728e2	Abordatge individualitzat: atenció ambulatòria (CAS), teràpia motivaci
 4b629b	Parla des de la preocupació, sense retrets.
 243058	Posa límits clars i mantén-los.
 198ff0	Cerca suport per a tu en grups de familiars.
+d48062	<a#0>OMS: Alcohol</a> <span#1>(en anglès)</span>
+8fe861	<a#0>NIDA: Drug Misuse and Addiction</a> <span#1>(en anglès)</span>
+0e04a3	<a#0>MedlinePlus: Consumo de drogas y la adicción</a> <span#1>(en castellà)</span>
+ab9375	<a#0>Plan Nacional sobre Drogas (Ministerio de Sanidad)</a> <span#1>(en castellà)</span>
 41b88d	Insomni i problemes de son – símptomes i ajuda | Psicòleg
 2bd1c0	Dificultat per dormir que afecta el dia a dia.
 34c554	<span#0>Son</span>
 4f785a	🌙 Insomni i problemes de son
 021b57	El son i la salut mental estan molt lligats: dormir malament pot empitjorar l'ànim i l'ansietat, i viceversa.
+1f4f9f	<strong>Font principal:</strong> <a#0>NHS: Insomnia</a> (en anglès)
 775717	Dificultat per adormir-se o despertars freqüents
 955bcf	Despertar massa d'hora
 489051	Cansament durant el dia
 db5642	Irritabilitat i dificultat de concentració
 2b2da9	<b>Mite:</b> Cal dormir sempre 8 hores.<br><b#0>Realitat:</b> Les necessitats varien entre persones.
 a3931c	<b>Mite:</b> Les pastilles són la solució.<br><b#0>Realitat:</b> Per a l'insomni crònic, la teràpia és el tractament de primera línia.
-f7ca28	Si l'insomni es manté més de tres nits per setmana durant més d'un mes.
-e5f792	La teràpia cognitivo-conductual per a l'insomni (TCC-I) és el tractament recomanat. Mesures d'higiene del son: horaris regulars, evitar pantalles i cafeïna abans d'anar a dormir, habitació fosca i fresca.
+7fa888	Si canviar els hàbits de son no t'ha ajudat, si fa mesos que dorms malament o si l'insomni afecta tant el teu dia que et costa funcionar.
+b5e531	La teràpia cognitivo-conductual per a l'insomni (TCC-I) és el tractament de primera elecció segons les guies clíniques europea i nord-americana. Les mesures d'higiene del son ajuden: horaris regulars, evitar pantalles, cafeïna i alcohol abans d'anar a dormir, i una habitació fosca, silenciosa i a una temperatura còmoda. Els somnífers només es valoren per a períodes curts i amb control mèdic.
 bc321e	Respecta els seus horaris i el descans.
 35acb4	Evita convertir el son en un tema de pressió.
+2fe366	<a#0>NHS: Insomnia</a> <span#1>(en anglès)</span>
+2ceea2	<a#0>Canal Salut: Son</a> <span#1>(en català)</span>
+8e8817	<a#0>Riemann D i col.: European guideline for the diagnosis and treatment of insomnia. J Sleep Res 2017;26:675-700</a> <span#1>(en anglès)</span>
+dd72ef	<a#0>Qaseem A i col.: Management of chronic insomnia disorder in adults (American College of Physicians). Ann Intern Med 2016;165:125-133</a> <span#1>(en anglès)</span>
+f3f8fc	<a#0>MedlinePlus: Insomnio</a> <span#1>(en castellà)</span>
 78cc29	Dol i pèrdues – símptomes i ajuda | Psicòleg
 6e5b4c	Un procés natural de reacció a una pèrdua, que pot necessitar acompanyament.
 3663d4	🕯️ Dol i pèrdues
 ba415e	El dol és la reacció normal a la pèrdua d'una persona estimada o d'una situació important. No té un calendari ni fases rígides. Cada persona el viu a la seva manera.
+b751c1	<strong>Font principal:</strong> <a#0>Canal Salut: Dol</a> (en català)
 5d5a30	Tristesa, enyorança, plor
 f7e8e1	Ràbia, culpa, ansietat
 3d63ba	Dificultat per concentrar-se, canvis de son i gana
@@ -321,11 +401,15 @@ a7023a	Acompanyament en grups de dol, psicoteràpia centrada en el dol complicat
 c09de5	Acompanya amb la presència, no amb frases fetes.
 7ff054	Parla de la persona perduda si ho desitja.
 795333	Ofereix ajuda pràctica (menjar, gestions).
+36f5c7	<a#0>Canal Salut: Dol</a> <span#1>(en català)</span>
+8f3d44	<a#0>NHS: Get help with grief after bereavement or loss</a> <span#1>(en anglès)</span>
+044207	<a#0>MedlinePlus: Pérdida de un ser querido</a> <span#1>(en castellà)</span>
 735389	Autolesions i pensaments suïcides – símptomes i ajuda | Psicòleg
 7d3530	Si ara estàs pensant a fer-te mal, no estàs sol/a: demana ajuda ara.
 f80df7	<span#0>Risc i crisi</span>
 a83480	🤝 Autolesions i pensaments suïcides
 4cf829	Els pensaments suïcides i les autolesions són formes de dolor emocional molt intens. Són més freqüents del que es creu i es poden tractar. Pots sentir-te millor, encara que ara no ho sembli.
+2a0e44	<strong>Font principal:</strong> <a#0>OMS: Suicide</a> (en anglès)
 3e5264	Sensació de no tenir sortida o de ser una càrrega
 c63bd4	Pensaments de mort o de voler desaparèixer
 70e005	Despedir-se, regalar pertinences, canvis bruscs de conducta
@@ -337,10 +421,16 @@ d1c709	Valoració professional urgent o preferent, pla de seguretat, psicoteràp
 dd44ed	Pregunta directament i amb calma: «Estàs pensant a fer-te mal?».
 37e966	Escolta sense jutjar i no et comprometis a guardar el secret.
 c0b0bd	No el deixis sol/a si hi ha risc immediat i truca al 112.
+4599b7	<a#0>OMS: Suicide</a> <span#1>(en anglès)</span>
+35cf3c	<a#0>NICE: Self-harm: assessment, management and preventing recurrence (NG225)</a> <span#1>(en anglès)</span>
+218593	<a#0>NHS: Self-harm</a> <span#1>(en anglès)</span>
+16e903	<a#0>Ministerio de Sanidad: Línea 024 de atención a la conducta suicida</a> <span#1>(en castellà)</span>
+59cc50	<a#0>MedlinePlus: Suicidio</a> <span#1>(en castellà)</span>
 5cc1b0	Fòbies específiques – símptomes i ajuda | Psicòleg
 2b2914	Por intensa i desproporcionada a una cosa o situació concreta (animals, altures, sang, volar...).
 d1f7c8	🕷️ Fòbies específiques
 66ff9e	Una fòbia específica és una por molt intensa a un objecte o situació concrets, que gairebé sempre apareix en trobar-lo i que és clarament desproporcionada respecte al perill real. La persona l'evita o el suporta amb molta angoixa. Són de les pors més freqüents i de les que millor responen al tractament.
+0bb2c5	<strong>Font principal:</strong> <a#0>NHS: Phobias</a> (en anglès)
 bb0a59	Por o angoixa immediata davant l'estímul (o només de pensar-hi)
 1a95b9	Palpitacions, suor, tremolors, sensació d'ofec o de mareig
 957cc5	Evitar situacions (volar, conduir, anar al dentista, veure sang...)
@@ -349,14 +439,19 @@ bb0a59	Por o angoixa immediata davant l'estímul (o només de pensar-hi)
 15f27b	<b>Mite:</b> És una exageració o falta de força de voluntat.<br><b#0>Realitat:</b> La por és una resposta automàtica del cos. No es soluciona «posant-hi ganes», però sí amb exposició gradual.
 7f948c	<b>Mite:</b> Si m'hi enfronto de cop, se'm passarà.<br><b#0>Realitat:</b> Una exposició sobtada i sense preparació pot reforçar la por. Funciona millor de manera gradual i pactada.
 3b3e45	Quan l'evitació limita la feina, els estudis, la salut (p. ex. no anar al metge) o les relacions, o quan la por et genera un malestar important.
-bdc379	El tractament d'elecció és la teràpia cognitivo-conductual amb exposició gradual, sovint en poques sessions. La medicació no és, en general, el primer recurs.
+27539b	Els tractaments habituals són les teràpies psicològiques, sobretot la teràpia cognitivo-conductual (TCC). En alguns casos es poden valorar també la hipnoteràpia o la medicació (antidepressius, betabloquejants o sedants), sempre amb el criteri d'un professional.
 288021	No et burlis ni la comparis amb la teva por: per a ella és real.
 c37386	No l'obliguis a exposar-se de cop, però tampoc l'ajudis a evitar-ho tot.
 f70454	Celebra els petits avenços i respecta el ritme de l'exposició.
+8f2f4a	<a#0>NHS: Phobias</a> <span#1>(en anglès)</span>
+c48788	<a#0>NHS: Treatment of phobias</a> <span#1>(en anglès)</span>
+5b6f3e	<a#0>NIMH: Specific Phobia</a> <span#1>(en anglès)</span>
+0d0b2a	<a#0>MedlinePlus: Fobias</a> <span#1>(en castellà)</span>
 9eb8c8	TEPT complex i trauma continuat – símptomes i ajuda | Psicòleg
 a3e74d	Efectes del trauma repetit o prolongat, sovint des de la infància: més enllà dels records, afecta com et veus i et relaciones.
 aa3272	🧩 TEPT complex i trauma continuat
 0e34af	El trauma complex es refereix a experiències repetides o prolongades de les quals és difícil escapar (maltractament, negligència, violència, abús). A més dels símptomes del TEPT, la CIE-11 descriu el TEPT complex amb dificultats per regular les emocions, una imatge negativa d'un mateix i problemes per mantenir relacions properes.
+fe8b05	<strong>Font principal:</strong> <a#0>NHS: PTSD (post-traumatic stress disorder), amb informació sobre el TEPT complex</a> (en anglès)
 80738f	Records intrusius, malsons o flashbacks
 e73be0	Evitació de persones, llocs o converses que recorden el que va passar
 ec7e2f	Emocions molt intenses, difícils de calmar, o sensació d'apagament
@@ -366,14 +461,17 @@ af8d19	Sentiments persistents de vergonya, culpa o de «ser defectuós/a»
 676a87	<b>Mite:</b> Si va passar fa anys, ja hauria d'estar superat.<br><b#0>Realitat:</b> El trauma no entén de calendari. Els símptomes poden aparèixer o empitjorar molts anys després.
 693111	<b>Mite:</b> Si hagués estat tan greu, ho recordaria tot amb claredat.<br><b#0>Realitat:</b> És habitual que els records del trauma siguin fragmentats o confusos. No invalida l'experiència.
 d1ed11	Si el passat condiciona el teu present (relacions, son, emocions, consum de substàncies) o si la teva seguretat actual està en risc. Busca un professional amb formació en trauma.
-b60d1a	Es recomana un abordatge per fases: primer seguretat i estabilització (regulació emocional, habilitats de calma), després el processament del trauma amb teràpies centrades en el trauma (TCC centrada en el trauma, EMDR) i, finalment, reintegració a la vida diària. El ritme el marca la persona.
+eb16e8	Segons una enquesta d'experts de l'ISTSS, la majoria recomana un abordatge per fases: primer seguretat i estabilització (regulació emocional, habilitats de calma), després el processament del trauma amb teràpies centrades en el trauma (TCC centrada en el trauma, EMDR) i, finalment, reintegració a la vida diària. No tots els professionals hi estan d'acord, i el ritme el marca la persona.
 55c5ad	Creu-la i no pressionis perquè expliqui detalls: tria ella quan i què compartir.
 728e4a	Fes-li sentir seguretat amb coherència i previsibilitat.
 189994	Informa't sobre el trauma: les reaccions intenses no són «dramatitzar».
+fc6788	<a#0>NHS: PTSD (post-traumatic stress disorder), amb informació sobre el TEPT complex</a> <span#1>(en anglès)</span>
+873685	<a#0>Cloitre M i col.: Treatment of complex PTSD: results of the ISTSS expert clinician survey on best practices. J Trauma Stress 2011;24:615-627</a> <span#1>(en anglès)</span>
 f2a107	Ansietat per la salut (hipocondria) – símptomes i ajuda | Psicòleg
 8b3579	Preocupació persistent per tenir o poder patir una malaltia greu, malgrat les revisions mèdiques.
 898cdd	🩺 Ansietat per la salut (hipocondria)
 179064	Hi ha ansietat per la salut quan les sensacions corporals normals s'interpreten com a senyals d'una malaltia greu i la preocupació continua tot i que les proves siguin normals. No és «fer-se el malalt»: el malestar és real. Sovint porta a comprovar-se constantment, a buscar a internet o a demanar moltes visites, o bé a evitar-ho tot.
+90982d	<strong>Font principal:</strong> <a#0>NHS: Health anxiety</a> (en anglès)
 8a623a	Por constant a tenir o desenvolupar una malaltia greu
 010881	Atenció excessiva a sensacions corporals (batecs, dolors, taques)
 3111e7	Comprovar-se el cos, mesurar-se constants o buscar símptomes a internet
@@ -387,10 +485,13 @@ c6f339	La TCC és el tractament amb més evidència: reinterpretar les sensacion
 d6cefa	Escolta sense ridiculitzar, però evita donar tranquil·litat repetida: la reforça.
 d58150	Anima'l a tenir un únic metge de referència.
 a694bd	Proposa activitats que el distreguin i li donin una vida plena.
+73ae96	<a#0>NHS: Health anxiety</a> <span#1>(en anglès)</span>
+d082bd	<a#0>MedlinePlus: Trastorno de ansiedad por enfermedad</a> <span#1>(en castellà)</span>
 8b0c54	Altres trastorns del son (apnea, somnolència, malsons) – símptomes i ajuda | Psicòleg
 f1ae0c	No tot és insomni: apnea, hipersòmnia, narcolèpsia, malsons i parasòmnies també afecten el descans.
 ff4dc8	😴 Altres trastorns del son (apnea, somnolència, malsons)
 3baee1	A més de l'insomni, hi ha altres problemes del son que convé conèixer. L'apnea obstructiva fa que la respiració s'aturi breument durant la nit. La hipersòmnia i la narcolèpsia provoquen una somnolència diürna excessiva. Els malsons repetits poden aparèixer amb estrès o trauma. Les parasòmnies (caminar dormint, terrors nocturns) són més freqüents a la infància. Moltes tenen una causa física que cal valorar.
+4b2005	<strong>Font principal:</strong> <a#0>NHS: Sleep apnoea</a> (en anglès)
 e972a7	Cansament o son durant el dia tot i dormir moltes hores
 cda0d6	Roncs forts, pauses respiratòries o despertar amb ofec
 6b5105	Mal de cap al matí, sequedat de boca
@@ -404,10 +505,16 @@ ead825	<b>Mite:</b> Els malsons només són fruit de sopar fort.<br><b#0>Realita
 59fd8c	Si observes pauses respiratòries o roncs forts, anima'l a consultar.
 a402e2	Evita despertar bruscament una persona amb parasòmnies; protegeix-la de cops.
 c5473f	No bromegis amb el cansament: pot ser mèdic.
+b15a51	<a#0>NHS: Sleep apnoea</a> <span#1>(en anglès)</span>
+c7ee05	<a#0>NHS: Narcolepsy</a> <span#1>(en anglès)</span>
+d7dbb0	<a#0>NICE: Obstructive sleep apnoea/hypopnoea syndrome and obesity hypoventilation syndrome (NG202)</a> <span#1>(en anglès)</span>
+f738d5	<a#0>Morgenthaler TI i col.: Position paper for the treatment of nightmare disorder in adults (American Academy of Sleep Medicine). J Clin Sleep Med 2018;14:1041-1055</a> <span#1>(en anglès)</span>
+7e3b15	<a#0>MedlinePlus: Apnea del sueño</a> <span#1>(en castellà)</span>
 dede25	Trastorns alimentaris per etapes de la vida – símptomes i ajuda | Psicòleg
 a6a645	Com es poden manifestar els trastorns de la conducta alimentària a la infància, l'adolescència, l'edat adulta i la gent gran.
 76b298	🍎 Trastorns alimentaris per etapes de la vida
 c9b8bb	Els trastorns de la conducta alimentària (TCA) no tenen edat. Tot i que es detecten sobretot en l'adolescència, també apareixen en la infància, l'edat adulta i la gent gran, i sovint passen desapercebuts perquè no encaixen amb la imatge habitual. Detectar-los aviat millora molt el pronòstic.
+342676	<strong>Font principal:</strong> <a#0>NICE: Eating disorders: recognition and treatment (NG69)</a> (en anglès)
 e6d692	Infància: menjar molt selectiu, por a vomitar o a ofegar-se, pèrdua de gana o de pes, escàs creixement; pot ser ARFID (trastorn per evitació/restricció de la ingesta d'aliments)
 5d440b	Adolescència: restricció i por a engreixar-se, atracons, vòmits o laxants, exercici compulsiu, evitar menjar en família, canvis d'humor
 36a257	Adults: atracons amb pèrdua de control i culpa, dietes extremes, preocupació constant per pes i cos, ocultació; poden coexistir amb feina i família
@@ -1044,6 +1151,7 @@ aa61be	Revisió professional
 8cf53f	Com s'ha elaborat el contingut
 0fd0af	Els textos s'han redactat amb l'ajuda d'una eina d'intel·ligència artificial, a partir de les fonts públiques que s'indiquen més avall. Són una síntesi divulgativa: no contenen recerca original ni experiència clínica.
 c3c646	Les versions en castellà i en anglès són traduccions fetes amb la mateixa eina, sense revisió d'un traductor ni d'un professional.
+53cf81	Cada fitxa de trastorn llista al final les fonts concretes que s'han consultat, amb enllaç, i en destaca la principal sota «Què és». Són fonts oficials o d'organismes de referència (OMS, Canal Salut, NHS, NICE, NIMH, MedlinePlus i altres). La fitxa és una síntesi: pot contenir errors o quedar desactualitzada, i cal contrastar-la amb aquestes fonts.
 8d5b90	Els qüestionaris PHQ-9 i GAD-7 són adaptacions de les escales originals, d'ús lliure, i no són versions validades oficialment en cap de les tres llengües.
 48c3e2	El qüestionari de burnout CBI és de domini públic. La versió en castellà és la validada a Espanya (2013). La versió en català és una traducció feta amb l'eina d'intel·ligència artificial a partir d'aquella, sense revisió ni validació. La versió en anglès és el text original publicat pels autors, validat amb mostres daneses.
 1551b2	Les eines d'autoajuda es basen en tècniques conegudes de la teràpia cognitivo-conductual. Són un suport, no un tractament.

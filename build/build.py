@@ -128,12 +128,6 @@ def li(items):
     return "<ul>" + "".join(f"<li>{e(i)}</li>" for i in items) + "</ul>"
 
 
-SOURCES = ('<p class="sources"><strong>Fonts per ampliar informació:</strong> '
-           '<a href="https://www.who.int/health-topics/mental-health" rel="noopener">OMS – Salut mental</a> · '
-           '<a href="https://canalsalut.gencat.cat" rel="noopener">Canal Salut (Generalitat de Catalunya)</a> · '
-           '<a href="https://www.nice.org.uk/guidance/conditions-and-diseases/mental-health-behavioural-and-neurodevelopmental-conditions" rel="noopener">Guies clíniques NICE</a>. '
-           'Classificacions de referència: CIE-11 i DSM-5-TR.</p>')
-
 
 def review_note(root=""):
     """Línia de revisió professional i data d'actualització (al peu de fitxes i guies)."""
@@ -179,6 +173,15 @@ for c in CONDITIONS:
     <li><a href="https://www.who.int/news/item/28-05-2019-burn-out-an-occupational-phenomenon-international-classification-of-diseases" rel="noopener">OMS: el burnout com a fenomen laboral a la CIE-11</a> (en anglès).</li>
   </ul>
   <div class="notice soft"><strong>No és un test de diagnòstic</strong>El qüestionari CBI és un instrument de recerca i no dona un diagnòstic. Si dubtes de com estàs, parla-ho amb un professional.</div>"""
+    LT = {"ca": "(en català)", "es": "(en castellà)", "en": "(en anglès)"}
+    def src_item(t, u, l):
+        return f'<li><a href="{e(u)}" rel="noopener">{e(t)}</a> <span class="muted">{LT[l]}</span></li>'
+    t0, u0, l0 = c["sources"][0]
+    main_src = f'<p class="muted" style="font-size:.9rem"><strong>Font principal:</strong> <a href="{e(u0)}" rel="noopener">{e(t0)}</a> {LT[l0]}</p>'
+    src_block = ('<div class="sources"><strong>Fonts d\'aquesta fitxa</strong>'
+                 '<p>Aquesta fitxa és una síntesi divulgativa feta amb ajuda d\'IA a partir d\'aquestes fonts. No les substitueix: consulta-les per ampliar o contrastar la informació.</p>'
+                 '<ul>' + "".join(src_item(*x) for x in c["sources"]) + '</ul>'
+                 '<p>Classificacions de referència: CIE-11 i DSM-5-TR.</p></div>')
     body = f'''
 <section class="page-hero"><div class="container narrow">
   <p class="crumbs"><a href="../trastorns.html">← Tots els trastorns</a></p>
@@ -190,13 +193,14 @@ for c in CONDITIONS:
   {crisi}
   <div class="notice"><strong>Informació, no diagnòstic</strong>Aquesta fitxa és informativa. Només un professional pot valorar la teva situació.</div>
   <h2>Què és</h2><p>{e(c["what"])}</p>
+  {main_src}
   <h2>Símptomes habituals</h2>{li(c["symptoms"])}
   <h2>Mites i realitats</h2>{mites}
   <h2>Quan consultar un professional</h2><p>{e(c["when"])}</p>
   <h2>{e(c.get("treatment_title", "Quins tractaments recomanen les guies clíniques"))}</h2><p>{e(c["treatment"])}</p>
   <h2>Consells per a familiars i amics</h2>{li(c["family"])}{extra}
   <div class="btn-row"><a class="btn btn-primary" href="../ajuda.html">Trobar ajuda</a><a class="btn btn-outline" href="../eines.html">Eines d'autoajuda</a></div>
-  {SOURCES}
+  {src_block}
   {review_note('../')}
 </div></section>'''
     ld = f'<script type="application/ld+json">{{"@context":"https://schema.org","@type":"MedicalWebPage","name":"{e(c["name"])}","inLanguage":"ca","about":{{"@type":"{"Thing" if c["slug"] == "burnout" else "MedicalCondition"}","name":"{e(c["name"])}"}}}}</script>'
@@ -1001,6 +1005,7 @@ body = f'''
   <ul>
     <li>Els textos s'han redactat amb l'ajuda d'una eina d'intel·ligència artificial, a partir de les fonts públiques que s'indiquen més avall. Són una síntesi divulgativa: no contenen recerca original ni experiència clínica.</li>
     <li>Les versions en castellà i en anglès són traduccions fetes amb la mateixa eina, sense revisió d'un traductor ni d'un professional.</li>
+    <li>Cada fitxa de trastorn llista al final les fonts concretes que s'han consultat, amb enllaç, i en destaca la principal sota «Què és». Són fonts oficials o d'organismes de referència (OMS, Canal Salut, NHS, NICE, NIMH, MedlinePlus i altres). La fitxa és una síntesi: pot contenir errors o quedar desactualitzada, i cal contrastar-la amb aquestes fonts.</li>
     <li>Els qüestionaris PHQ-9 i GAD-7 són adaptacions de les escales originals, d'ús lliure, i no són versions validades oficialment en cap de les tres llengües.</li>
     <li>El qüestionari de burnout CBI és de domini públic. La versió en castellà és la validada a Espanya (2013). La versió en català és una traducció feta amb l'eina d'intel·ligència artificial a partir d'aquella, sense revisió ni validació. La versió en anglès és el text original publicat pels autors, validat amb mostres daneses.</li>
     <li>Les eines d'autoajuda es basen en tècniques conegudes de la teràpia cognitivo-conductual. Són un suport, no un tractament.</li>
